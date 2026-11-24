@@ -1,0 +1,251 @@
+{
+  "_note": "SAP asset classes, from the template's DataVal sheet. The value is what prints on the form and what Fixed Assets keys at AS01. Maintained in Admin > Master data.",
+  "source": "AFE Form.xlsx",
+  "entries": [
+    {
+      "value": "16100-Land",
+      "code": "16100",
+      "label": "Land",
+      "sortOrder": 1,
+      "active": true
+    },
+    {
+      "value": "16200-Buildings",
+      "code": "16200",
+      "label": "Buildings",
+      "sortOrder": 2,
+      "active": true
+    },
+    {
+      "value": "16205-Building Improvements",
+      "code": "16205",
+      "label": "Building Improvements",
+      "sortOrder": 3,
+      "active": true
+    },
+    {
+      "value": "16206-Land Improvements -Owned- FR",
+      "code": "16206",
+      "label": "Land Improvements -Owned- FR",
+      "sortOrder": 4,
+      "active": true
+    },
+    {
+      "value": "16207-Land Improvements - Other - FR",
+      "code": "16207",
+      "label": "Land Improvements - Other - FR",
+      "sortOrder": 5,
+      "active": true
+    },
+    {
+      "value": "16300-Leasehold Improvements",
+      "code": "16300",
+      "label": "Leasehold Improvements",
+      "sortOrder": 6,
+      "active": true
+    },
+    {
+      "value": "16400-Reagent Rental Equipment",
+      "code": "16400",
+      "label": "Reagent Rental Equipment",
+      "sortOrder": 7,
+      "active": true
+    },
+    {
+      "value": "16500-Furniture & Fixtures",
+      "code": "16500",
+      "label": "Furniture & Fixtures",
+      "sortOrder": 8,
+      "active": true
+    },
+    {
+      "value": "16501-Lab Equipment",
+      "code": "16501",
+      "label": "Lab Equipment",
+      "sortOrder": 9,
+      "active": true
+    },
+    {
+      "value": "16502-Tools and Mold",
+      "code": "16502",
+      "label": "Tools and Mold",
+      "sortOrder": 10,
+      "active": true
+    },
+    {
+      "value": "16503-Service Equipment",
+      "code": "16503",
+      "label": "Service Equipment",
+      "sortOrder": 11,
+      "active": true
+    },
+    {
+      "value": "16504-General Equipment",
+      "code": "16504",
+      "label": "General Equipment",
+      "sortOrder": 12,
+      "active": true
+    },
+    {
+      "value": "16505-Loaner Equipment",
+      "code": "16505",
+      "label": "Loaner Equipment",
+      "sortOrder": 13,
+      "active": true
+    },
+    {
+      "value": "16506-Supply Center Equipment",
+      "code": "16506",
+      "label": "Supply Center Equipment",
+      "sortOrder": 14,
+      "active": true
+    },
+    {
+      "value": "16507-Equipment Install - FR",
+      "code": "16507",
+      "label": "Equipment Install - FR",
+      "sortOrder": 15,
+      "active": true
+    },
+    {
+      "value": "16508-Industry Tools - FR",
+      "code": "16508",
+      "label": "Industry Tools - FR",
+      "sortOrder": 16,
+      "active": true
+    },
+    {
+      "value": "16509-Tool Improvement - FR",
+      "code": "16509",
+      "label": "Tool Improvement - FR",
+      "sortOrder": 17,
+      "active": true
+    },
+    {
+      "value": "16510-Other Improvement and Installation - FR",
+      "code": "16510",
+      "label": "Other Improvement and Installation - FR",
+      "sortOrder": 18,
+      "active": true
+    },
+    {
+      "value": "16530-Machinery - Production",
+      "code": "16530",
+      "label": "Machinery - Production",
+      "sortOrder": 19,
+      "active": true
+    },
+    {
+      "value": "16540-Machinery - Engineering",
+      "code": "16540",
+      "label": "Machinery - Engineering",
+      "sortOrder": 20,
+      "active": true
+    },
+    {
+      "value": "16550-Machinery - Research",
+      "code": "16550",
+      "label": "Machinery - Research",
+      "sortOrder": 21,
+      "active": true
+    },
+    {
+      "value": "16560-Machinery - Warehouse & Shipping",
+      "code": "16560",
+      "label": "Machinery - Warehouse & Shipping",
+      "sortOrder": 22,
+      "active": true
+    },
+    {
+      "value": "16570-Machinery - Tradeshow",
+      "code": "16570",
+      "label": "Machinery - Tradeshow",
+      "sortOrder": 23,
+      "active": true
+    },
+    {
+      "value": "16580-Machinery - Promotional",
+      "code": "16580",
+      "label": "Machinery - Promotional",
+      "sortOrder": 24,
+      "active": true
+    },
+    {
+      "value": "16590-Machinery - Marketing",
+      "code": "16590",
+      "label": "Machinery - Marketing",
+      "sortOrder": 25,
+      "active": true
+    },
+    {
+      "value": "16600-Computer Software - Sold, Leased, or Marketed",
+      "code": "16600",
+      "label": "Computer Software - Sold, Leased, or Marketed",
+      "sortOrder": 26,
+      "active": true
+    },
+    {
+      "value": "16601-Computer Software - Internal Use",
+      "code": "16601",
+      "label": "Computer Software - Internal Use",
+      "sortOrder": 27,
+      "active": true
+    },
+    {
+      "value": "16605-Capitaliized Interest - Comp SW",
+      "code": "16605",
+      "label": "Capitaliized Interest - Comp SW",
+      "sortOrder": 28,
+      "active": true
+    },
+    {
+      "value": "16701-Computer Hardware",
+      "code": "16701",
+      "label": "Computer Hardware",
+      "sortOrder": 29,
+      "active": true
+    },
+    {
+      "value": "16702-Servers & PC's",
+      "code": "16702",
+      "label": "Servers & PC's",
+      "sortOrder": 30,
+      "active": true
+    },
+    {
+      "value": "16703-Networking",
+      "code": "16703",
+      "label": "Networking",
+      "sortOrder": 31,
+      "active": true
+    },
+    {
+      "value": "16800-Automobiles - Cars",
+      "code": "16800",
+      "label": "Automobiles - Cars",
+      "sortOrder": 32,
+      "active": true
+    },
+    {
+      "value": "16801-Automobiles - Trucks and Vans",
+      "code": "16801",
+      "label": "Automobiles - Trucks and Vans",
+      "sortOrder": 33,
+      "active": true
+    },
+    {
+      "value": "16899-Low Value Assets - IT",
+      "code": "16899",
+      "label": "Low Value Assets - IT",
+      "sortOrder": 34,
+      "active": true
+    },
+    {
+      "value": "16900-Low Value Assets",
+      "code": "16900",
+      "label": "Low Value Assets",
+      "sortOrder": 35,
+      "active": true
+    }
+  ]
+}

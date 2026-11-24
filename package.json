@@ -1,0 +1,16 @@
+{
+  "name": "afe-to-fixed-asset",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AFE to Fixed Asset (AUC) automation - Acme Global FSSC Fixed Asset Accounting (PoC)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "1.1.1",
+    "express": "^4.19.2",
+    "pdf-lib": "1.17.1",
+    "pg": "^8.23.0"
+  }
+}

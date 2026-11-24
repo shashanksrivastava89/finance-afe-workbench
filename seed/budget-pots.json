@@ -1,0 +1,485 @@
+{
+  "_note": "Annual budget by division x category x region (R53). The STRUCTURE is Aiden's IT CAPEX dashboard (the five categories and three regions as he cuts them); the AMOUNTS are round dummy values — the real figures are confidential and are loaded by the division, not committed here. Nothing in the SAP exports carries an annual pot: the cost-centre list and Budget Details are per cost centre and per internal order, so this file is the only place the pots exist until a division loads its own. CORP_IT is Aiden's own grid; MFG, Facilities and LSG_R&D were added on 2026-09-22 so the division switcher (R128) has somewhere to go — same dummy-amount rule, categories taken from what those divisions actually spend on. The grid is complete on purpose — every category exists in every region, so the wizard offers the same five wherever the AFE is raised.",
+  "pots": [
+    {
+      "id": "pot-0001",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Life Cycle Refresh",
+      "region": "NLAM",
+      "amountUsd": 1600000
+    },
+    {
+      "id": "pot-0002",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Life Cycle Refresh",
+      "region": "EMEA",
+      "amountUsd": 1000000
+    },
+    {
+      "id": "pot-0003",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Life Cycle Refresh",
+      "region": "APAC",
+      "amountUsd": 900000
+    },
+    {
+      "id": "pot-0004",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Printers & Conf Rooms",
+      "region": "NLAM",
+      "amountUsd": 170000
+    },
+    {
+      "id": "pot-0005",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Printers & Conf Rooms",
+      "region": "EMEA",
+      "amountUsd": 200000
+    },
+    {
+      "id": "pot-0006",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Printers & Conf Rooms",
+      "region": "APAC",
+      "amountUsd": 100000
+    },
+    {
+      "id": "pot-0007",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "NLAM",
+      "amountUsd": 500000
+    },
+    {
+      "id": "pot-0008",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "EMEA",
+      "amountUsd": 280000
+    },
+    {
+      "id": "pot-0009",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "APAC",
+      "amountUsd": 75000
+    },
+    {
+      "id": "pot-0010",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Regular Capex",
+      "region": "NLAM",
+      "amountUsd": 965000
+    },
+    {
+      "id": "pot-0012",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Regular Capex",
+      "region": "EMEA",
+      "amountUsd": 640000
+    },
+    {
+      "id": "pot-0013",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "Regular Capex",
+      "region": "APAC",
+      "amountUsd": 410000
+    },
+    {
+      "id": "pot-0011",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "CCA",
+      "region": "NLAM",
+      "amountUsd": 1150000
+    },
+    {
+      "id": "pot-0014",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "CCA",
+      "region": "EMEA",
+      "amountUsd": 520000
+    },
+    {
+      "id": "pot-0015",
+      "division": "CORP_IT",
+      "fiscalYear": 2026,
+      "budgetCategory": "CCA",
+      "region": "APAC",
+      "amountUsd": 300000
+    },
+    {
+      "id": "pot-0016",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Capacity Expansion",
+      "region": "NLAM",
+      "amountUsd": 2185000
+    },
+    {
+      "id": "pot-0017",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Capacity Expansion",
+      "region": "EMEA",
+      "amountUsd": 1220000
+    },
+    {
+      "id": "pot-0018",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Capacity Expansion",
+      "region": "APAC",
+      "amountUsd": 800000
+    },
+    {
+      "id": "pot-0019",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Equipment Replacement",
+      "region": "NLAM",
+      "amountUsd": 1350000
+    },
+    {
+      "id": "pot-0020",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Equipment Replacement",
+      "region": "EMEA",
+      "amountUsd": 755000
+    },
+    {
+      "id": "pot-0021",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Equipment Replacement",
+      "region": "APAC",
+      "amountUsd": 495000
+    },
+    {
+      "id": "pot-0022",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Automation",
+      "region": "NLAM",
+      "amountUsd": 730000
+    },
+    {
+      "id": "pot-0023",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Automation",
+      "region": "EMEA",
+      "amountUsd": 405000
+    },
+    {
+      "id": "pot-0024",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Automation",
+      "region": "APAC",
+      "amountUsd": 265000
+    },
+    {
+      "id": "pot-0025",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Quality & Compliance",
+      "region": "NLAM",
+      "amountUsd": 470000
+    },
+    {
+      "id": "pot-0026",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Quality & Compliance",
+      "region": "EMEA",
+      "amountUsd": 260000
+    },
+    {
+      "id": "pot-0027",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Quality & Compliance",
+      "region": "APAC",
+      "amountUsd": 170000
+    },
+    {
+      "id": "pot-0028",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "NLAM",
+      "amountUsd": 310000
+    },
+    {
+      "id": "pot-0029",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "EMEA",
+      "amountUsd": 175000
+    },
+    {
+      "id": "pot-0030",
+      "division": "MFG",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "APAC",
+      "amountUsd": 115000
+    },
+    {
+      "id": "pot-0031",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Building Renovation",
+      "region": "NLAM",
+      "amountUsd": 1610000
+    },
+    {
+      "id": "pot-0032",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Building Renovation",
+      "region": "EMEA",
+      "amountUsd": 900000
+    },
+    {
+      "id": "pot-0033",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Building Renovation",
+      "region": "APAC",
+      "amountUsd": 590000
+    },
+    {
+      "id": "pot-0034",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "HVAC & Utilities",
+      "region": "NLAM",
+      "amountUsd": 650000
+    },
+    {
+      "id": "pot-0035",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "HVAC & Utilities",
+      "region": "EMEA",
+      "amountUsd": 360000
+    },
+    {
+      "id": "pot-0036",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "HVAC & Utilities",
+      "region": "APAC",
+      "amountUsd": 240000
+    },
+    {
+      "id": "pot-0037",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Lab Fit-out",
+      "region": "NLAM",
+      "amountUsd": 510000
+    },
+    {
+      "id": "pot-0038",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Lab Fit-out",
+      "region": "EMEA",
+      "amountUsd": 285000
+    },
+    {
+      "id": "pot-0039",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Lab Fit-out",
+      "region": "APAC",
+      "amountUsd": 185000
+    },
+    {
+      "id": "pot-0040",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Security & Access",
+      "region": "NLAM",
+      "amountUsd": 220000
+    },
+    {
+      "id": "pot-0041",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Security & Access",
+      "region": "EMEA",
+      "amountUsd": 120000
+    },
+    {
+      "id": "pot-0042",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Security & Access",
+      "region": "APAC",
+      "amountUsd": 80000
+    },
+    {
+      "id": "pot-0043",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Site Services",
+      "region": "NLAM",
+      "amountUsd": 160000
+    },
+    {
+      "id": "pot-0044",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Site Services",
+      "region": "EMEA",
+      "amountUsd": 90000
+    },
+    {
+      "id": "pot-0045",
+      "division": "Facilities",
+      "fiscalYear": 2026,
+      "budgetCategory": "Site Services",
+      "region": "APAC",
+      "amountUsd": 60000
+    },
+    {
+      "id": "pot-0046",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Instrumentation",
+      "region": "NLAM",
+      "amountUsd": 1430000
+    },
+    {
+      "id": "pot-0047",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Instrumentation",
+      "region": "EMEA",
+      "amountUsd": 800000
+    },
+    {
+      "id": "pot-0048",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Instrumentation",
+      "region": "APAC",
+      "amountUsd": 520000
+    },
+    {
+      "id": "pot-0049",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Lab Systems",
+      "region": "NLAM",
+      "amountUsd": 615000
+    },
+    {
+      "id": "pot-0050",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Lab Systems",
+      "region": "EMEA",
+      "amountUsd": 340000
+    },
+    {
+      "id": "pot-0051",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Lab Systems",
+      "region": "APAC",
+      "amountUsd": 225000
+    },
+    {
+      "id": "pot-0052",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Prototype & Tooling",
+      "region": "NLAM",
+      "amountUsd": 395000
+    },
+    {
+      "id": "pot-0053",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Prototype & Tooling",
+      "region": "EMEA",
+      "amountUsd": 220000
+    },
+    {
+      "id": "pot-0054",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Prototype & Tooling",
+      "region": "APAC",
+      "amountUsd": 145000
+    },
+    {
+      "id": "pot-0055",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Software & Licences",
+      "region": "NLAM",
+      "amountUsd": 280000
+    },
+    {
+      "id": "pot-0056",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Software & Licences",
+      "region": "EMEA",
+      "amountUsd": 155000
+    },
+    {
+      "id": "pot-0057",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Software & Licences",
+      "region": "APAC",
+      "amountUsd": 105000
+    },
+    {
+      "id": "pot-0058",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "NLAM",
+      "amountUsd": 200000
+    },
+    {
+      "id": "pot-0059",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "EMEA",
+      "amountUsd": 110000
+    },
+    {
+      "id": "pot-0060",
+      "division": "LSG_R&D",
+      "fiscalYear": 2026,
+      "budgetCategory": "Facilities",
+      "region": "APAC",
+      "amountUsd": 70000
+    }
+  ]
+}

@@ -1,0 +1,906 @@
+{
+  "_note": "Synthetic location list (public demo copy). The code is what prints in the form's Location cell and carries the building number Fixed Assets files property tax against. Maintained from here on in Admin > Master data; regenerate only when the template changes.",
+  "source": "AFE Form.xlsx",
+  "locations": [
+    {
+      "code": "ARE_Dubai_Site 1",
+      "country": "ARE",
+      "city": "Dubai",
+      "active": true
+    },
+    {
+      "code": "AUS_Melbourne_Site 1",
+      "country": "AUS",
+      "city": "Melbourne",
+      "active": true
+    },
+    {
+      "code": "AUS_Sydney_Site 1",
+      "country": "AUS",
+      "city": "Sydney",
+      "active": true
+    },
+    {
+      "code": "AUS_Sydney_Site 2",
+      "country": "AUS",
+      "city": "Sydney",
+      "active": true
+    },
+    {
+      "code": "AUS_Sydney_Site 3",
+      "country": "AUS",
+      "city": "Sydney",
+      "active": true
+    },
+    {
+      "code": "AUS_Sydney_Site 4",
+      "country": "AUS",
+      "city": "Sydney",
+      "active": true
+    },
+    {
+      "code": "AUT_Vienna_Site 1",
+      "country": "AUT",
+      "city": "Vienna",
+      "active": true
+    },
+    {
+      "code": "BEL_Nazareth_Site 1",
+      "country": "BEL",
+      "city": "Nazareth",
+      "active": true
+    },
+    {
+      "code": "BEL_Temse_Site 1",
+      "country": "BEL",
+      "city": "Temse",
+      "active": true
+    },
+    {
+      "code": "BRA_Lagos Santa_Site 1",
+      "country": "BRA",
+      "city": "Lagos Santa",
+      "active": true
+    },
+    {
+      "code": "BRA_Sao Paulo_Site 1",
+      "country": "BRA",
+      "city": "Sao Paulo",
+      "active": true
+    },
+    {
+      "code": "CAN_Mississauga_Site 1",
+      "country": "CAN",
+      "city": "Mississauga",
+      "active": true
+    },
+    {
+      "code": "CAN_Montreal_Site 1",
+      "country": "CAN",
+      "city": "Montreal",
+      "active": true
+    },
+    {
+      "code": "CAN_Montreal_Site 2",
+      "country": "CAN",
+      "city": "Montreal",
+      "active": true
+    },
+    {
+      "code": "CHE_Basel_Site 1",
+      "country": "CHE",
+      "city": "Basel",
+      "active": true
+    },
+    {
+      "code": "CHE_Site V_Site 1",
+      "country": "CHE",
+      "city": "Site V",
+      "active": true
+    },
+    {
+      "code": "CHE_Site V_Site 2",
+      "country": "CHE",
+      "city": "Site V",
+      "active": true
+    },
+    {
+      "code": "CHE_Site V_Site 3",
+      "country": "CHE",
+      "city": "Site V",
+      "active": true
+    },
+    {
+      "code": "CHE_Site V_Site 4",
+      "country": "CHE",
+      "city": "Site V",
+      "active": true
+    },
+    {
+      "code": "CHE_Site V_Site 5",
+      "country": "CHE",
+      "city": "Site V",
+      "active": true
+    },
+    {
+      "code": "CHE_Site V_Site 6",
+      "country": "CHE",
+      "city": "Site V",
+      "active": true
+    },
+    {
+      "code": "CHE_Site V_Site 7",
+      "country": "CHE",
+      "city": "Site V",
+      "active": true
+    },
+    {
+      "code": "CHN_Beijing_Site 1",
+      "country": "CHN",
+      "city": "Beijing",
+      "active": true
+    },
+    {
+      "code": "CHN_Guangzhou_Site 1",
+      "country": "CHN",
+      "city": "Guangzhou",
+      "active": true
+    },
+    {
+      "code": "CHN_Hong Kong_Site 1",
+      "country": "CHN",
+      "city": "Hong Kong",
+      "active": true
+    },
+    {
+      "code": "CHN_Shanghai_Site 1",
+      "country": "CHN",
+      "city": "Shanghai",
+      "active": true
+    },
+    {
+      "code": "CHN_Shanghai_Site 2",
+      "country": "CHN",
+      "city": "Shanghai",
+      "active": true
+    },
+    {
+      "code": "CHN_Shanghai_Site 3",
+      "country": "CHN",
+      "city": "Shanghai",
+      "active": true
+    },
+    {
+      "code": "CHN_Shanghai_Site 4",
+      "country": "CHN",
+      "city": "Shanghai",
+      "active": true
+    },
+    {
+      "code": "CHN_Suzhou_Site 1",
+      "country": "CHN",
+      "city": "Suzhou",
+      "active": true
+    },
+    {
+      "code": "CHN_Taipei_Site 1",
+      "country": "CHN",
+      "city": "Taipei",
+      "active": true
+    },
+    {
+      "code": "CHN_Wuhan_Site 1",
+      "country": "CHN",
+      "city": "Wuhan",
+      "active": true
+    },
+    {
+      "code": "CHN_Wuxi_Site 1",
+      "country": "CHN",
+      "city": "Wuxi",
+      "active": true
+    },
+    {
+      "code": "CHN_Wuxi_Site 2",
+      "country": "CHN",
+      "city": "Wuxi",
+      "active": true
+    },
+    {
+      "code": "CZE_Prague_Site 1",
+      "country": "CZE",
+      "city": "Prague",
+      "active": true
+    },
+    {
+      "code": "DEU_Site U_Site 1",
+      "country": "DEU",
+      "city": "Site U",
+      "active": true
+    },
+    {
+      "code": "DEU_Site U_Site 2",
+      "country": "DEU",
+      "city": "Site U",
+      "active": true
+    },
+    {
+      "code": "DEU_Site U_Site 3",
+      "country": "DEU",
+      "city": "Site U",
+      "active": true
+    },
+    {
+      "code": "DEU_Site U_Site 4",
+      "country": "DEU",
+      "city": "Site U",
+      "active": true
+    },
+    {
+      "code": "DEU_Site U_Site 5",
+      "country": "DEU",
+      "city": "Site U",
+      "active": true
+    },
+    {
+      "code": "DEU_Site U_Site 6",
+      "country": "DEU",
+      "city": "Site U",
+      "active": true
+    },
+    {
+      "code": "DEU_Leipzig_Site 1",
+      "country": "DEU",
+      "city": "Leipzig",
+      "active": true
+    },
+    {
+      "code": "DEU_Munich_Site 1",
+      "country": "DEU",
+      "city": "Munich",
+      "active": true
+    },
+    {
+      "code": "DEU_Puchheim_Site 1",
+      "country": "DEU",
+      "city": "Puchheim",
+      "active": true
+    },
+    {
+      "code": "DEU_Puchheim_Site 2",
+      "country": "DEU",
+      "city": "Puchheim",
+      "active": true
+    },
+    {
+      "code": "DNK_Copenhagen_Site 1",
+      "country": "DNK",
+      "city": "Copenhagen",
+      "active": true
+    },
+    {
+      "code": "DNK_Copenhagen_Site 2",
+      "country": "DNK",
+      "city": "Copenhagen",
+      "active": true
+    },
+    {
+      "code": "ESP_Barcelona_Site 1",
+      "country": "ESP",
+      "city": "Barcelona",
+      "active": true
+    },
+    {
+      "code": "ESP_Madrid_Site 1",
+      "country": "ESP",
+      "city": "Madrid",
+      "active": true
+    },
+    {
+      "code": "FIN_Helsinki_Site 1",
+      "country": "FIN",
+      "city": "Helsinki",
+      "active": true
+    },
+    {
+      "code": "FRA_Gemenos_Site 1",
+      "country": "FRA",
+      "city": "Gemenos",
+      "active": true
+    },
+    {
+      "code": "FRA_Marnes La Coquette_Site 1",
+      "country": "FRA",
+      "city": "Marnes La Coquette",
+      "active": true
+    },
+    {
+      "code": "FRA_Marnes_Site 1",
+      "country": "FRA",
+      "city": "Marnes",
+      "active": true
+    },
+    {
+      "code": "FRA_Mitry-Mory_Site 1",
+      "country": "FRA",
+      "city": "Mitry-Mory",
+      "active": true
+    },
+    {
+      "code": "FRA_Roanne_Site 1",
+      "country": "FRA",
+      "city": "Roanne",
+      "active": true
+    },
+    {
+      "code": "FRA_Roanne_Site 2",
+      "country": "FRA",
+      "city": "Roanne",
+      "active": true
+    },
+    {
+      "code": "FRA_Schiltigheim_Site 1",
+      "country": "FRA",
+      "city": "Schiltigheim",
+      "active": true
+    },
+    {
+      "code": "FRA_Schiltigheim_Site 2",
+      "country": "FRA",
+      "city": "Schiltigheim",
+      "active": true
+    },
+    {
+      "code": "FRA_Steenvoorde_Site 1",
+      "country": "FRA",
+      "city": "Steenvoorde",
+      "active": true
+    },
+    {
+      "code": "FRA_Streenvoorde_Site 1",
+      "country": "FRA",
+      "city": "Streenvoorde",
+      "active": true
+    },
+    {
+      "code": "GBR_Oxfordshire_Site 1",
+      "country": "GBR",
+      "city": "Oxfordshire",
+      "active": true
+    },
+    {
+      "code": "GBR_Watford_Site 1",
+      "country": "GBR",
+      "city": "Watford",
+      "active": true
+    },
+    {
+      "code": "GBR_Watford_Site 2",
+      "country": "GBR",
+      "city": "Watford",
+      "active": true
+    },
+    {
+      "code": "GRC_Athens_Site 1",
+      "country": "GRC",
+      "city": "Athens",
+      "active": true
+    },
+    {
+      "code": "HUN_Budapest_Site 1",
+      "country": "HUN",
+      "city": "Budapest",
+      "active": true
+    },
+    {
+      "code": "HUN_Budapest_Site 2",
+      "country": "HUN",
+      "city": "Budapest",
+      "active": true
+    },
+    {
+      "code": "IND_Bangalore_Site 1",
+      "country": "IND",
+      "city": "Bangalore",
+      "active": true
+    },
+    {
+      "code": "IND_Chennai_Site 1",
+      "country": "IND",
+      "city": "Chennai",
+      "active": true
+    },
+    {
+      "code": "IND_Chennai_Site 2",
+      "country": "IND",
+      "city": "Chennai",
+      "active": true
+    },
+    {
+      "code": "IND_Gurgaon_Site 1",
+      "country": "IND",
+      "city": "Gurgaon",
+      "active": true
+    },
+    {
+      "code": "IND_Kolkata_Site 1",
+      "country": "IND",
+      "city": "Kolkata",
+      "active": true
+    },
+    {
+      "code": "IND_Mumbai_Site 1",
+      "country": "IND",
+      "city": "Mumbai",
+      "active": true
+    },
+    {
+      "code": "IND_New Delhi_Site 1",
+      "country": "IND",
+      "city": "New Delhi",
+      "active": true
+    },
+    {
+      "code": "ISR_Haifa_Site 1",
+      "country": "ISR",
+      "city": "Haifa",
+      "active": true
+    },
+    {
+      "code": "ISR_Rishon Le Zion_Site 1",
+      "country": "ISR",
+      "city": "Rishon Le Zion",
+      "active": true
+    },
+    {
+      "code": "ITA_Segrate (Milan)_Site 1",
+      "country": "ITA",
+      "city": "Segrate (Milan)",
+      "active": true
+    },
+    {
+      "code": "ITA_Segrate (Milan)_Site 2",
+      "country": "ITA",
+      "city": "Segrate (Milan)",
+      "active": true
+    },
+    {
+      "code": "JPN_Osaka_Site 1",
+      "country": "JPN",
+      "city": "Osaka",
+      "active": true
+    },
+    {
+      "code": "JPN_Osaka_Site 2",
+      "country": "JPN",
+      "city": "Osaka",
+      "active": true
+    },
+    {
+      "code": "JPN_Tokyo_Site 1",
+      "country": "JPN",
+      "city": "Tokyo",
+      "active": true
+    },
+    {
+      "code": "JPN_Tokyo_Site 2",
+      "country": "JPN",
+      "city": "Tokyo",
+      "active": true
+    },
+    {
+      "code": "KOR_Seoul_Site 1",
+      "country": "KOR",
+      "city": "Seoul",
+      "active": true
+    },
+    {
+      "code": "KOR_Seoul_Site 2",
+      "country": "KOR",
+      "city": "Seoul",
+      "active": true
+    },
+    {
+      "code": "KOR_Seoul_Site 3",
+      "country": "KOR",
+      "city": "Seoul",
+      "active": true
+    },
+    {
+      "code": "MEX_Cuautitlan Izcalli_Site 1",
+      "country": "MEX",
+      "city": "Cuautitlan Izcalli",
+      "active": true
+    },
+    {
+      "code": "MEX_Distrito Federal_Site 1",
+      "country": "MEX",
+      "city": "Distrito Federal",
+      "active": true
+    },
+    {
+      "code": "NOR_Oslo_Site 1",
+      "country": "NOR",
+      "city": "Oslo",
+      "active": true
+    },
+    {
+      "code": "NZL_Auckland_Site 1",
+      "country": "NZL",
+      "city": "Auckland",
+      "active": true
+    },
+    {
+      "code": "POL_Warsaw_Site 1",
+      "country": "POL",
+      "city": "Warsaw",
+      "active": true
+    },
+    {
+      "code": "PRT_Lisbon_Site 1",
+      "country": "PRT",
+      "city": "Lisbon",
+      "active": true
+    },
+    {
+      "code": "RUS_Krasnodar_Site 1",
+      "country": "RUS",
+      "city": "Krasnodar",
+      "active": true
+    },
+    {
+      "code": "RUS_Krasnoyarsk_Site 1",
+      "country": "RUS",
+      "city": "Krasnoyarsk",
+      "active": true
+    },
+    {
+      "code": "RUS_Kursk_Site 1",
+      "country": "RUS",
+      "city": "Kursk",
+      "active": true
+    },
+    {
+      "code": "RUS_Moscow_Site 1",
+      "country": "RUS",
+      "city": "Moscow",
+      "active": true
+    },
+    {
+      "code": "RUS_Moscow_Site 2",
+      "country": "RUS",
+      "city": "Moscow",
+      "active": true
+    },
+    {
+      "code": "RUS_Novosibirsk_Site 1",
+      "country": "RUS",
+      "city": "Novosibirsk",
+      "active": true
+    },
+    {
+      "code": "RUS_St. Petersburg_Site 1",
+      "country": "RUS",
+      "city": "St. Petersburg",
+      "active": true
+    },
+    {
+      "code": "SGP_Singapore_Site 1",
+      "country": "SGP",
+      "city": "Singapore",
+      "active": true
+    },
+    {
+      "code": "SGP_Singapore_Site 2",
+      "country": "SGP",
+      "city": "Singapore",
+      "active": true
+    },
+    {
+      "code": "SGP_Singapore_Site 3",
+      "country": "SGP",
+      "city": "Singapore",
+      "active": true
+    },
+    {
+      "code": "SGP_Singapore_Site 4",
+      "country": "SGP",
+      "city": "Singapore",
+      "active": true
+    },
+    {
+      "code": "SGP_Singapore_Site 5",
+      "country": "SGP",
+      "city": "Singapore",
+      "active": true
+    },
+    {
+      "code": "SWE_Solna_Site 1",
+      "country": "SWE",
+      "city": "Solna",
+      "active": true
+    },
+    {
+      "code": "SWE_Solna_Site 2",
+      "country": "SWE",
+      "city": "Solna",
+      "active": true
+    },
+    {
+      "code": "SWE_Solna_Site 3",
+      "country": "SWE",
+      "city": "Solna",
+      "active": true
+    },
+    {
+      "code": "THA_Bangkok_Site 1",
+      "country": "THA",
+      "city": "Bangkok",
+      "active": true
+    },
+    {
+      "code": "THA_Bangkok_Site 2",
+      "country": "THA",
+      "city": "Bangkok",
+      "active": true
+    },
+    {
+      "code": "THA_Bangkok_Site 3",
+      "country": "THA",
+      "city": "Bangkok",
+      "active": true
+    },
+    {
+      "code": "USA_Site R_Site 1",
+      "country": "USA",
+      "city": "Site R",
+      "active": true
+    },
+    {
+      "code": "USA_Site R_Site 2",
+      "country": "USA",
+      "city": "Site R",
+      "active": true
+    },
+    {
+      "code": "USA_Site R_Site 3",
+      "country": "USA",
+      "city": "Site R",
+      "active": true
+    },
+    {
+      "code": "USA_Site R_Site 4",
+      "country": "USA",
+      "city": "Site R",
+      "active": true
+    },
+    {
+      "code": "USA_Site C_Site 1",
+      "country": "USA",
+      "city": "Site C",
+      "active": true
+    },
+    {
+      "code": "USA_Site C_Site 2",
+      "country": "USA",
+      "city": "Site C",
+      "active": true
+    },
+    {
+      "code": "USA_Site N_Site 1",
+      "country": "USA",
+      "city": "Site N",
+      "active": true
+    },
+    {
+      "code": "USA_Site N_Site 2",
+      "country": "USA",
+      "city": "Site N",
+      "active": true
+    },
+    {
+      "code": "USA_Site S_Site 1",
+      "country": "USA",
+      "city": "Site S",
+      "active": true
+    },
+    {
+      "code": "USA_Site Q_Site 1",
+      "country": "USA",
+      "city": "Site Q",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 1",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 2",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 3",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 4",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 5",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 6",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 7",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 8",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 9",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 10",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 11",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 12",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 13",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site A_Site 14",
+      "country": "USA",
+      "city": "Site A",
+      "active": true
+    },
+    {
+      "code": "USA_Site B_Site 1",
+      "country": "USA",
+      "city": "Site B",
+      "active": true
+    },
+    {
+      "code": "USA_Site B_Site 2",
+      "country": "USA",
+      "city": "Site B",
+      "active": true
+    },
+    {
+      "code": "USA_Site B_Site 3",
+      "country": "USA",
+      "city": "Site B",
+      "active": true
+    },
+    {
+      "code": "USA_Site B_Site 4",
+      "country": "USA",
+      "city": "Site B",
+      "active": true
+    },
+    {
+      "code": "USA_Site B_Site 5",
+      "country": "USA",
+      "city": "Site B",
+      "active": true
+    },
+    {
+      "code": "USA_Site K_Site 1",
+      "country": "USA",
+      "city": "Site K",
+      "active": true
+    },
+    {
+      "code": "USA_Site J_Site 1",
+      "country": "USA",
+      "city": "Site J",
+      "active": true
+    },
+    {
+      "code": "USA_Site H_Site 1",
+      "country": "USA",
+      "city": "Site H",
+      "active": true
+    },
+    {
+      "code": "USA_Site H_Site 2",
+      "country": "USA",
+      "city": "Site H",
+      "active": true
+    },
+    {
+      "code": "USA_Portland_Site 1",
+      "country": "USA",
+      "city": "Portland",
+      "active": true
+    },
+    {
+      "code": "USA_Portland_Site 2",
+      "country": "USA",
+      "city": "Portland",
+      "active": true
+    },
+    {
+      "code": "USA_Site E_Site 1",
+      "country": "USA",
+      "city": "Site E",
+      "active": true
+    },
+    {
+      "code": "USA_Site G _Site 1",
+      "country": "USA",
+      "city": "Site G ",
+      "active": true
+    },
+    {
+      "code": "USA_Site G _Site 2",
+      "country": "USA",
+      "city": "Site G ",
+      "active": true
+    },
+    {
+      "code": "USA_Santa Rosa_Site 1",
+      "country": "USA",
+      "city": "Santa Rosa",
+      "active": true
+    },
+    {
+      "code": "USA_Site D_Site 1",
+      "country": "USA",
+      "city": "Site D",
+      "active": true
+    },
+    {
+      "code": "USA_Site D_Site 2",
+      "country": "USA",
+      "city": "Site D",
+      "active": true
+    },
+    {
+      "code": "ZAF_Johannesburg_Site 1",
+      "country": "ZAF",
+      "city": "Johannesburg",
+      "active": true
+    }
+  ]
+}

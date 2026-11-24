@@ -1,0 +1,34 @@
+node_modules/
+_preview*.html
+*.zip
+# never commit the raw source exports (size + personnel data) — seeds are the derived, committed form
+*.xls
+*.xlsx
+*.msg
+*.pdf
+!docs/**
+app.zip
+
+# personal Claude Code settings — the launch config next to it is shared, this is not
+.claude/settings.local.json
+# Test fixtures ARE committed: a workbook that real Excel saved is the only honest way to prove
+# lib/xlsx reads what the business will actually send back. Synthetic contents, no personnel data.
+!tools/fixtures/**
+.venv/
+venv/
+dist/
+build/
+coverage/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+.storage*/
+dist-scenarios/
+*.tsbuildinfo
+test-results/
+playwright-report/
+.DS_Store
+!.env.example
+!**/.env.example
+!**/.env.*.example

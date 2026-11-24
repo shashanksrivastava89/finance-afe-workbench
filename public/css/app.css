@@ -1,0 +1,1464 @@
+/* ============================================================================================
+   AFE Workbench — the one stylesheet.
+
+   RESTYLED 2026-09-20 (R106). The information architecture did not move: one question per
+   screen, aggregation before detail, numbers that drill down, consequences as chips under the
+   answer that caused them. What moved is the register. Six things carried the old look, and
+   they are all decided in the token block below rather than per component:
+     · 999px on everything → a pill is a BADGE (avatar, count, rail node, progress track); a
+       button, an input, a chip and a card are rectangles with a 5-10px radius.
+     · 2px borders → 1px, with 2px (or an inset ring) reserved for a selected state.
+     · a mint page (#F3FAF6) and pastel bucket panels → a neutral page and white cards whose
+       colour is a 3px rule down the left edge.
+     · a green glow under the primary button → no shadow on controls at all.
+     · hover lifts (translateY(-1px)) → colour changes only.
+     · 16px body / 34px questions / 64px inputs → 14px / 24px / 42px, which fits about half as
+       much again on a screen and is the density people who live in SAP and Excel expect.
+   Arial has exactly two weights, so 700 is spent rather than sprinkled: headings, figures, the
+   primary action, a column total. Everything else is 400 and uses colour and size for rank.
+   The ink, the brand green and every status colour were measured against WCAG AA in the live
+   DOM; the washes only got lighter here, which can only raise contrast.
+   R107 (2026-09-21) tried to answer "it looks AI built" by squaring everything -- hairlines,
+   rectangles, no fills. It was REVERTED the same day, because it made the tool poorer and it had
+   the diagnosis backwards. What reads as generated is not the roundness, it is this, in
+   Shashank's own words: "lot of white space and chips... no use of filling rows or cards with
+   colours -- closer to wireframe language than an actual webpage... too much use of text in
+   explanations, no hovered explainers... no use of glyphs, colours or icons, reading text is
+   cognitively heavy. Informational direction rather than visual guidance."
+   That is one fault with four faces, and R109 answers each:
+     - COLOUR IS A FILL, not an outline. A bucket, a tile, a category and a list row carry their
+       status as a tinted ground with a matching edge, taken from the Acme DS's own accent
+       family rather than from invented pastels. A white card with a hairline is a wireframe of
+       a card.
+     - A GLYPH CARRIES THE MEANING and the words confirm it. Every bucket, tile, section tab and
+       list row leads with an icon in a coloured medallion, so the shape and the colour are read
+       before the sentence is.
+     - AN EXPLANATION HOVERS. The grey paragraph at the foot of a screen, explaining how the
+       screen works, is the single clearest sign that the design is talking instead of showing.
+       Those become `.tip` -- a glyph you point at.
+     - LESS AIR. The page and question paddings come in, so a screen is a working surface rather
+       than a poster with a control on it.
+   The geometry, the radii, the pills and the shadows are R106's and are NOT to be squared again.
+   Brand tokens come from the Acme design system (public/ds/tokens); the semantic layer on top
+   is the AA-measured palette from CLAUDE.md. The DS base layer is NOT imported: it sets a white
+   page and #40AFFF links, neither of which clears AA on our surfaces.
+   ============================================================================================ */
+@import "/ds/tokens/colors.css";
+@import "/ds/tokens/typography.css";
+@import "/ds/tokens/spacing.css";
+
+:root {
+  /* Ink and the brand green are unchanged: both were measured against WCAG AA in the live DOM
+     and re-deriving them would mean re-auditing every surface for nothing. */
+  /* THE SECONDARY SCALE MOVED ONE STEP DARKER ON 2026-09-21 (R117). "The readability of the
+     font (mostly due to light grey colour) is really hard." It was: --muted carried most of the
+     writing on every screen — hints, captions, section labels, the second line of every row — at
+     5.10 against white, which passes AA at the letter of it and reads faint at 12px. Each of
+     these is now the value the one below it used to hold, and --deco stops being decorative-only:
+     measured on white, ink 15.9, ink-2 11.8, ink-3 7.9, muted 6.3, deco 4.9. NOTHING on a screen
+     is under 4.5 any more, which is a stronger statement than the design rule asks for. */
+  --ink: #1C1F1D; --ink-2: #333935; --ink-3: #4B534E; --muted: #5A625C; --deco: #6B736D;
+  --link: #006934; --cta: #008943; --cta-hover: #00703A; --green: #00A651; --green-tint: #CCEDDC; --green-deep: #00552B;
+
+  /* Surfaces. The page was mint (#F3FAF6) and read as a consumer app the moment it loaded.
+     It is a neutral now, with just enough green in it to stay Acme's rather than grey. */
+  --page: #F4F6F4; --card: #FFFFFF; --card-soft: #FAFBFA;
+  --line: #DEE3DF; --line-soft: #EDF0EE; --rail: #E2E7E3;
+
+  /* Status washes, lightened. They still colour-code the choice (design rule 1) but they are a
+     tint on a white card rather than the card itself, so a screen of them is not a paint chart.
+     Every one of them got lighter, which can only raise contrast against the ink on top. */
+  --green-ok-bg: #EFF6F1; --blue-bg: #EFF6F9; --blue: #17638F;
+  --yellow-bg: #FBF6E4; --yellow: #6E5106; --warn-bg: #FBF4DF; --warn: #8A6603;
+  --red-bg: #FAF0EF; --red: #B3352E;
+
+  /* FILLS (R109). The washes above are the quietest tint that still reads -- right behind a line
+     of text, wrong as the ground of a card, which is why a screen of them looked like a
+     wireframe. These are the same hues at the strength the Acme DS uses for its own accent
+     surfaces, with a matching edge a shade down, so a filled card has a ground AND an outline
+     rather than a hairline and nothing. Every tone was measured with the ink that sits on it:
+     --ink-2 clears 8.2 on all five, and each tone's own text colour clears AA (yellow 6.4,
+     blue 5.3, red 4.8, green higher). */
+  --fill-green: #D4EDDF;  --edge-green: #8FCBA9;
+  --fill-blue: #D2EBF4;   --edge-blue: #8CBFD3;
+  --fill-yellow: #FCEFC0; --edge-yellow: #DCBF63;
+  --fill-red: #FADFDC;    --edge-red: #DCA29C;
+  --fill-grey: #E9EDE9;   --edge-grey: #C6CDC8;
+  /* The saturated end of each, for a medallion with a white glyph in it. */
+  --dot-green: #007A3D; --dot-blue: #17638F; --dot-yellow: #9A7106; --dot-red: #B3352E; --dot-grey: #5A625C;
+
+  /* Geometry. A pill is now a badge, not a button: 999px is reserved for things that are
+     genuinely round -- avatars, counts, rail nodes, progress tracks. Everything you press or
+     type into is a rectangle with a small radius. */
+  --r-xs: 3px; --r-sm: 5px; --r-md: 7px; --r-lg: 10px; --r-xl: 12px; --r-pill: 999px;
+  --bw: 1px;                                         /* a border is 1px; 2px is a selected state */
+
+  /* Shadows are neutral and shallow. The primary button used to carry a green glow
+     (0 8px 22px rgba(0,137,67,.22)), which is the single loudest thing on any screen. */
+  --shadow-card: 0 1px 2px rgba(28,31,29,.05), 0 1px 3px rgba(28,31,29,.04);
+  --shadow-pop: 0 4px 16px rgba(28,31,29,.10), 0 1px 3px rgba(28,31,29,.06);
+  --shadow-cta: none;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+/* THE SIDEWAYS FLICKER, and it was never a repaint.
+   Every screen here is a centred column (`.wrap`, `margin: 0 auto`). A keystroke changes the
+   validation, the validation changes the page's height, the height crosses the viewport, and the
+   scrollbar appears or disappears — which changes the WIDTH by ~15px, and a centred column moves
+   half of that sideways. Type a sentence and the whole page twitches left and right; pick a date
+   and the picker closing does it again. `scrollbar-gutter: stable` reserves the track whether or
+   not it is used, so the column never moves. */
+html { background: var(--page); scrollbar-gutter: stable; }
+/* 14px, not 16. This is a desktop tool for people who work in spreadsheets: the old base size
+   fitted about two thirds of the information on a screen and read as a phone app blown up.
+   Arial has exactly two weights, so 700 has to be spent rather than sprinkled -- it now means
+   a heading, a figure, a primary action or a column total, and nothing else. */
+body { margin: 0; background: var(--page); color: var(--ink); font: 14px/1.5 Arial, "Helvetica Neue", Helvetica, sans-serif; font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; font-weight: 400; }
+a:hover { color: var(--green-deep); text-decoration: underline; }
+button { font-family: inherit; cursor: pointer; color: inherit; }
+button:disabled { cursor: not-allowed; }
+input, textarea, select { font-family: inherit; color: var(--ink); }
+:focus-visible { outline: 2px solid var(--cta); outline-offset: 2px; border-radius: var(--r-sm); }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ---- motion ------------------------------------------------------------------------------- */
+@keyframes paneIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes chipIn { from { opacity: 0; transform: translateY(6px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes sheetIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.pane { animation: paneIn .28s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .pane, .reveal, .sheet, .chip { animation: none !important; transition: none !important; } }
+
+/* ---- chrome --------------------------------------------------------------------------------- */
+/* The bar is a surface now, with a rule under it. On the mint page it floated, which is what
+   made the whole screen read as one soft sheet rather than as an application. */
+/* The masthead never moves. The mark and the application's name are separated by a full-height
+   rule, the sections are full-height tabs that LEAD WITH A GLYPH, and who you are is at the far
+   end. Nothing is ever inserted between them -- that is what .ctxbar below is for. */
+/* Sticky, because the sections and who you are are the two things you reach for from halfway
+   down a long queue, and a 528-row tracker is a long way back to the top. */
+.top { position: sticky; top: 0; z-index: 30; display: flex; align-items: stretch; padding: 0 20px; height: 48px; background: var(--card); border-bottom: 1px solid var(--line); }
+.top .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; flex: none; padding-right: 14px; margin-right: 12px; border-right: 1px solid var(--line); }
+.top .brand img { height: 19px; width: auto; display: block; }
+.top .brand b { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); white-space: nowrap; }
+.chipnav { display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: none; flex: 0 1 auto; min-width: 0; }
+.chipnav::-webkit-scrollbar { display: none; }
+.chipnav a, .chipnav button { display: inline-flex; align-items: center; gap: 5px; padding: 0 9px; border-radius: 0; font-size: 12.5px; font-weight: 400; color: var(--ink-3); background: none; border: 0; border-bottom: 2px solid transparent; white-space: nowrap; text-decoration: none; }
+/* Each section owns a hue. With the words gone below 1210px the glyph IS the nav, and nine
+   identical grey marks are nine things to decode; the colour is what you actually navigate by.
+   Every one of them was measured against white at 4.4:1 or better, which is the floor for a
+   graphic. The active underline takes the same hue, so "where I am" and "what this is" are one
+   statement rather than two. */
+.chipnav a svg { flex: none; color: var(--sec, var(--ink-3)); opacity: .9; }
+.chipnav a:hover { color: var(--ink); background: var(--card-soft); border-bottom-color: var(--sec, var(--rail)); text-decoration: none; }
+.chipnav a:hover svg { opacity: 1; }
+/* The section you are in is stated by its glyph going brand green, by weight, and by a rule on
+   the bar's own bottom edge. */
+.chipnav a.on { color: var(--ink); font-weight: 700; border-bottom-color: var(--sec, var(--cta)); background: none; box-shadow: none; }
+.chipnav a.on svg { opacity: 1; }
+.chipnav .n { display: inline-block; min-width: 17px; padding: 0 5px; border-radius: var(--r-pill); background: var(--fill-yellow); color: var(--yellow); font-size: 11px; font-weight: 700; line-height: 17px; text-align: center; }
+.who { margin-left: auto; align-self: center; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 400; border: 0; background: none; padding: 5px 8px 5px 5px; border-radius: var(--r-sm); }
+.who:hover { background: var(--line-soft); }
+.who .name { white-space: nowrap; }
+/* "View as" is a mode, and looks like one (2026-10-16): stopping it half-way through an AFE went
+   unnoticed in the KT walkthrough because the button only changed its name. */
+.who.as { box-shadow: inset 0 0 0 2px #E5A93B; background: #FFF8E6; }
+.who.as .av { background: #9A7106; color: #FFF; }
+.who .asl { display: block; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #7A5A05; line-height: 1.1; }
+/* Nine sections with their words need about 1210px once the mark and the signed-in name are
+   paid for. Under that the words drop and the glyphs carry the nav on their own — which is why
+   every tab keeps its label as a title. */
+@media (max-width: 1210px) { .chipnav a .lbl { display: none; } .chipnav a { padding: 0 10px; } }
+@media (max-width: 1180px) {
+  .top { padding: 0 16px; }
+  .who .name { max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+/* ---- the context bar ------------------------------------------------------------------------ */
+/* WHICH record you are looking at, on a line of its own under the masthead.
+   It used to be a span squeezed in between the logo and the sections, so opening an AFE slid the
+   whole navigation 208px sideways -- and slid it again on every keystroke of the title, because
+   each save repainted the bar with a longer string. A record's identity is not chrome; it
+   belongs to the record, so it gets a line that can grow without pushing anything. The id is set
+   in the same monospace as the KO01 sheet: it is a key, and a key you can read back character by
+   character is worth more than one that looks tidy. */
+.ctxbar { position: sticky; top: 48px; z-index: 29; display: flex; align-items: center; gap: 10px; height: 32px; padding: 0 20px; background: var(--card-soft); border-bottom: 1px solid var(--line); font-size: 12.5px; color: var(--ink-2); }
+.ctxbar .rid { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); flex: none; }
+.ctxbar .rsep { width: 1px; align-self: stretch; margin: 8px 0; background: var(--line); flex: none; }
+.ctxbar .rtitle { font-weight: 700; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.ctxbar .rnote { margin-left: auto; padding-left: 12px; color: var(--muted); font-size: 12px; white-space: nowrap; flex: none; animation: chipIn .16s var(--ease); }
+.ctxbar .rnote.ok { color: var(--link); }
+.ctxbar .asbar { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px 2px 10px; border-radius: 999px; background: #FFF1CC; color: #5C4300; font-size: 12px; white-space: nowrap; flex: none; }
+.ctxbar .rnote + .asbar { margin-left: 12px; }
+.ctxbar .asbar .linkbtn { font-size: 12px; padding: 0 6px; }
+@media (max-width: 560px) { .ctxbar { padding: 0 14px; height: 30px; } .ctxbar .rid, .ctxbar .rsep { display: none; } }
+
+
+/* ---- the hovered explainer -------------------------------------------------------------------- */
+/* A grey paragraph at the foot of a screen explaining how the screen works is the design talking
+   instead of showing. It becomes a glyph you point at. The trigger is a real button with the
+   text as its accessible name, so the explanation is not lost to anyone who cannot hover -- it
+   opens on focus as well, which is also what a tap does. */
+.tip { position: relative; display: inline-flex; vertical-align: middle; }
+.tipb { width: 16px; height: 16px; border-radius: var(--r-pill); border: 1px solid var(--rail); background: #FFF; color: var(--ink-3); display: inline-flex; align-items: center; justify-content: center; padding: 0; font-size: 10px; font-weight: 700; line-height: 1; font-family: Georgia, "Times New Roman", serif; font-style: italic; transition: background .12s ease, border-color .12s ease, color .12s ease; }
+.tipb:hover, .tipb:focus { background: var(--cta); border-color: var(--cta); color: #FFF; }
+.tipbody { position: absolute; bottom: calc(100% + 7px); left: 50%; transform: translateX(-50%); width: max-content; max-width: 280px; background: var(--ink); color: #FFF; border-radius: var(--r-md); padding: 8px 11px; font-size: 12.5px; font-weight: 400; line-height: 1.45; letter-spacing: 0; text-align: left; white-space: normal; box-shadow: var(--shadow-pop); opacity: 0; visibility: hidden; transition: opacity .12s ease, visibility .12s; z-index: 40; pointer-events: none; }
+.tipbody::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border: 5px solid transparent; border-top-color: var(--ink); }
+/* :focus rather than :focus-visible — a TAP focuses without being "visible" focus, and a phone
+   has no hover at all, so focus-visible alone put the explanation out of a touch user's reach. */
+.tip:hover .tipbody, .tipb:focus + .tipbody { opacity: 1; visibility: visible; }
+.tip.end .tipbody { left: auto; right: -6px; transform: none; }
+.tip.end .tipbody::after { left: auto; right: 10px; margin-left: 0; }
+.tip.below .tipbody { bottom: auto; top: calc(100% + 7px); }
+.tip.below .tipbody::after { top: auto; bottom: 100%; border-top-color: transparent; border-bottom-color: var(--ink); }
+/* Beside a heading is where the screen's own explainer lives, so it needs no other home — and
+   a heading is always near the top of the page, so its bubble hangs DOWN. Above, it opened
+   underneath the masthead and lost its first two lines. */
+.h1 .tip, .q .tip { margin-left: 8px; transform: translateY(-1px); }
+.h1 .tipbody, .q .tipbody { bottom: auto; top: calc(100% + 7px); }
+.h1 .tipbody::after, .q .tipbody::after { top: auto; bottom: 100%; border-top-color: transparent; border-bottom-color: var(--ink); }
+/* On a phone the bubble is a bar at the foot of the screen. A 280px bubble centred on a glyph
+   two thirds of the way across a 375px screen hangs 26px off the right edge -- and an absolutely
+   positioned box widens the DOCUMENT even while it is invisible, so the whole page gained a
+   horizontal scrollbar from a tooltip nobody had opened. A fixed element cannot do that. */
+@media (max-width: 560px) {
+  .tipbody, .h1 .tipbody, .q .tipbody { position: fixed; left: 12px; right: 12px; bottom: 14px; top: auto; width: auto; max-width: none; transform: none; }
+  .tipbody::after { display: none; }
+}
+.close { width: 30px; height: 30px; border-radius: var(--r-sm); border: 1px solid var(--line); background: #FFF; display: inline-flex; align-items: center; justify-content: center; color: var(--ink-3); }
+
+/* ---- type ----------------------------------------------------------------------------------- */
+/* The question is still the biggest thing on the screen and still the only thing at that size
+   -- it is just no longer a poster. 34px -> 24px against a 14px body keeps the same ratio the
+   wizard was designed with. */
+.h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.012em; line-height: 1.2; margin: 0; }
+.sub { font-size: 13px; color: var(--muted); margin-top: 5px; }
+.q { font-size: 24px; font-weight: 700; letter-spacing: -0.014em; line-height: 1.22; margin: 0; }
+.hint { font-size: 13.5px; color: var(--muted); margin-top: 7px; }
+/* "Why are all section titles always completely grey? Even the glyph." They were: --ink-3 words
+   and an --ink-3 mark, on every panel of every screen, so a page of them read as one texture.
+   The WORDS are a step darker (a heading is a heading) and the MARK carries the section's own
+   hue — the same family the nav uses, so the two read as one system. Green is the default
+   because most sections are the thing itself; a tone is set where the section means something
+   else. The words stay ink: colouring those would fight the content underneath. */
+.sect { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--ink-2); letter-spacing: .06em; text-transform: uppercase; }
+.sect svg { flex: none; color: var(--dot-green); }
+.sect.blue svg { color: var(--dot-blue); }
+.sect.yellow svg { color: var(--dot-yellow); }
+.sect.red svg { color: var(--dot-red); }
+.sect.grey svg { color: var(--ink-3); }
+.sect.purple svg { color: #5A4A90; }
+.amt { font-size: 16px; font-weight: 700; letter-spacing: 0; }
+.big-amt { font-size: 27px; font-weight: 700; letter-spacing: -0.018em; }
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; }
+
+/* ---- layout --------------------------------------------------------------------------------- */
+/* R109: the air came out. 34px over a 24px question read as a poster with a control on it. */
+.wrap { max-width: 660px; margin: 0 auto; padding: 22px 24px 48px; }
+.wrap.wide { max-width: 1180px; padding-top: 18px; }
+.page { padding: 16px 24px 48px; max-width: 1440px; margin: 0 auto; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 18px; align-items: start; }
+.split.narrow { grid-template-columns: 400px minmax(0, 1fr); }
+.split.dec { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; }
+/* The approver's decision stays in reach while they read: it sat under the conversation, a long
+   scroll below the figure it decides. */
+.decbar { position: sticky; bottom: 0; z-index: 5; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 22px; padding: 12px 0; background: var(--card); border-top: 1px solid var(--line-soft); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); }
+.card.pad { padding: 14px 16px; }
+.card.soft { background: var(--card-soft); border-color: var(--line-soft); }
+.foot { display: flex; align-items: center; margin-top: 32px; gap: 14px; flex-wrap: wrap; }
+.kbd { font-size: 12px; color: var(--muted); margin-left: auto; }
+/* The record page's actions: what moves the AFE on, then — apart from it — what ends it. */
+.foot.acts .cta.quiet { margin-left: auto; }
+.foot.acts .cta.quiet ~ .cta.quiet { margin-left: 0; }
+/* The same .kbd slot, as a control: when Continue is off it says how many things are wrong and
+   takes you to the first one. The message itself is already inline beside its field, so the foot
+   printing it again was one sentence twice on one screen (R140). */
+button.kbd { border: 0; background: none; padding: 0; font: inherit; cursor: pointer; color: var(--red); font-weight: 700; display: inline-flex; align-items: center; gap: 5px; }
+button.kbd:hover { text-decoration: underline; }
+/* The save state, beside the button rather than up in the brand area. It is deliberately the
+   quietest thing in the row: you look at it when you want it, and it goes away by itself. */
+.savestate { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--muted); animation: chipIn .16s var(--ease); }
+.savestate.saved { color: var(--link); }
+.savestate.failed { color: var(--red); font-weight: 700; }
+.savestate .spin { width: 10px; height: 10px; border: 1.5px solid var(--rail); border-top-color: var(--ink-3); border-radius: var(--r-pill); animation: spin .8s linear infinite; display: inline-block; }
+
+/* ---- buttons -------------------------------------------------------------------------------- */
+/* No lift on hover. A control that jumps a pixel when the pointer crosses it is the single
+   clearest tell of a toy; the colour change says the same thing without the bounce. */
+.cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 0 18px; border: 1px solid var(--cta); border-radius: var(--r-sm); background: var(--cta); color: #FFF; font-size: 13.5px; font-weight: 700; box-shadow: none; transition: background .12s ease, border-color .12s ease, color .12s ease; text-decoration: none; }
+.cta:hover { background: var(--cta-hover); border-color: var(--cta-hover); color: #FFF; text-decoration: none; }
+.cta:disabled, .cta.off { background: var(--card-soft); border-color: var(--line); color: var(--muted); box-shadow: none; }
+/* A blocked Continue LOOKS disabled and still answers a press: it shows what is missing (P2). */
+.cta.is-blocked, .cta.is-blocked:hover { background: var(--card-soft); border-color: var(--line); color: var(--muted); box-shadow: none; cursor: help; }
+.cta.sec { background: #FFF; color: var(--link); border-color: var(--line); box-shadow: none; }
+.cta.sec:hover { background: var(--card-soft); border-color: var(--ink-3); color: var(--green-deep); }
+.cta.dark { background: var(--ink); border-color: var(--ink); box-shadow: none; }
+.cta.dark:hover { background: #000; border-color: #000; }
+.cta.quiet { background: transparent; border-color: transparent; color: #8C2A25; box-shadow: none; height: 30px; font-size: 13px; font-weight: 400; }
+.cta.quiet:hover { background: var(--red-bg); border-color: transparent; color: #8C2A25; }
+.cta.sm { height: 30px; padding: 0 12px; font-size: 13px; }
+.cta .spin { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.5); border-top-color: #FFF; border-radius: 999px; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.back { border: 0; background: none; color: var(--ink-3); font-size: 13.5px; font-weight: 400; padding: 0; display: inline-flex; align-items: center; gap: 5px; }
+.back:hover { color: var(--ink); }
+.linkbtn { border: 0; background: none; color: var(--link); font-weight: 400; font-size: 13px; padding: 0; }
+.linkbtn:hover { text-decoration: underline; }
+/* A destructive action sits quietly at the end of the row until you look for it. */
+.linkbtn.quiet { color: var(--muted); font-weight: 400; margin-left: auto; }
+.linkbtn.quiet:hover { color: var(--red); }
+/* The name stays -- it is used in a dozen screens -- but it is a secondary button now. */
+.pillbtn { height: 30px; border-radius: var(--r-sm); border: 1px solid var(--line); background: #FFF; color: var(--link); font-size: 13px; font-weight: 400; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 0 12px; text-decoration: none; transition: background .12s ease, border-color .12s ease; }
+.pillbtn:hover { background: var(--card-soft); border-color: var(--ink-3); text-decoration: none; }
+.pillbtn.dark { background: var(--ink); border-color: var(--ink); color: #FFF; font-weight: 700; }
+.pillbtn.dark:hover { background: #000; border-color: #000; }
+.pillbtn.done { border-color: #BFE0CD; background: var(--green-ok-bg); color: var(--green-deep); }
+
+/* ---- inputs --------------------------------------------------------------------------------- */
+/* The headline input stays deliberately larger than the rest -- it is the one thing the screen
+   is asking for -- but 64px tall at 22px was a kiosk. */
+.big { width: 100%; height: 42px; border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0 12px; font-size: 15px; background: #FFF; outline: none; transition: border-color .12s ease, box-shadow .12s ease; }
+.big:focus { border-color: var(--cta); box-shadow: 0 0 0 3px rgba(0,137,67,.12); outline: none; }
+.big.money { font-size: 21px; font-weight: 700; height: 48px; }
+.big.is-block { border-color: var(--red); }
+.big.is-block:focus { box-shadow: 0 0 0 3px rgba(179,53,46,.12); }
+textarea.big { height: 108px; padding: 10px 12px; font-size: 14px; line-height: 1.5; resize: none; }
+.counter { font-size: 12px; color: var(--muted); margin-top: 6px; display: flex; justify-content: space-between; gap: 12px; }
+.counter .over { color: var(--red); font-weight: 700; }
+.money-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.money-row .big { flex: 1 1 260px; width: auto; min-width: 0; }
+.money-row .tog { flex: none; }
+.money-row .cur { font-size: 21px; color: var(--muted); }
+.input { width: 100%; height: 32px; border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0 10px; font-size: 13.5px; background: #FFF; outline: none; transition: border-color .12s ease, box-shadow .12s ease; }
+.input:focus { border-color: var(--cta); box-shadow: 0 0 0 3px rgba(0,137,67,.12); outline: none; }
+textarea.input { height: auto; min-height: 72px; padding: 8px 10px; resize: vertical; line-height: 1.5; }
+/* A field message is read at a glance and then acted on, so it is a line of coloured text with
+   a rule beside it rather than a filled lozenge. It arrives on the keystroke now (R105). */
+.field-msg { display: flex; align-items: flex-start; gap: 7px; margin-top: 7px; font-size: 13px; font-weight: 400; border-radius: var(--r-xs); border-left: 2px solid currentColor; padding: 7px 10px; animation: chipIn .16s var(--ease); }
+.field-msg.block { background: var(--fill-red); color: var(--red); }
+.field-msg.pending { background: var(--fill-yellow); color: var(--yellow); }
+.field-msg.warn { background: var(--fill-yellow); color: var(--warn); }
+.field-msg a { color: inherit; text-decoration: underline; }
+/* A message that blocks carries the action that clears it, in its own colour, inside the
+   message — not somewhere else on the screen for the reader to go and find. */
+.fixbtn { display: inline-flex; align-items: center; margin-left: 8px; padding: 2px 10px; border-radius: var(--r-sm); border: 1px solid currentColor; background: rgba(255,255,255,.75); color: inherit; font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+.fixbtn:hover { background: #FFF; }
+label.lbl { display: block; font-size: 13px; font-weight: 700; margin: 22px 0 8px; }
+.optional { color: var(--muted); font-weight: 400; }
+
+/* ---- chips ---------------------------------------------------------------------------------- */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: #FFF; color: var(--ink-2); border-radius: var(--r-sm); padding: 7px 12px; font-size: 13px; font-weight: 400; transition: border-color .12s ease, background .12s ease, color .12s ease; }
+.chip:hover { border-color: var(--ink-3); background: var(--card-soft); color: var(--ink); }
+.chip.on { background: var(--green-ok-bg); border-color: var(--cta); color: var(--green-deep); font-weight: 700; box-shadow: inset 0 0 0 1px var(--cta); }
+.chip.more { color: var(--link); border-style: dashed; }
+.chip.sm { padding: 5px 9px; font-size: 12.5px; }
+/* A status badge IS round -- that is what the pill is for. R109 gives it a real ground: the
+   quietest tint that reads behind a line of body text is not enough to colour an object, which
+   is why a list of these looked like placeholder text rather than status. */
+.tag { display: inline-flex; align-items: center; gap: 6px; border-radius: var(--r-pill); padding: 3px 10px 3px 4px; font-size: 11.5px; font-weight: 700; background: var(--fill-green); color: var(--green-deep); white-space: nowrap; max-width: 100%; }
+.tag.blue { background: var(--fill-blue); color: var(--blue); }
+.tag.yellow { background: var(--fill-yellow); color: var(--yellow); }
+.tag.grey { background: var(--fill-grey); color: var(--ink-2); }
+.tag.red { background: var(--fill-red); color: var(--red); }
+.tag.pad { padding: 3px 10px; }
+.tag svg { flex: none; }
+.tag .txt { overflow: hidden; text-overflow: ellipsis; }
+/* A consequence chip can be a sentence ("Goes straight back to Udarsh Atwal · Daryl's signature
+   stands", R148), and on a phone a sentence wraps: the pill becomes a rounded box instead of
+   holding the banner around it open and pushing the banner's own words off the screen. */
+.tag.sentence { white-space: normal; border-radius: var(--r-md); }
+.tag.sentence .txt { overflow: visible; }
+.banner > span { min-width: 0; }
+.banner > svg { flex: none; }
+/* The consequence chip: it appears under the answer that caused it, so it keeps its shape and
+   its entrance. R109 fills it -- a consequence is the loudest thing a question can produce. */
+.reveal { display: inline-flex; align-items: center; gap: 8px; background: var(--fill-green); color: var(--green-deep); border: 1px solid var(--edge-green); border-radius: var(--r-sm); padding: 6px 11px 6px 6px; font-size: 13px; font-weight: 400; animation: chipIn .22s ease-out; max-width: 100%; }
+.reveal.blue { background: var(--fill-blue); border-color: var(--edge-blue); color: var(--blue); }
+.reveal.yellow { background: var(--fill-yellow); border-color: var(--edge-yellow); color: var(--yellow); }
+.reveal.red { background: var(--fill-red); border-color: var(--edge-red); color: var(--red); }
+.reveal.grey { background: var(--fill-grey); border-color: var(--edge-grey); color: var(--ink-2); }
+.reveal .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Initials are text, so they clear AA: white on the DS's deeper green (4.51), ink on the
+   lighter gold and lime fills — the same call CLAUDE.md records for the primary button. */
+.av { width: 26px; height: 26px; border-radius: var(--r-pill); background: var(--cta); color: #FFF; font-size: 10px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex: none; letter-spacing: .02em; }
+.av.blue { background: var(--blue); } .av.dark { background: var(--ink); } .av.gold { background: #C8920A; color: var(--ink); } .av.lime { background: #7DB747; color: var(--ink); } .av.red { background: var(--red); } .av.grey { background: var(--line-soft); color: var(--ink-2); }
+.av.lg { width: 34px; height: 34px; font-size: 11px; } .av.xs { width: 20px; height: 20px; font-size: 9px; } .av.xl { width: 56px; height: 56px; font-size: 18px; }
+/* A person's role, as a ring rather than a fourth fill. The fill already says "signed"; the ring
+   says "and this is who they are to this AFE", which a column of identical green circles did not. */
+.av.ring { box-shadow: 0 0 0 2px #FFF, 0 0 0 4px var(--ring, transparent); }
+
+/* ---- shape is a channel (R119) ---------------------------------------------------------------
+   Every object in the back office was a circle: a person (.av 34px), a document (.av again,
+   literally the same class), a SAP transaction, a step, a verdict, a red flag — all differing
+   only in fill. So nothing had a silhouette and the only way to tell two things apart was to
+   read them. Round stays a PERSON. Paper gets the shape of paper. A transaction code gets the
+   shape of a key you press. That is three silhouettes doing the work colour alone was failing at.
+
+   This is NOT R107. R107 squared everything and took the fills away, and it made the product
+   poorer. The pill is still the default; a second shape appears only where the object class is
+   genuinely different. */
+.pg { position: relative; width: 28px; height: 34px; flex: none; border-radius: var(--r-xs); background: var(--fill-grey); color: var(--ink-2); border: 1px solid var(--edge-grey);
+  clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%);
+  display: inline-flex; align-items: flex-end; justify-content: center; padding-bottom: 3px; font-size: 8.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+/* The folded corner, drawn as the triangle the clip removed — a page, not a rectangle. */
+.pg::after { content: ""; position: absolute; top: 0; right: 0; width: 9px; height: 9px; background: currentColor; opacity: .3; clip-path: polygon(0 0, 100% 100%, 0 100%); }
+.pg.green { background: var(--fill-green); border-color: var(--edge-green); color: var(--green-deep); }
+.pg.blue { background: var(--fill-blue); border-color: var(--edge-blue); color: var(--dot-blue); }
+.pg.yellow { background: var(--fill-yellow); border-color: var(--edge-yellow); color: var(--yellow); }
+.pg.red { background: var(--fill-red); border-color: var(--edge-red); color: var(--red); }
+.pg.ink { background: var(--ink); border-color: var(--ink); color: #FFF; }
+.pg.sm { width: 22px; height: 27px; font-size: 7px; }
+
+/* A SAP transaction code is an instruction to type, not a status — so it is a keycap: monospace,
+   squared, with the weight on its bottom edge the way a key has depth. */
+.key { display: inline-flex; align-items: center; justify-content: center; flex: none; min-width: 46px; height: 26px; padding: 0 7px;
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 700; letter-spacing: .02em;
+  color: var(--ink); background: linear-gradient(#FFF, var(--card-soft)); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: var(--r-sm); }
+.key.done { color: var(--green-deep); background: var(--fill-green); border-color: var(--edge-green); }
+.key.now { color: var(--ink); background: linear-gradient(#FFF, var(--fill-yellow)); border-color: var(--edge-yellow); }
+.key.off { color: var(--ink-3); background: var(--card-soft); border-color: var(--line-soft); }
+
+/* ---- a section is a panel, not a caption floating over white (R120) --------------------------
+   There was no panel component at all: 21 screen files hand-wrote 144 `.card` + `.tabhd`/`.sect`
+   pairs, so every section of every back-office screen was the same white rectangle under the same
+   grey line of capitals. A panel carries its own ground and its own glyph, which is what lets the
+   eye find the one section that needs it. */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
+.panel + .panel { margin-top: 14px; }
+.panel-hd { display: flex; align-items: center; gap: 8px; padding: 9px 14px; background: var(--fill-grey); border-bottom: 1px solid var(--edge-grey); }
+.panel-hd .ttl { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.panel-hd .meta { font-size: 11.5px; color: var(--ink-3); letter-spacing: 0; text-transform: none; font-weight: 400; }
+.panel-hd svg { flex: none; color: var(--ink-3); }
+.panel-hd .right { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; }
+.panel-bd { padding: 12px 14px; }
+.panel-bd.flush { padding: 0; }
+.panel.t-green > .panel-hd { background: var(--fill-green); border-bottom-color: var(--edge-green); }
+.panel.t-green > .panel-hd svg { color: var(--dot-green); }
+.panel.t-blue > .panel-hd { background: var(--fill-blue); border-bottom-color: var(--edge-blue); }
+.panel.t-blue > .panel-hd svg { color: var(--dot-blue); }
+.panel.t-yellow > .panel-hd { background: var(--fill-yellow); border-bottom-color: var(--edge-yellow); }
+.panel.t-yellow > .panel-hd svg { color: var(--dot-yellow); }
+.panel.t-red > .panel-hd { background: var(--fill-red); border-bottom-color: var(--edge-red); }
+.panel.t-red > .panel-hd svg { color: var(--dot-red); }
+/* The panel's own edge takes the tone too, so a red panel reads as one object rather than a white
+   box wearing a red hat. */
+.panel.t-green { border-color: var(--edge-green); } .panel.t-blue { border-color: var(--edge-blue); }
+.panel.t-yellow { border-color: var(--edge-yellow); } .panel.t-red { border-color: var(--edge-red); }
+
+/* ---- a sub-nav is not the top bar (R121) ------------------------------------------------------
+   The FA "tabs" were `<a href>` route links wearing `.chipnav` — the application's own top-level
+   section nav — with `class="on"` hardcoded on the first one and the strip drawn on no
+   destination. So clicking one replaced the page and the tabs themselves vanished. This is its
+   own component: it says "inside a section", the active item is computed, and every screen in
+   the family renders it. */
+.subnav { display: flex; align-items: stretch; gap: 4px; padding: 3px; background: var(--fill-grey); border: 1px solid var(--edge-grey); border-radius: var(--r-lg); overflow-x: auto; scrollbar-width: none; }
+.subnav::-webkit-scrollbar { display: none; }
+.subnav a { display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: var(--r-md); font-size: 12.5px; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.subnav a svg { flex: none; color: var(--ink-3); }
+.subnav a:hover { background: #FFF8; color: var(--ink); text-decoration: none; }
+.subnav a.on { background: var(--card); color: var(--ink); font-weight: 700; box-shadow: var(--shadow-card); }
+.subnav a.on svg { color: var(--sec, var(--dot-green)); }
+.subnav .n { min-width: 17px; padding: 0 5px; border-radius: var(--r-pill); background: var(--fill-yellow); color: var(--yellow); font-size: 11px; font-weight: 700; line-height: 17px; text-align: center; }
+
+/* ---- toggles -------------------------------------------------------------------------------- */
+/* A pill of two or three answers. `flex: none` matters: the toggle sits in a flex row beside a
+   question that can be long, and without it the pill shrinks and `overflow: hidden` clips the
+   answers -- which is what happened to Yes/No beside the Assist question. */
+.tog { display: inline-flex; flex: none; border: 1px solid var(--line); border-radius: var(--r-sm); overflow: hidden; background: #FFF; }
+.tog button { border: 0; background: none; padding: 6px 13px; font-size: 13px; font-weight: 400; color: var(--ink-3); white-space: nowrap; }
+.tog button:hover:not(.on) { background: var(--card-soft); color: var(--ink); }
+/* Green, not black. Three or four of these on a screen were the whole reason the Why step
+   read as monochrome: the only filled objects on it were black. This is the brand's own
+   deeper green, 4.51 against white, which is the same call the primary button makes. */
+.tog button.on { background: var(--cta); color: #FFF; font-weight: 700; }
+.tog button.on:hover { background: var(--cta-hover); }
+.tog.wide button { flex: 1; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); font-size: 13.5px; }
+/* A yes/no question leads with a glyph, so a column of them is scanned rather than read. The
+   medallion is the tint with the saturated mark on it — quieter than a bucket's solid fill,
+   which would be shouting at this size. All four clear 3:1 for a graphic. */
+.rq { display: flex; align-items: flex-start; gap: 10px; min-width: 0; }
+.rq > .ico { width: 24px; height: 24px; border-radius: var(--r-pill); display: inline-flex; align-items: center; justify-content: center; flex: none; margin-top: 1px; background: var(--fill-grey); color: var(--dot-grey); }
+.rq > .ico.green { background: var(--fill-green); color: var(--dot-green); }
+.rq > .ico.blue { background: var(--fill-blue); color: var(--dot-blue); }
+.rq > .ico.yellow { background: var(--fill-yellow); color: var(--dot-yellow); }
+.rq > .ico.red { background: var(--fill-red); color: var(--dot-red); }
+.row > span { min-width: 0; }                      /* the question wraps; the answers never shrink */
+.row:last-child { border-bottom: 0; }
+
+/* ---- stepper -------------------------------------------------------------------------------- */
+.stepper { display: flex; gap: 6px; padding: 10px 24px 0; max-width: 1440px; margin: 0 auto; flex-wrap: wrap; }
+.stepper .seg { flex: 1 1 0; }
+/* Where you are, in words — only on a phone, where the segments lose their names. */
+.stepnow { display: none; }
+.q:focus { outline: none; }
+.seg { flex: 1; border: 0; background: none; padding: 0; text-align: left; min-width: 0; cursor: pointer; font: inherit; color: inherit; }
+/* A segment may be a <button> when the step it names is a SECTION of this page rather than
+   another screen (the Fixed Assets six are five sections plus the judgment). A button inherits
+   neither the font nor the cursor from an <a>, so both are said here and the two render alike. */
+.seg .chev { display: inline-flex; transition: transform .18s var(--ease); }
+.seg .chev.up { transform: rotate(180deg); }
+.panel-hd .asbtn { border: 0; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; }
+.panel-hd .asbtn .chev { display: inline-flex; color: var(--ink-3); transition: transform .18s var(--ease); }
+.panel-hd .asbtn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+/* A step beyond the first one that still has something blocking is NOT a link. The journey was
+   a breadcrumb you could jump forward on, which walked straight past the validation on the step
+   it skipped (R110). It stays visible — you can see what is coming — and it stops being a door. */
+.seg.locked, .seg.ro { cursor: default; }
+.seg.locked .lab { color: var(--muted); }
+.seg.locked .bar { background: var(--line-soft); }
+.seg .bar { height: 3px; border-radius: var(--r-pill); background: var(--rail); overflow: hidden; display: block; }
+.seg .bar i { display: block; height: 100%; width: 0; background: var(--cta); border-radius: var(--r-pill); transition: width .3s var(--ease); }
+.seg.done .bar i, .seg.on .bar i { width: 100%; }
+.seg.done .bar i { background: #9BC9AE; }                /* done is settled; the one you are on is not */
+.seg .lab { font-size: 11.5px; color: var(--muted); margin-top: 6px; display: flex; align-items: center; gap: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.seg.on .lab { color: var(--ink); font-weight: 700; }
+.seg.done .lab { color: var(--link); }
+.seg .lab .dot { width: 6px; height: 6px; border-radius: var(--r-pill); background: var(--red); flex: none; }
+.seg .lab .dot.pending { background: #C8920A; }
+
+/* ---- the band scale ------------------------------------------------------------------------- */
+/* The bands are the approval ladder made visible, so they have to BE visible. They were built
+   from the text washes and vanished on the page (R110). Same fault as the cards: a tint tuned to
+   sit behind a line of type is not a fill. */
+.scale { position: relative; height: 9px; border-radius: var(--r-pill); background: linear-gradient(90deg, var(--fill-green) 0 25%, var(--fill-yellow) 25% 60%, var(--fill-red) 60%); box-shadow: inset 0 0 0 1px rgba(28,31,29,.07); margin-top: 20px; }
+.scale .pin { position: absolute; top: -4px; width: 17px; height: 17px; border-radius: var(--r-pill); background: var(--cta); border: 3px solid #FFF; box-shadow: 0 1px 4px rgba(0,0,0,.25); transform: translateX(-50%); transition: left .3s var(--ease); }
+.scale .tick { position: absolute; top: 12px; font-size: 11px; color: var(--muted); transform: translateX(-50%); white-space: nowrap; }
+.scale .tick:first-of-type { transform: none; }
+.scale .tick.last { transform: translateX(-100%); }
+
+/* ---- upload --------------------------------------------------------------------------------- */
+.drop { border: 1px dashed #B9C6BD; background: var(--card-soft); border-radius: var(--r-lg); padding: 24px; text-align: center; transition: background .12s ease, border-color .12s ease; }
+.drop.over { background: var(--green-ok-bg); border-color: var(--cta); }
+/* Two things to attach for equipment from Acme's own inventory (R150), side by side where
+   there is room; a zone that already has its file says so with a solid edge. */
+.drops.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 640px) { .drops.two { grid-template-columns: minmax(0, 1fr); } }
+/* A question whose answers are words rather than Yes/No ("An outside vendor" / "Acme
+   inventory", R150) puts the answers under it on a phone, instead of squeezing the question into
+   a column one word wide. */
+@media (max-width: 560px) { .row.wide-answers { flex-wrap: wrap; } .row.wide-answers > .tog { margin-left: 34px; } }
+.drop.has { border-style: solid; border-color: var(--edge-green); }
+/* "Acme inventory" on a list row (R152): a word with a glyph, in the blue a quote wears. */
+.srcmark { display: inline-flex; align-items: center; gap: 4px; color: var(--blue); font-weight: 700; }
+.chipsep { width: 1px; align-self: stretch; background: var(--line); margin: 2px 4px; }
+.drop input[type=file] { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.doc { display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
+.doc + .doc { border-top: 1px solid var(--line-soft); }
+.doc .meta { min-width: 0; flex: 1; }
+.doc .name { display: block; font-size: 13.5px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.doc .desc { display: block; font-size: 12.5px; color: var(--muted); }
+/* A priced document's facts — vendor, total, the date on it (R169) — take a line under its name,
+   indented to the name, so three fields never squeeze the filename to one word a line. */
+.doc.priced { flex-wrap: wrap; row-gap: 8px; }
+.doc-fields { display: flex; gap: 10px 16px; align-items: center; flex: 1 1 100%; flex-wrap: wrap; min-width: 0; padding-left: 40px; }
+/* What happened to the figures just typed for this document, and "remove it?" when × is pressed. */
+.doc-save, .doc-confirm { flex: 1 1 100%; padding-left: 40px; display: inline-flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.doc-save { color: var(--muted); } .doc-save.saved { color: var(--link); } .doc-save.failed { color: var(--red); font-weight: 700; }
+.doc:not(.priced) { flex-wrap: wrap; }
+.doc-fields .input { height: 30px; font-size: 13px; min-width: 0; }
+.doc-price, .doc-when { display: flex; gap: 8px; align-items: center; min-width: 0; }
+.doc-price { flex: 1 1 280px; }
+.doc-fields .doc-vendor { flex: 1 1 0; width: auto; }
+.doc-fields .doc-amount { width: 120px; }
+.doc-fields .doc-date { width: 140px; }
+/* What the quote reader proposed (R170), under the fields it would fill. An offer sits on the blue
+   ground the band scale uses, because it is information to weigh, not a status; everything else
+   about a reading is a quiet line of type. */
+.readline { flex: 1 1 100%; margin-left: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 12.5px; color: var(--muted); min-width: 0; }
+.readline svg { flex: none; }
+/* A sentence beside its icon takes the rest of the line and wraps inside it, rather than dropping
+   below the icon as a whole; a button after it goes to the next line before the words get narrow. */
+.readline:not(.offer) > span:not(.spin) { flex: 1 1 0; min-width: 12em; }
+.readline .linkbtn { font-size: 12.5px; }
+.readline.busy .spin { width: 12px; height: 12px; border: 1.5px solid var(--rail); border-top-color: var(--dot-blue); border-radius: var(--r-pill); animation: spin .8s linear infinite; display: inline-block; flex: none; }
+.readline.done { color: var(--ink-3); }
+.readline.offer { background: var(--fill-blue); border: 1px solid var(--edge-blue); border-radius: var(--r-md); padding: 8px 10px; color: var(--ink-2); }
+.readline.offer .rl-hd { font-weight: 700; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.readline.offer .rl-hd svg { color: var(--dot-blue); }
+.rl-vals { display: flex; flex-wrap: wrap; gap: 6px; flex: 1 1 auto; min-width: 0; }
+.rl-v { display: inline-flex; align-items: baseline; gap: 5px; background: #FFF; border: 1px solid var(--edge-blue); border-radius: var(--r-pill); padding: 2px 10px; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.rl-v:hover { border-color: var(--dot-blue); }
+.rl-v b { color: var(--ink); }
+.rl-v i { font-style: normal; font-size: 11.5px; color: var(--dot-blue); font-weight: 700; }
+.rl-acts { display: flex; gap: 6px; margin-left: auto; }
+.rl-held { flex: 1 1 100%; font-size: 12px; color: var(--ink-3); }
+/* Fixed Assets' judgment row: where each quote total came from, and an unused reading beside it. */
+.qfigs { margin-top: 8px; display: grid; gap: 4px; }
+.qfig { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 12.5px; color: var(--ink-3); }
+.qfig b { color: var(--ink); }
+.qfig .airead { background: var(--fill-blue); border: 1px solid var(--edge-blue); border-radius: var(--r-pill); padding: 1px 9px; color: var(--ink-2); text-decoration: none; font-size: 12px; }
+.qfig .airead:hover { border-color: var(--dot-blue); }
+
+/* ---- buckets + lists (aggregation first) ---------------------------------------------------- */
+/* Aggregation first (design rule 1) is the brief, and R109 is what makes it work as a VISUAL
+   aggregation rather than a written one. A bucket is a filled card in its own colour, it leads
+   with a glyph in a saturated medallion, and the count sits opposite the glyph at the top. The
+   eye gets the colour, then the shape, then the number, and only then the sentence -- which is
+   the order those things are actually read in. A white card with a 3px rule down its edge asked
+   for the sentence first. */
+.buckets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+.buckets.four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.buckets.five { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.bucket { border-radius: var(--r-lg); padding: 11px 14px 12px; border: 1px solid var(--edge-grey); background: var(--fill-grey); display: flex; flex-direction: column; gap: 3px; min-height: 0; text-align: left; font: inherit; color: var(--ink); cursor: pointer; transition: box-shadow .12s ease, border-color .12s ease; }
+.bucket:hover { border-color: var(--ink-3); }
+.bucket .bhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 3px; }
+.bucket .ico { width: 28px; height: 28px; border-radius: var(--r-pill); background: var(--dot-grey); color: #FFF; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.bucket .n { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--ink-2); }
+.bucket .t { font-size: 13.5px; font-weight: 700; }
+.bucket .d { font-size: 12.5px; color: var(--ink-2); line-height: 1.45; }
+.bucket.yellow { background: var(--fill-yellow); border-color: var(--edge-yellow); } .bucket.yellow .ico { background: var(--dot-yellow); } .bucket.yellow .n { color: var(--yellow); }
+.bucket.blue { background: var(--fill-blue); border-color: var(--edge-blue); } .bucket.blue .ico { background: var(--dot-blue); } .bucket.blue .n { color: var(--blue); }
+.bucket.green { background: var(--fill-green); border-color: var(--edge-green); } .bucket.green .ico { background: var(--dot-green); } .bucket.green .n { color: var(--link); }
+.bucket.red { background: var(--fill-red); border-color: var(--edge-red); } .bucket.red .ico { background: var(--dot-red); } .bucket.red .n { color: var(--red); }
+.bucket.grey { background: var(--fill-grey); border-color: var(--edge-grey); }
+/* Chosen is a ring, because the colour is already spent saying what the bucket IS. */
+.bucket.on { border-color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.list { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); margin-top: 12px; overflow: hidden; animation: paneIn .2s var(--ease); }
+/* The section head is a filled bar with its own glyph, not a floating caption. */
+.list .sect { padding: 8px 14px; background: var(--card-soft); border-bottom: 1px solid var(--line-soft); display: flex; align-items: center; gap: 7px; }
+/* The glyph keeps its section hue in here too. This said `--ink-3` and quietly undid R118 in
+   exactly the place lists live, which is most of the back office. */
+.list .sect svg { flex: none; }
+/* A ROW IS COLOURED BY WHERE IT IS. This is the change that stops a list reading as a wireframe:
+   scanning for what needs you becomes looking rather than reading. The ground is a quarter the
+   strength of a chip's -- a row is large, and a chip's fill across a whole row would be a
+   highlighter. The money column is 96px because accounting alignment makes the cell's own width
+   the gap between the currency mark and the figure. */
+.lrow { display: grid; grid-template-columns: var(--cols, 34px minmax(0, 1fr) 96px minmax(0, 250px) 110px 22px); gap: 12px; align-items: center; padding: 9px 14px 9px 11px; border-bottom: 1px solid var(--line-soft); border-left: 3px solid transparent; color: inherit; text-decoration: none; font-weight: 400; }
+.lrow:last-child { border-bottom: 0; }
+.lrow.t-yellow { background: #FBF4DC; border-left-color: var(--edge-yellow); }
+.lrow.t-blue { background: #E3F2F8; border-left-color: var(--edge-blue); }
+.lrow.t-green { background: #E6F3EC; border-left-color: var(--edge-green); }
+.lrow.t-red { background: #FBEAE8; border-left-color: var(--edge-red); }
+.lrow.t-grey { background: #F1F4F1; border-left-color: var(--edge-grey); }
+/* Hover darkens whatever ground the row already has, so one rule serves all five tones. */
+.lrow:hover { background-image: linear-gradient(rgba(28,31,29,.045), rgba(28,31,29,.045)); text-decoration: none; }
+.lrow .ttl { display: block; font-size: 13.5px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* --ink-3, not --muted: the row has a ground under it now, and the quieter grey lands at 4.38
+   on the red one. A metadata line is still metadata one step darker. */
+.lrow .id { display: block; font-size: 12px; color: var(--ink-3); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lrow .amt { font-size: 13.5px; text-align: right; }
+
+/* ---- money, set the way the form sets it ----------------------------------------------------
+   The generated AFE reproduces Excel's accounting format -- the currency mark against the left
+   edge of the cell, the figure against the right -- because that is what makes a column of money
+   legible: the marks line up, the digits line up, and a figure an order of magnitude out is
+   visible without being read. The screens had one string with the mark glued to the first digit.
+   Only where there IS a column; a figure in a sentence is prose. */
+.acct { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 0 8px; font-variant-numeric: tabular-nums; }
+.acct > .cur { font-weight: 400; color: var(--ink-3); text-align: left; }
+.acct > .fig { text-align: right; overflow: hidden; text-overflow: ellipsis; }
+.acct.neg > .cur, .acct.neg > .fig { color: var(--red); }
+.lrow .chev { color: var(--ink-3); }
+.prog { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--ink-2); font-weight: 400; }
+.prog .bar { flex: 1; height: 4px; border-radius: var(--r-pill); background: var(--rail); overflow: hidden; }
+.prog .bar i { display: block; height: 100%; background: var(--cta); border-radius: var(--r-pill); transition: width .3s var(--ease); }
+.empty { padding: 30px 20px; text-align: center; color: var(--muted); font-size: 13.5px; }
+
+/* ---- the approval chain ----------------------------------------------------------------------
+   Who signs, in order, as a CHAIN: numbered nodes joined by a line, the matrix level as a badge
+   beside the name, and the reason under it. It was a flat list of avatars and two lines of text,
+   which said the same facts and showed none of the shape — and the shape is the thing an
+   approver and a coordinator are both looking for. */
+.chain { list-style: none; margin: 12px 0 0; padding: 0; }
+.cstep { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 11px; padding-bottom: 13px; position: relative; }
+.cstep:last-child { padding-bottom: 0; }
+.cstep::before { content: ""; position: absolute; left: 12px; top: 26px; bottom: 0; width: 2px; background: var(--rail); }
+.cstep:last-child::before { display: none; }
+.cnum { width: 26px; height: 26px; border-radius: var(--r-pill); background: var(--fill-blue); color: var(--blue); border: 1px solid var(--edge-blue); font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+.cstep.pre .cnum { background: var(--fill-grey); color: var(--ink-2); border-color: var(--edge-grey); }
+.cstep.fa .cnum { background: var(--fill-yellow); color: var(--yellow); border-color: var(--edge-yellow); }
+.cstep.send .cnum { background: var(--fill-green); color: var(--green-deep); border-color: var(--edge-green); }
+.cstep .nm { font-size: 12.5px; font-weight: 700; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; min-width: 0; }
+.cstep .lvl { font-size: 10px; font-weight: 700; letter-spacing: .05em; padding: 1px 7px; border-radius: var(--r-pill); background: var(--fill-blue); color: var(--blue); flex: none; }
+.cstep.pre .lvl { background: var(--fill-grey); color: var(--ink-2); }
+.cstep.fa .lvl { background: var(--fill-yellow); color: var(--yellow); }
+/* `display: block` is the whole fix for the text that ran off the card: `overflow` and
+   `text-overflow` do NOTHING on a non-replaced INLINE element, so the ellipsis was declared and
+   never applied and the sentence just kept going. The line is also much shorter now — what every
+   signer has in common is said once, in .chaincap. */
+.cstep .why { display: block; font-size: 12px; color: var(--ink-3); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cstep .nm { min-width: 0; }
+.cstep .nm > :first-child { overflow: hidden; text-overflow: ellipsis; }
+/* What every row would otherwise repeat — the cost centre and the band — said once, under the
+   heading, where it is read once. */
+.chaincap { font-size: 11.5px; color: var(--muted); margin: 4px 0 0; }
+
+/* ---- the sent rail -------------------------------------------------------------------------- */
+.rail { display: flex; align-items: flex-start; justify-content: center; margin-top: 30px; }
+.node { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 130px; text-align: center; font-size: 12px; color: var(--muted); }
+.node b { color: var(--ink); }
+.dot { width: 30px; height: 30px; border-radius: var(--r-pill); display: inline-flex; align-items: center; justify-content: center; background: #FFF; border: 1px solid var(--rail); color: var(--muted); font-weight: 700; font-size: 11px; flex: none; }
+.dot.done { background: var(--cta); border-color: var(--cta); color: #FFF; }
+.dot.now { border: 2px solid #C8920A; color: var(--warn); }
+.dot.bad { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+.link { flex: 1; max-width: 90px; height: 3px; background: var(--rail); border-radius: 999px; margin-top: 19px; }
+.link.done { background: var(--green); }
+
+/* ---- signer rows (coordinate / decision) ---------------------------------------------------- */
+.signer { display: grid; grid-template-columns: 30px 34px minmax(0, 1fr) minmax(190px, 290px) 28px; gap: 11px; align-items: center; padding: 9px 14px; border-bottom: 1px solid var(--line-soft); }
+.signer:last-child { border-bottom: 0; }
+.signer.todo { background: #FDFBF2; }
+.signer.done { background: var(--card-soft); }
+.signer .num { width: 30px; height: 30px; border-radius: var(--r-pill); background: var(--ink); color: #FFF; font-weight: 700; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; }
+.signer .num.cc { background: var(--line-soft); color: var(--ink-2); font-size: 10px; }
+.signer .num.done { background: var(--cta); }
+.signer .num.now { background: #FFF; border: 2px solid #C8920A; color: var(--warn); }
+/* --muted on the lightened grey lands at 4.45 -- just under AA for 12px. The ink one step
+   darker clears it at 5.6, and a skipped signer is information, not decoration. */
+.signer .num.off { background: var(--line-soft); color: var(--ink-3); }
+.signer .nm { font-size: 13.5px; font-weight: 700; }
+.signer .nm .role { font-weight: 400; color: var(--muted); }
+.signer .why { font-size: 12px; color: var(--muted); margin-top: 1px; }
+.mail { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 400; color: var(--green-deep); min-width: 0; }
+.mail .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mail .src { font-size: 10px; font-weight: 700; letter-spacing: .05em; color: var(--muted); flex: none; }
+.mail.soft { color: var(--ink-2); font-weight: 400; }
+.mail.todo { color: var(--yellow); }
+/* One signature from a named pair: the alternates sit on the row, and the one signing is the
+   one filled in. Not a dropdown — there are two of them and both names matter. */
+.alts { display: flex; align-items: center; gap: 6px; margin-top: 5px; flex-wrap: wrap; }
+.altlbl { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.altbtn { border: 1px solid var(--line); background: #FFF; border-radius: var(--r-sm); font-size: 11.5px; padding: 2px 9px; color: var(--ink-3); }
+.altbtn:hover:not(:disabled) { border-color: var(--cta); background: var(--fill-green); color: var(--green-deep); }
+.altbtn.on { background: var(--fill-green); border-color: var(--edge-green); color: var(--green-deep); font-weight: 700; }
+.altbtn:disabled { cursor: default; }
+.typebox { display: flex; align-items: center; gap: 8px; }
+.typebox .input { height: 30px; border-color: #C8920A; background: var(--yellow-bg); font-size: 13px; }
+.x { width: 26px; height: 26px; border-radius: var(--r-sm); border: 1px solid var(--line); background: #FFF; color: var(--ink-3); display: inline-flex; align-items: center; justify-content: center; }
+.x:hover { border-color: var(--red); color: var(--red); }
+.check { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); font-size: 13.5px; }
+.check:last-child { border-bottom: 0; }
+.tick { width: 22px; height: 22px; border-radius: var(--r-pill); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.tick.ok { background: var(--fill-green); color: var(--green-deep); }
+.tick.todo { background: var(--fill-yellow); color: var(--yellow); }
+.tick.bad { background: var(--fill-red); color: var(--red); }
+.tabhd { padding: 9px 14px 5px; font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; background: var(--card-soft); border-top: 1px solid var(--line-soft); }
+
+/* ---- the review screen ------------------------------------------------------------------------
+   The last screen of the requester's journey and the one Fixed Assets look at hardest, so it is
+   laid out as a decision rather than as a page: what you are sending and for how much at the top,
+   what stands in the way across the full width underneath, the document and the note you are
+   writing on the left, the chain on the right, and the one button the whole journey exists for in
+   a bar that STICKS — it used to sit under a 720px document, below the fold on any screen smaller
+   than a poster. */
+.reviewtop { display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 15px 18px; }
+/* The facts about this AFE, as objects rather than as a grey sentence. The cost centre and the
+   classification were "quite hidden visually" — they were dot-separated grey text, which is what
+   you write when you do not want something read. */
+.reviewtop .meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin-top: 8px; }
+/* A Acme site name is a full postal address — "SGP_Singapore_ICON @IBP, 3A International
+   Business Park" — and left alone it is four times the width of every other fact on the row. */
+.reviewtop .meta .tag { max-width: 250px; }
+.reviewtop .meta .rid { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); }
+.reviewtop .headamt { margin-left: auto; text-align: right; flex: none; }
+.reviewtop .headamt .big-amt { line-height: 1.1; }
+.reviewtop .headamt a { display: inline-block; margin-top: 4px; font-size: 12.5px; white-space: nowrap; }
+
+/* What stands between this AFE and Send, across the whole width. It was in the 400px rail —
+   the narrowest column on the page for the one thing you have to act on. */
+.todobar { margin-top: 12px; border-left: 4px solid var(--edge-grey); }
+.todobar.stop { border-left-color: var(--red); background: #FEF7F6; }
+.todobar.wait { border-left-color: var(--edge-yellow); background: #FEFBF1; }
+.todobar.go { border-left-color: var(--edge-green); background: var(--fill-green); }
+.todobar .sect { color: var(--ink-2); }
+.todobar.stop .sect { color: var(--red); }
+.todobar .okline { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--green-deep); }
+.todobar .field-msg:first-of-type { margin-top: 8px; }
+
+/* The commit bar. It carries the figure and the count as well as the button, because "send"
+   needs to say what is being sent. */
+.foot.commit { position: sticky; bottom: 0; z-index: 20; margin-top: 16px; padding: 12px 0 14px; background: var(--page); border-top: 1px solid var(--line); box-shadow: 0 -10px 16px -12px rgba(28,31,29,.35); }
+.commitsum { margin-left: auto; font-size: 13px; color: var(--ink-2); }
+/* "N things to fix first" takes you to the first of them. A count that cannot be pressed is a
+   number you have to go and hunt for. */
+.tofix { border: 1px solid var(--edge-red); background: var(--fill-red); color: var(--red); font-weight: 700; font-size: 12.5px; padding: 4px 11px; border-radius: var(--r-sm); display: inline-flex; align-items: center; gap: 6px; }
+.tofix:hover { background: #FFF; border-color: var(--red); }
+.foot.commit .cta { margin-left: 14px; }
+@media (max-width: 899px) {
+  .reviewtop .headamt { margin-left: 0; text-align: left; }
+}
+
+/* ---- the review sheet (an HTML rendition of the form) -------------------------------------- */
+.sheet-doc { background: #FFF; border: 1px solid var(--line); border-radius: var(--r-xs); padding: 18px 22px; box-shadow: var(--shadow-pop); font-size: 12px; }
+.sk { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; }
+.sv { font-size: 12.5px; font-weight: 700; margin-top: 2px; }
+.sv.blank { color: var(--muted); font-weight: 400; font-style: italic; border-bottom: 1px dashed #C9CFC9; }
+.edit { border-bottom: 1px solid #BFE0CD; cursor: pointer; background: none; border-top: 0; border-left: 0; border-right: 0; padding: 0; font: inherit; text-align: left; color: inherit; }
+.edit:hover { background: var(--page); border-bottom-color: var(--green); }
+.sgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 16px; }
+.srow { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--line-soft); }
+.srow.tot { border-top: 1px solid var(--ink); border-bottom: 0; font-size: 12.5px; font-weight: 700; }
+.srow.sig.on { background: var(--yellow-bg); margin: 0 -8px; padding: 6px 8px; border-radius: var(--r-xs); border-bottom: 0; }
+.anchor { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 700; color: var(--yellow); border: 1px dashed #C8920A; border-radius: var(--r-xs); padding: 2px 6px; white-space: nowrap; }
+.na { font-size: 11px; color: var(--muted); }
+.pdf-frame { width: 100%; height: 720px; border: 1px solid var(--line); border-radius: var(--r-sm); background: #FFF; display: block; }
+/* The document takes a moment to assemble — five pages rendered and every attachment bound in
+   behind them. Until the frame paints, this says so; a white rectangle cannot be told apart from
+   a broken one. It goes when the frame reports `load`, and it is behind the frame rather than
+   over it, so nothing has to be taken away afterwards. */
+/* A strip along the TOP EDGE of the frame, with the link on it.
+   "When users see the PDF in a frame and can't read it, they look for a link to open in a new tab
+   just at the top edge of the frame." They do — and the link was up beside the heading, a
+   different part of the page. It cannot go INSIDE the frame: the browser's own PDF toolbar owns
+   that row, and a chip over it would sit on the download button. */
+.pdfbar { display: flex; align-items: center; gap: 10px; padding: 7px 10px 7px 12px; background: var(--card-soft); border: 1px solid var(--line); border-bottom: 0; border-radius: var(--r-sm) var(--r-sm) 0 0; font-size: 12px; color: var(--ink-3); }
+.pdfbar .openpdf { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--r-sm); border: 1px solid var(--line); background: #FFF; color: var(--link); font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: border-color .12s ease, background .12s ease; }
+.pdfbar .openpdf:hover { border-color: var(--cta); background: var(--fill-green); color: var(--green-deep); text-decoration: none; }
+.pdfwrap { position: relative; min-height: 220px; }
+.pdfwrap .pdf-frame { border-radius: 0 0 var(--r-sm) var(--r-sm); }
+.split .pdfwrap .pdf-frame { height: 640px; }
+.pdfwrap .pdfbusy { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 24px; text-align: left; font-size: 13px; color: var(--ink-2); background: var(--card); border: 1px solid var(--line); border-radius: var(--r-sm); }
+.pdfwrap .pdfbusy .spin { width: 18px; height: 18px; border: 2px solid var(--rail); border-top-color: var(--cta); border-radius: var(--r-pill); animation: spin .8s linear infinite; flex: none; }
+.pdfwrap[data-ready] .pdfbusy { display: none; }
+.pdfwrap .pdf-frame { position: relative; z-index: 2; }
+.pdfwrap:not([data-ready]) .pdf-frame { opacity: 0; }
+
+/* ---- motion (R117) ----------------------------------------------------------------------------
+   Everything here is driven from public/js/core/motion.js with the Web Animations API — no
+   package, because the ADC rules forbid a frontend dependency and this needs none. The classes
+   below only supply the surfaces; the timing lives with the code that knows why it is moving.
+   Every one of them is transform, opacity or a box-shadow on a single element: nothing here can
+   cause a reflow, which is the whole reason animation gets a bad name in an application. */
+.flylayer { position: fixed; inset: 0; z-index: 70; pointer-events: none; }
+.flylayer .plane { position: fixed; width: 56px; height: 56px; color: var(--cta); fill: currentColor; filter: drop-shadow(0 6px 10px rgba(0,137,67,.25)); }
+/* The ring that follows "take me to it". It is a box-shadow on one element, so it costs a paint
+   and not a layout. */
+.pulsing { border-radius: var(--r-lg); }
+/* ---- sheets, toasts, busy ------------------------------------------------------------------- */
+.backdrop { position: fixed; inset: 0; background: rgba(28,31,29,.42); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 20px; }
+.sheet { background: #FFF; border-radius: var(--r-xl); width: min(520px, 100%); max-height: min(86vh, 760px); overflow: auto; padding: 20px 22px; box-shadow: 0 24px 64px rgba(28,31,29,.22); animation: sheetIn .2s var(--ease); }
+/* A sheet that carries a DOCUMENT. 520px around a 720px-tall page is a letterbox — "the size
+   of the pop-up needs to increase" (Shashank, 2026-09-22). It takes the width the review
+   screen's own frame has, and the page gets the height that is left. */
+.sheet.wide { width: min(1080px, 100%); max-height: min(92vh, 980px); }
+.sheet.wide .pdf-frame { height: min(72vh, 780px); }
+.sheet .h1 { font-size: 18px; }
+.sheet .actions { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; justify-content: flex-end; }
+.toasts { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 60; pointer-events: none; }
+.toast { background: var(--ink); color: #FFF; border-radius: var(--r-md); padding: 9px 14px; font-size: 13px; font-weight: 400; box-shadow: var(--shadow-pop); animation: sheetIn .18s var(--ease); pointer-events: auto; max-width: 90vw; }
+.toast.err { background: var(--red); }
+.toast.ok { background: var(--cta); }
+.busy { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
+.busy .spin { width: 13px; height: 13px; border: 2px solid var(--rail); border-top-color: var(--cta); border-radius: var(--r-pill); animation: spin .8s linear infinite; }
+.banner { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: var(--r-md); border: 1px solid currentColor; font-size: 13px; font-weight: 400; }
+.banner.yellow { background: var(--fill-yellow); color: var(--yellow); }
+.banner.blue { background: var(--fill-blue); color: var(--blue); }
+.banner.red { background: var(--fill-red); color: var(--red); }
+.banner.green { background: var(--fill-green); color: var(--link); }
+.banner.grey { background: var(--fill-grey); color: var(--ink-2); border-color: var(--edge-grey); }
+
+/* ---- thread --------------------------------------------------------------------------------- */
+.msg { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line-soft); }
+.msg:last-child { border-bottom: 0; }
+.msg .body { min-width: 0; flex: 1; }
+.msg .meta { font-size: 13px; color: var(--muted); }
+.msg .text { font-size: 13.5px; margin-top: 3px; white-space: pre-wrap; }
+.msg.question .text { background: var(--yellow-bg); border-radius: var(--r-sm); padding: 8px 11px; }
+.msg.answer .text { background: var(--green-ok-bg); border-radius: var(--r-sm); padding: 8px 11px; }
+.msg.send_back .text, .msg.decline .text { background: var(--red-bg); border-radius: var(--r-sm); padding: 8px 11px; }
+/* The conversation's compose box (R149): the box grows, the button stays its own size. */
+.thread .compose { display: flex; gap: 8px; align-items: flex-end; margin-top: 12px; }
+.thread .compose textarea { flex: 1; min-width: 0; min-height: 42px; resize: vertical; }
+.thread .compose .cta { flex: none; }
+.thread .compose .acts { display: flex; gap: 8px; flex: none; flex-wrap: wrap; }
+/* An ask is the one line that asks for something back (R163): it keeps its own ground while open. */
+.msg.ask .text { background: var(--blue-bg); border-radius: var(--r-sm); padding: 8px 11px; }
+.msg .askst { display: inline-flex; align-items: center; gap: 4px; margin-left: 6px; font-size: 11.5px; font-weight: 700; }
+.msg .askst.open { color: var(--warn); }
+.msg .askst.done { color: var(--link); }
+.msg .meta .side { color: var(--ink-2); font-weight: 700; }
+
+/* ---- lines editor --------------------------------------------------------------------------- */
+.lines { display: grid; grid-template-columns: minmax(0, 2fr) 90px minmax(0, 1.2fr) 40px; gap: 10px; align-items: center; }
+.lines .hd { font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; }
+.lines .input { height: 32px; }
+.lines .sum { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding-top: 9px; border-top: 1px solid var(--ink); font-weight: 700; }
+
+/* ---- the financial case (R94) ----------------------------------------------------------------- */
+/* Eleven years plus a description and a delete. It scrolls sideways inside its card rather than
+   stretching the page, because the summary above it is the thing most people read. */
+.finrow { display: grid; grid-template-columns: minmax(150px, 1.6fr) repeat(11, minmax(74px, 1fr)) 26px; gap: 4px; align-items: center; padding: 2px 0; min-width: 980px; }
+.finrow .input { height: 28px; font-size: 12.5px; padding: 0 7px; }
+.finrow .input.num { text-align: right; font-variant-numeric: tabular-nums; }
+.finrow.head { font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .05em; text-transform: uppercase; padding: 0 0 5px; }
+.finrow.head span:not(:first-child) { text-align: right; }
+.finrow.total { font-size: 12.5px; padding: 6px 0; border-top: 1px solid var(--line-soft); }
+.finrow.total span:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.finrow.total.strong { font-weight: 700; border-top: 1px solid var(--ink); }
+.finrow .x { width: 22px; height: 22px; }
+
+/* ---- pots ----------------------------------------------------------------------------------- */
+.kpis { display: flex; gap: 22px; margin-top: 16px; flex-wrap: wrap; }
+.kpi .k { font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; }
+.kpi .v { font-size: 24px; font-weight: 700; letter-spacing: -0.018em; margin-top: 3px; }
+.kpi .v.blue { color: var(--blue); } .kpi .v.green { color: var(--link); }
+/* A count with rows behind it is a button; it looks like the figure, underlined when it is the filter. */
+.kpi.kbtn { display: flex; flex-direction: column; background: none; border: 0; border-bottom: 2px solid transparent; padding: 0 0 4px; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.kpi.kbtn:hover .k { color: var(--ink-2); }
+.kpi.kbtn.on { border-bottom-color: var(--ink); }
+/* A search box keeps the field's own look: WebKit draws type="search" rounded and inset otherwise. */
+input[type="search"].input { -webkit-appearance: none; appearance: none; }
+.cats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.cat { background: var(--fill-grey); border: 1px solid var(--edge-grey); border-radius: var(--r-lg); padding: 11px 13px; display: flex; flex-direction: column; gap: 5px; text-align: left; font: inherit; color: inherit; cursor: pointer; transition: border-color .12s ease, box-shadow .12s ease; }
+.cat:hover { border-color: var(--ink-3); }
+.cat.blue { background: var(--fill-blue); border-color: var(--edge-blue); }
+.cat.on { background: var(--fill-blue); border-color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.cat .t { font-size: 12.5px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.cat .t svg { color: var(--dot-blue); flex: none; }
+.cat .b { font-size: 18px; font-weight: 700; letter-spacing: -0.015em; }
+.cat .s { font-size: 12px; color: var(--ink-3); }
+.bar { height: 5px; border-radius: var(--r-pill); background: var(--rail); overflow: hidden; display: flex; }
+.bar i { display: block; height: 100%; }
+.bar .cr { background: var(--blue); } .bar .al { background: var(--green); }
+.prow { display: grid; grid-template-columns: 110px minmax(0, 1fr) 140px 140px 140px 140px 22px; gap: 12px; align-items: center; padding: 9px 14px; border-bottom: 1px solid var(--line-soft); }
+.prow:last-child { border-bottom: 0; }
+.prow .reg { font-size: 13.5px; font-weight: 700; }
+.prow .num { font-size: 13.5px; font-weight: 700; text-align: right; }
+.prow .num.soft { color: var(--muted); font-weight: 400; }
+.prow .num.blue { color: var(--blue); } .prow .num.green { color: var(--link); }
+.prow.hd { font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; padding: 10px 14px 5px; border-bottom: 0; }
+.prow.hd span:nth-child(n+3) { text-align: right; }
+
+/* ---- responsive ----------------------------------------------------------------------------- */
+@media (max-width: 899px) {
+  .split, .split.narrow, .split.dec { grid-template-columns: minmax(0, 1fr); }
+  .buckets, .buckets.four, .buckets.five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lrow { grid-template-columns: 44px minmax(0, 1fr) 110px 28px; row-gap: 6px; }
+  .lrow .wideonly { display: none; }
+  .lrow > .av { grid-column: 1; grid-row: 1 / span 2; }
+  .lrow .chev { grid-column: 4; grid-row: 1 / span 2; }
+  .lrow .tagcol { grid-column: 2 / 4; grid-row: 2; }
+  .prow, .prow.hd { grid-template-columns: 90px minmax(0, 1fr) 120px 120px 28px; }
+  .prow .num:nth-child(4), .prow .num:nth-child(5), .prow.hd span:nth-child(4), .prow.hd span:nth-child(5) { display: none; }
+  .signer { grid-template-columns: 40px minmax(0, 1fr) 34px; }
+  .signer .av { display: none; }
+  .signer .mail, .signer .typebox { grid-column: 2; }
+}
+.dec-head { display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 480px) {
+  /* A consequence is the point of the chip — on a phone it wraps rather than truncating. */
+  .reveal { align-items: flex-start; border-radius: var(--r-sm); }
+  .reveal .txt { white-space: normal; overflow: visible; line-height: 1.35; }
+  .reveal .av { margin-top: 1px; }
+  /* No height here. index.html reserves the bar as `#top`, which is an ID and outranks this
+     rule at every width — so a second height in the stylesheet is not a phone size, it is a
+     line that looks like it does something and does not. smoke-boot keeps the two in step. */
+  .top { padding: 0 14px; gap: 8px; }
+  .top .brand b, .who .name { display: none; }
+  .dec-head { flex-direction: column; gap: 8px; }
+  .dec-head .big-amt { font-size: 23px; }
+  .page .card[style*="padding: 28px 32px"] { padding: 20px 18px !important; }
+  .chipnav { margin-left: 4px; }
+  .wrap { padding: 22px 16px 110px; }
+  .page { padding: 18px 14px 110px; }
+  .q { font-size: 21px; } .h1 { font-size: 19px; }
+  .big { height: 42px; font-size: 15px; } .big.money { font-size: 20px; height: 46px; }
+  .buckets, .buckets.four, .buckets.five, .cats { grid-template-columns: minmax(0, 1fr); }
+  .bucket { min-height: 0; }
+  .foot { position: fixed; left: 0; right: 0; bottom: 0; margin: 0; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: var(--card); border-top: 1px solid var(--line); flex-wrap: nowrap; }
+  .foot .cta { flex: 1; }
+  .foot .kbd.hint, .foot.commit .commitsum { display: none; }
+  /* Why Continue is off, on a line of its own above the button: hidden, the button greyed out
+     with nothing on the screen to say why. */
+  .foot { flex-wrap: wrap; row-gap: 6px; }
+  .foot .kbd.why { order: -1; flex: 1 0 100%; margin: 0; font-size: 12.5px; text-align: left; }
+  .foot #bin { order: 5; flex: 1 0 100%; text-align: center; font-size: 12px; }
+  /* The decision bar on a phone: the decision on a row of its own, the other three under it,
+     and no sentence — it was a quarter of the screen, stuck over what it decides. */
+  .decbar { gap: 8px; padding: 10px 0; }
+  .decbar .decnote { display: none; }
+  .decbar .cta { flex: 1 1 auto; }
+  .decbar .cta:not(.sec):not(.quiet) { flex-basis: 100%; }
+  .decbar .cta.sec, .decbar .cta.quiet { height: 38px; font-size: 13px; padding: 0 10px; }
+  /* Withdraw and Delete shared one unwrapped row with Continue and Answer; a thumb aimed at one
+     found the other. They take a row of their own, under the rest. */
+  .foot.acts .cta { flex: 1 1 auto; }
+  .foot.acts .cta.quiet { order: 5; flex: 1 0 100%; margin-left: 0; }
+  .stepnow { display: block; flex: 1 0 100%; margin-top: 6px; font-size: 12px; font-weight: 700; color: var(--ink-3); }
+  /* On a phone a toast comes in under the masthead: at the bottom it sat over Continue and Send
+     for its three to five seconds, and the fixed bar's height changes with what it is saying. */
+  .toasts { top: 58px; bottom: auto; width: calc(100vw - 28px); }
+  .toast { max-width: none; }
+  .foot.commit { margin-top: 0; box-shadow: none; }
+  .stepper { padding: 6px 16px 0; } .seg .lab { display: none; }
+  .lrow { grid-template-columns: minmax(0, 1fr) 90px; padding: 14px 16px; }
+  .lrow .av, .lrow .chev { display: none; }
+  .lrow .tagcol { grid-column: 1 / -1; }
+  .lrow .amt { font-size: 13.5px; }
+  .kpis { gap: 14px; } .kpi .v { font-size: 20px; }
+  /* A quote row is a name and two fields. Side by side they need 300px of their own, which a
+     phone does not have — so the fields drop to their own line and share its width. */
+  .doc { flex-wrap: wrap; gap: 12px 14px; padding: 14px 16px; }
+  .doc .meta { flex: 1 1 150px; }
+  .doc-fields { padding-left: 0; }
+  .doc-save, .doc-confirm { padding-left: 0; }
+  .doc-fields .doc-vendor, .doc-fields .doc-amount { width: auto; flex: 1 1 0; }
+  /* The price takes a line, and the quote's date the next. */
+  .doc-price, .doc-when { flex: 1 1 100%; }
+  .doc-fields .doc-date { width: auto; flex: 1 1 auto; }
+  .readline { margin-left: 0; }
+  .rl-acts { margin-left: 0; flex: 1 1 100%; }
+  .pdf-frame { height: 420px; }
+  .sheet { border-radius: var(--r-xl) var(--r-xl) 0 0; align-self: flex-end; max-height: 90vh; }
+  .backdrop { padding: 0; align-items: flex-end; }
+  .rail { flex-wrap: wrap; gap: 14px; } .link { display: none; } .node { width: 44%; }
+}
+
+/* ---- Fixed Assets (Stage 5): red flags, judgment rows, the KO01 sheet ---------------------------- */
+.bucket .n small { font-size: 14px; font-weight: 700; letter-spacing: 0; color: var(--ink-2); }
+/* ---- the SAP run sheet (R122) -----------------------------------------------------------------
+   "Keying in SAP is a nightmare." It was eleven sentences of running prose across three steps,
+   one badge, one button, and not a single input on the row — every field lived behind a modal.
+   A run sheet is two columns: what to KEY over there, and what to bring BACK. The person is
+   alt-tabbing between two windows, so the value has to be on the row, one click from the
+   clipboard, and only one step is open at a time because only one transaction is. */
+.runstep { border-bottom: 1px solid var(--line-soft); }
+.runstep:last-child { border-bottom: 0; }
+.runstep.done { background: var(--card-soft); }
+.runstep.open { background: #FFF; }
+.runhd { display: grid; grid-template-columns: auto minmax(0, 1fr) 20px; gap: 12px; align-items: center; width: 100%; padding: 11px 14px; background: none; border: 0; text-align: left; }
+.runhd:hover { background: var(--line-soft); }
+.runstep.blocked .runhd { cursor: default; }
+.runstep.blocked .runhd:hover { background: none; }
+.runhd .rt { min-width: 0; }
+.runhd .t { display: block; font-size: 13.5px; font-weight: 700; }
+.runhd .d { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.runstep.done .runhd .d { color: var(--link); }
+.runhd .chev { color: var(--ink-3); display: inline-flex; }
+.runbd { padding: 0 14px 14px; }
+.runcols { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 899px) { .runcols { grid-template-columns: minmax(0, 1fr); } }
+.runkey, .runret { border: 1px solid var(--line); border-radius: var(--r-md); padding: 10px 12px; background: var(--card-soft); }
+.runkey > .sect, .runret > .sect { margin-bottom: 8px; }
+/* A field and its value, on one line, with the value's own Copy. This is the whole point: the
+   figure you are about to type is RIGHT THERE, not described in a sentence above. */
+.kv { display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr) 62px; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line-soft); }
+.kv:last-child { border-bottom: 0; }
+.kv .f { font-size: 12px; color: var(--ink-3); }
+.kv .f .req { color: var(--red); font-style: normal; margin-left: 2px; }
+.kv .v { font-size: 13.5px; font-weight: 700; color: var(--ink); overflow-wrap: anywhere; }
+.kv .v .note { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-3); margin-top: 1px; }
+.kv .v.blank { color: var(--red); }
+.kv.soft .v { font-weight: 400; color: var(--ink-2); }
+/* What SAP says BACK is not something to type, so it does not look like a field. */
+.expect { display: flex; gap: 7px; align-items: flex-start; margin-top: 8px; padding: 7px 9px; border-radius: var(--r-sm); background: var(--fill-blue); color: var(--dot-blue); font-size: 12px; }
+.expect svg { flex: none; margin-top: 1px; }
+.runret .d { font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
+.gotit { display: flex; gap: 7px; align-items: center; margin-top: 9px; padding: 8px 10px; border-radius: var(--r-sm); background: var(--fill-green); color: var(--green-deep); font-size: 12.5px; }
+.gotit svg { flex: none; }
+.needs { display: flex; gap: 7px; align-items: flex-start; margin-top: 9px; padding: 8px 10px; border-radius: var(--r-sm); background: var(--fill-yellow); color: var(--yellow); font-size: 12.5px; font-weight: 700; }
+.needs svg { flex: none; margin-top: 1px; }
+
+.flag { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 11px; align-items: start; padding: 11px 14px; border-bottom: 1px solid var(--line-soft); }
+.flag:last-child { border-bottom: 0; }
+.flag.cleared { background: var(--card-soft); }
+.flag .t { font-size: 13.5px; font-weight: 700; line-height: 1.35; }
+.flag .d { font-size: 12.5px; color: var(--ink-2); margin-top: 3px; line-height: 1.5; }
+.flag .acts { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.tick.lg { width: 26px; height: 26px; }
+.tick.warn { background: var(--yellow-bg); color: var(--yellow); }
+.tick.ready { background: #FFF; border: 1px solid var(--cta); color: var(--link); }
+.tick.off { background: #FFF; border: 1px solid var(--rail); color: var(--ink-3); }
+button.tick { cursor: pointer; font: inherit; padding: 0; }
+button.tick:disabled { cursor: default; }
+button.tick.off:hover:not(:disabled) { border-color: var(--green); color: var(--link); }
+.jrow { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: start; padding: 9px 14px; border-bottom: 1px solid var(--line-soft); }
+.jrow:last-child { border-bottom: 0; }
+.jrow .t { font-size: 13px; font-weight: 700; line-height: 1.35; }
+.jrow .s { font-size: 12px; color: var(--muted); margin-top: 1px; }
+.vbadge { font-size: 12px; font-weight: 400; color: var(--link); display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.vbadge.bad { color: var(--red); }
+.vbadge.soft { color: var(--muted); }
+.korow { display: grid; grid-template-columns: 26px minmax(0, 1fr) 88px; gap: 11px; align-items: center; padding: 8px 14px; border-bottom: 1px solid var(--line-soft); }
+.korow:last-child { border-bottom: 0; }
+.korow.copied { background: var(--card-soft); }
+.korow .fv { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 12px; align-items: center; min-width: 0; }
+.korow .f { font-size: 12.5px; color: var(--ink-2); }
+.korow .v { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 13.5px; font-weight: 700; word-break: break-word; min-width: 0; }
+.korow .v.soft { font-family: inherit; font-weight: 400; color: var(--muted); font-size: 12.5px; }
+.korow .v.blank { color: var(--red); font-family: inherit; }
+.korow .note { display: block; font-size: 12.5px; color: var(--muted); font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-weight: 400; margin-top: 2px; }
+.pillbtn.sm { height: 26px; font-size: 12px; padding: 0 9px; }
+.pillbtn.soft { border-color: var(--line); color: var(--ink-2); }
+.pillbtn.soft:hover { background: var(--card-soft); }
+.pillbtn:disabled { opacity: .5; }
+.ring { box-shadow: 0 0 0 2px var(--yellow-bg), 0 0 0 4px #C8920A !important; border-radius: var(--r-sm); transition: box-shadow .3s; }
+.mtx { width: 100%; border-collapse: collapse; font-size: 13px; }
+.mtx th { text-align: left; font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; padding: 7px 9px; border-bottom: 1px solid var(--line); }
+.mtx td { padding: 6px 9px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+.mtx tr.changed td { background: var(--red-bg); color: var(--red); font-weight: 700; }
+.draft { white-space: pre-wrap; font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 12px; line-height: 1.55; background: var(--card-soft); border: 1px solid var(--line-soft); border-radius: var(--r-sm); padding: 11px 13px; max-height: 360px; overflow: auto; margin: 0; color: var(--ink); }
+@media (max-width: 899px) {
+  .flag { grid-template-columns: 34px minmax(0, 1fr); }
+  .flag .acts { grid-column: 2; justify-content: flex-start; }
+  .korow { grid-template-columns: 34px minmax(0, 1fr) 84px; }
+  .korow .fv { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+
+/* ---- projects (Stage 6): the four numbers, the purchase orders behind them ---------------------- */
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.tiles.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.tile { background: var(--fill-grey); border: 1px solid var(--edge-grey); border-radius: var(--r-lg); padding: 11px 13px 12px; text-align: left; font: inherit; color: var(--ink); cursor: pointer; display: flex; flex-direction: column; gap: 2px; transition: box-shadow .12s ease, border-color .12s ease; }
+.tile:hover { border-color: var(--ink-3); }
+.tile.on { border-color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+/* A figure with nothing behind it: drawn as a tile, never offered as a button (design rule 3). */
+.tile.static { cursor: default; }
+.tile.static:hover { border-color: var(--edge-grey); }
+.tile.static.green:hover { border-color: var(--edge-green); } .tile.static.blue:hover { border-color: var(--edge-blue); } .tile.static.red:hover { border-color: var(--edge-red); }
+.tile .thead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.tile .ico { width: 24px; height: 24px; border-radius: var(--r-pill); background: var(--dot-grey); color: #FFF; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.tile .tv { font-size: 24px; font-weight: 700; letter-spacing: -0.018em; line-height: 1.1; color: var(--ink-2); }
+.tile.green { background: var(--fill-green); border-color: var(--edge-green); } .tile.green .ico { background: var(--dot-green); } .tile.green .tv { color: var(--link); }
+.tile.blue { background: var(--fill-blue); border-color: var(--edge-blue); } .tile.blue .ico { background: var(--dot-blue); } .tile.blue .tv { color: var(--blue); }
+.tile.red { background: var(--fill-red); border-color: var(--edge-red); } .tile.red .ico { background: var(--dot-red); } .tile.red .tv { color: var(--red); }
+.tile.yellow { background: var(--fill-yellow); border-color: var(--edge-yellow); } .tile.yellow .ico { background: var(--dot-yellow); } .tile.yellow .tv { color: var(--yellow); }
+.tile .tl { font-size: 12.5px; color: var(--ink-2); margin-top: 4px; font-weight: 700; }
+.tile .ts { font-size: 12px; color: var(--ink-3); }
+.track { height: 8px; border-radius: var(--r-pill); background: var(--rail); position: relative; overflow: visible; }
+.track i { display: block; height: 100%; border-radius: var(--r-pill); background: var(--cta); max-width: 100%; }
+.track .mark { position: absolute; top: -4px; width: 2px; height: 16px; border-radius: 1px; background: var(--red); }
+.po { display: grid; grid-template-columns: 120px minmax(0, 1fr) 125px 105px; gap: 12px; align-items: center; padding: 8px 14px; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
+.po:last-child { border-bottom: 0; }
+.po .mono { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 12px; color: var(--ink-2); }
+.po .num { text-align: right; font-weight: 700; }
+@media (max-width: 899px) {
+  .tiles, .tiles.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .po { grid-template-columns: minmax(0, 1fr) 110px; }
+  .po .mono, .po .small { grid-column: 1; }
+}
+@media (max-width: 480px) {
+  .tiles, .tiles.four { grid-template-columns: minmax(0, 1fr); }
+  .tile .tv { font-size: 28px; }
+}
+
+/* ---- portfolio, review, tracker, admin (Stage 7) ------------------------------------------------ */
+.flow { display: flex; align-items: stretch; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+/* The roll-forward is an equation, so its terms stay apart -- the operators between them are
+   the point. The terms are filled and sized like everything else now; these rules predate R106
+   and still carried a 26px figure and a 16px radius. */
+.flow .fl { background: var(--fill-grey); border: 1px solid var(--edge-grey); border-radius: var(--r-xl); padding: 13px 16px; flex: 1 1 160px; }
+.flow .fl.now { border: 2px solid var(--ink); }
+.flow .fl .v { font-size: 23px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink-2); }
+.flow .fl.blue { background: var(--fill-blue); border-color: var(--edge-blue); } .flow .fl.blue .v { color: var(--blue); }
+.flow .fl.green { background: var(--fill-green); border-color: var(--edge-green); } .flow .fl.green .v { color: var(--link); }
+.flow .fl .l { font-size: 12.5px; color: var(--ink-2); margin-top: 4px; }
+.flow .op { align-self: center; font-size: 18px; font-weight: 700; color: var(--ink-3); }
+.segbar { display: flex; height: 14px; border-radius: 999px; overflow: hidden; background: var(--rail); }
+.segbar i { display: block; height: 100%; }
+.segbar i.yellow { background: #E5A93B; } .segbar i.purple { background: #6E5BA8; } .segbar i.green { background: #4C9E6F; }
+.segbar i.grey { background: #8A918C; } .segbar i.red { background: var(--red); } .segbar i.orange { background: #D4713A; }
+.segbar i.blue { background: var(--blue); }
+.rgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.reason { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; border: 2px solid transparent; background: none; text-align: left; font: inherit; color: var(--ink); cursor: pointer; }
+.reason:hover { background: var(--card-soft); }
+.reason.on { border-color: var(--ink); background: var(--card-soft); }
+.reason .n { min-width: 46px; height: 34px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex: none; }
+.reason .n.yellow { background: var(--fill-yellow); color: var(--yellow); } .reason .n.purple { background: #E4DCF3; color: #4C3D80; }
+.reason .n.green { background: var(--fill-green); color: var(--link); } .reason .n.red { background: var(--fill-red); color: var(--red); }
+.reason .n.grey { background: var(--fill-grey); color: var(--ink-2); } .reason .n.orange { background: #F8DBC7; color: #7E3910; }
+.reason .n.blue { background: var(--fill-blue); color: var(--blue); }
+.reason .t { font-weight: 700; font-size: 13.5px; display: block; }
+.reason .s { font-size: 12.5px; color: var(--muted); display: block; }
+.bigrow { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.bigrow:hover { text-decoration: none; }
+.bigrow .t { font-weight: 700; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bigrow .s { font-size: 13px; color: var(--muted); display: block; }
+.bigrow .amt { font-size: 15px; font-weight: 700; margin-left: auto; flex: none; }
+.drow { display: grid; grid-template-columns: minmax(0, 1fr) 160px minmax(0, 220px) 28px; gap: 14px; align-items: center; width: 100%; padding: 12px 16px; border-bottom: 1px solid var(--line-soft); background: none; border-left: 0; border-right: 0; border-top: 0; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.drow:hover { background: var(--card-soft); }
+.drow.on { background: var(--card-soft); }
+.drow .t { font-size: 14.5px; font-weight: 700; display: block; }
+.drow .s { font-size: 12.5px; color: var(--muted); display: block; }
+.stack { display: inline-flex; }
+.stack .av { margin-left: -8px; box-shadow: 0 0 0 2px var(--card); }
+.stack .av:first-child { margin-left: 0; }
+.tabs { display: inline-flex; gap: 4px; background: var(--fill-grey); padding: 4px; border-radius: 999px; flex-wrap: wrap; }
+.tabs button { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--ink-2); background: none; border: 0; cursor: pointer; }
+.tabs button svg { flex: none; opacity: .7; }
+.tabs button.on svg { opacity: 1; color: var(--cta); }
+.tabs button.on { background: #FFF; color: var(--ink); box-shadow: 0 1px 3px rgba(20,20,19,.12); }
+.rule { display: grid; grid-template-columns: 40px minmax(0, 1fr) 170px 128px; gap: 12px; align-items: center; padding: 11px 16px; border-bottom: 1px solid var(--line-soft); }
+.rule:last-of-type { border-bottom: 0; }
+.rule .nm { font-size: 14px; font-weight: 700; }
+.rule .nm .role { font-weight: 400; color: var(--muted); }
+.rule .why { font-size: 13px; color: var(--muted); margin-top: 2px; line-height: 1.4; display: block; }
+@media (max-width: 899px) {
+  .rgrid { grid-template-columns: minmax(0, 1fr); }
+  .drow { grid-template-columns: minmax(0, 1fr) 28px; }
+  .drow .stack, .drow .tagcol { display: none; }
+  .rule { grid-template-columns: 40px minmax(0, 1fr) 128px; }
+  .rule .tagcol { display: none; }
+  .flow .op { display: none; }
+}
+@media (max-width: 480px) {
+  .flow .fl { flex: 1 1 100%; }
+  .tabs { width: 100%; overflow-x: auto; flex-wrap: nowrap; }
+  .rule { grid-template-columns: 40px minmax(0, 1fr); }
+  .rule span:last-child { grid-column: 2; }
+}
+
+/* ---- the order's story (R125) -----------------------------------------------------------------
+   The in-service date, and how far it has moved. One seeded order carries 22 re-forecasts; the
+   screen drew the last one as a yellow chip and discarded the rest. A step line of a receding
+   promise against today says in one glance what a column of 22 dates never would. */
+.slip { margin-top: 10px; }
+.slip svg { display: block; overflow: visible; }
+.slip .line { fill: none; stroke: var(--dot-yellow); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.slip .pt { fill: #FFF; stroke: var(--dot-yellow); stroke-width: 2; }
+.slip .pt.last { fill: var(--dot-yellow); }
+.slip .pt.last.late { fill: var(--dot-red); stroke: var(--dot-red); }
+.slip .nowline { stroke: var(--edge-grey); stroke-width: 1; stroke-dasharray: 3 3; }
+.slip .nowlab { font-size: 10px; fill: var(--ink-3); font-weight: 700; letter-spacing: .04em; }
+.slipfoot { font-size: 12.5px; color: var(--ink-2); margin-top: 6px; }
+.slipfoot .late { color: var(--red); font-weight: 700; }
+
+/* The follow-up history as the conversation it is. It was one 3,249-character paragraph in a
+   380px rail, with no `pre-wrap` in the stylesheet, so even its newlines collapsed. */
+.thread { display: flex; flex-direction: column; gap: 2px; }
+.tmsg { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); }
+.tmsg:last-child { border-bottom: 0; }
+.tmsg .who { font-size: 12.5px; font-weight: 700; color: var(--ink); }
+.tmsg .at { font-size: 11.5px; color: var(--ink-3); font-weight: 400; margin-left: 6px; }
+.tmsg .body { font-size: 12.5px; color: var(--ink-2); line-height: 1.55; margin-top: 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
+/* A reviewer's word and a preparer's word are different acts, so they are different grounds —
+   "no colours to differentiate who said to whom about what" was exactly right. */
+.tmsg.reviewer .body { background: var(--fill-blue); border-left: 3px solid var(--edge-blue); padding: 7px 9px; border-radius: 0 var(--r-sm) var(--r-sm) 0; }
+.tmsg.undated .at { font-style: italic; }
+.threadmore { margin-top: 10px; }
+
+/* A milestone spine: what has happened to this AFE, in order, with its real dates. */
+.spine { display: flex; flex-direction: column; }
+.mrow { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 11px; align-items: start; padding: 7px 0; }
+.mrow .pip { position: relative; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--r-pill); background: var(--fill-grey); color: var(--ink-3); }
+.mrow.done .pip { background: var(--fill-green); color: var(--green-deep); }
+.mrow.warn .pip { background: var(--fill-yellow); color: var(--yellow); }
+.mrow.stop .pip { background: var(--fill-red); color: var(--red); }
+.mrow.todo .pip { background: var(--card-soft); color: var(--deco); border: 1px dashed var(--edge-grey); }
+/* The rule joining the pips, drawn from each one down to the next. */
+.mrow:not(:last-child) .pip::after { content: ""; position: absolute; top: 22px; left: 50%; width: 1px; height: 14px; background: var(--edge-grey); transform: translateX(-50%); }
+.mrow .t { font-size: 13px; color: var(--ink); }
+.mrow.todo .t { color: var(--ink-3); }
+.mrow .by { font-size: 11.5px; color: var(--ink-3); }
+.mrow time, .mrow .none { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+/* The AuC facts, as a short label/value list — this is what belongs in a 380px rail. */
+.aucfacts .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 5px 0; border-bottom: 1px solid var(--line-soft); font-size: 12.5px; }
+.aucfacts .row:last-child { border-bottom: 0; }
+.aucfacts .row > span:first-child { color: var(--ink-3); }
+/* The row you are standing on says so, instead of pretending to be a link. */
+.hererow { font-style: normal; font-weight: 400; font-size: 10.5px; color: var(--green-deep); background: var(--fill-green); border-radius: var(--r-xs); padding: 1px 5px; margin-left: 6px; letter-spacing: .02em; }
+
+/* ---- a dense table you can actually work (R124) -----------------------------------------------
+   528 recon lines, ordered by balance because one line of code said so, with the numbers buried
+   in repeated chips and the OWNER — the person you ring — shown nowhere and searchable not at
+   all. A grid puts the numbers in columns where they align and can be compared; the reason the
+   line is in the review becomes the row's own spine colour.
+
+   Deliberately NOT zebra striping. The suggestion was reasonable, but a positional stripe and a
+   semantic tint fight each other, and only one of them tells you anything: here the ground means
+   "this is why I am on your list". */
+.ghead, .grow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr) 150px 72px 84px 118px 132px 22px; gap: 12px; align-items: center; padding: 8px 18px; }
+/* Sticky against the masthead (48px + its rule). `.list` is `overflow: hidden`, which makes it
+   a scroll container and silently kills sticky inside it — so the grid variant uses `clip`,
+   which clips exactly the same but creates no scroll container. Scoped to this list rather
+   than changed globally: `.list` is `hidden` on purpose everywhere else. */
+.list.gridlist { overflow: clip; }
+.ghead { position: sticky; top: 49px; z-index: 3; background: var(--card-soft); border-bottom: 1px solid var(--line); font-size: 10.5px; font-weight: 700; color: var(--ink-3); letter-spacing: .07em; text-transform: uppercase; }
+.ghead > span { text-align: right; }
+.ghead > span:first-child { text-align: left; }
+.sortb { display: inline-flex; align-items: center; gap: 3px; background: none; border: 0; padding: 0; font: inherit; color: inherit; letter-spacing: inherit; text-transform: inherit; }
+.sortb.r { justify-content: flex-end; }
+.sortb:hover { color: var(--ink); }
+.sortb.on { color: var(--ink); }
+.sortb svg { flex: none; }
+.grow { border-bottom: 1px solid var(--line-soft); border-left: 3px solid transparent; text-decoration: none; color: inherit; }
+.grow:last-child { border-bottom: 0; }
+.grow:hover { background: linear-gradient(0deg, rgba(0,0,0,.035), rgba(0,0,0,.035)); text-decoration: none; }
+.grow.t-yellow { background: #FDFAEF; border-left-color: var(--edge-yellow); }
+.grow.t-red { background: #FDF5F4; border-left-color: var(--edge-red); }
+.grow.t-blue { background: #F4FAFC; border-left-color: var(--edge-blue); }
+.grow.t-green { background: #F4FAF6; border-left-color: var(--edge-green); }
+.grow.t-grey { border-left-color: var(--line); }
+.grow .line, .grow .owner, .grow .afe { min-width: 0; }
+.grow .ttl { display: block; font-size: 13px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.grow .nm { display: block; font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.grow .id { display: block; font-size: 11.5px; color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.grow .num { text-align: right; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.grow .num i { font-style: normal; font-weight: 400; color: var(--ink-3); font-size: 11px; margin-left: 1px; }
+.grow .why { display: flex; justify-content: flex-end; }
+.grow .chev { color: var(--ink-3); display: inline-flex; justify-content: flex-end; }
+@media (max-width: 1100px) { .ghead, .grow { grid-template-columns: minmax(0, 1fr) 72px 84px 118px 22px; } .ghead > .sortb[data-key="owner"], .ghead > .sortb[data-key="afe"], .grow .owner, .grow .afe, .grow .why { display: none; } }
+@media (max-width: 760px) { .ghead, .grow { grid-template-columns: minmax(0, 1fr) 110px 22px; } .ghead > .sortb[data-key="age"], .ghead > .sortb[data-key="consumed"], .grow .num { display: none; } }
+/* The portfolio's line list is the same grid without the owner and consumed columns. */
+.ghead.phead, .grow.phead { grid-template-columns: minmax(0, 1fr) 72px 118px 132px 22px; }
+.ghead.phead { top: 49px; }
+
+/* ---- the financial case, brought to life (R131) -----------------------------------------------
+   "Very black and white — why would it be seen as better than editing in Excel?" The four
+   figures already KNEW the verdict and only said it when it was good: `.kpi .v` had a green and
+   a blue and no red, so a negative NPV and a negative ROI rendered as plain ink. A figure that
+   decides whether a project goes ahead should not look like a figure that does not. */
+.kpi .v.red { color: var(--red); }
+.kpi .v.amber { color: var(--yellow); }
+/* Four tiles, one row. `.kpis` is a flex row with a 22px gap, and the wizard column is 612px —
+   so four of these wrapped, putting IRR on a line of its own under a gap. A grid makes them
+   share what there is, which is also why they stay equal when one figure is much longer. */
+.kpis.fin { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 620px) { .kpis.fin { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.finfig { position: relative; padding: 10px 12px 11px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--card); min-width: 0; }
+.finfig .v { font-size: 21px; overflow: hidden; text-overflow: ellipsis; }
+.finfig .k { font-size: 9.5px; letter-spacing: .05em; }
+.finfig.t-green { background: var(--fill-green); border-color: var(--edge-green); }
+.finfig.t-red { background: var(--fill-red); border-color: var(--edge-red); }
+.finfig.t-amber { background: var(--fill-yellow); border-color: var(--edge-yellow); }
+.finfig .k { display: flex; align-items: center; gap: 5px; }
+.finfig .k svg { flex: none; }
+.finfig.t-green .k svg { color: var(--dot-green); }
+.finfig.t-red .k svg { color: var(--dot-red); }
+.finfig.t-amber .k svg { color: var(--dot-yellow); }
+.finfig .sub { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
+
+/* The answer in a sentence, before the four numbers that support it. */
+.verdict { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-top: 18px; padding: 12px 14px; border-radius: var(--r-md); border: 1px solid var(--edge-grey); background: var(--fill-grey); }
+.verdict.good { background: var(--fill-green); border-color: var(--edge-green); }
+.verdict.bad { background: var(--fill-red); border-color: var(--edge-red); }
+.verdict.warn { background: var(--fill-yellow); border-color: var(--edge-yellow); }
+.verdict .ico { flex: none; width: 28px; height: 28px; border-radius: var(--r-pill); display: inline-flex; align-items: center; justify-content: center; background: #FFF9; }
+.verdict.good .ico { color: var(--green-deep); } .verdict.bad .ico { color: var(--red); } .verdict.warn .ico { color: var(--yellow); }
+.verdict .t { font-size: 14px; font-weight: 700; }
+.verdict .d { font-size: 12.5px; color: var(--ink-2); margin-top: 2px; line-height: 1.5; }
+/* The verdict's own action (R140). It sits at the end of the line on a wide screen and drops
+   to its own line under the text on a narrow one, rather than being squeezed into two words a
+   line beside it. The text takes the room it needs first. */
+.verdict > span:not(.ico) { flex: 1 1 240px; min-width: 0; }
+.verdict > button { flex: none; margin-left: auto; white-space: nowrap; align-self: center; }
+@media (max-width: 560px) { .verdict > button { margin-left: 38px; } }
+
+/* What the earlier steps already said, carried forward so this one can be filled from it —
+   and so three numbers that must agree are seen NOT agreeing. */
+.carry { display: flex; align-items: center; gap: 0; flex-wrap: wrap; margin-top: 16px; border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--card); }
+.carry .cell { display: flex; flex-direction: column; gap: 1px; padding: 9px 14px; min-width: 132px; border-right: 1px solid var(--line-soft); }
+.carry .cell:last-child { border-right: 0; }
+.carry .cell .k { font-size: 10px; font-weight: 700; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; display: flex; align-items: center; gap: 5px; }
+.carry .cell .k svg { flex: none; color: var(--dot-blue); }
+.carry .cell .v { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.carry .cell.off { background: var(--fill-yellow); }
+.carry .cell.off .v { color: var(--yellow); }
+.carry .cell.off .k svg { color: var(--dot-yellow); }
+.carry .cell.agree { background: var(--fill-green); }
+.carry .cell.agree .k svg { color: var(--dot-green); }
+.carry .act { margin-left: auto; padding: 8px 12px; }
+
+/* Depreciation, drawn rather than described. The half-year convention is a SHAPE — a short bar
+   at each end and full bars between — and a sentence saying "half of that in 2026 and in the
+   year it leaves" takes longer to read than the picture takes to understand. */
+.deprec { display: flex; align-items: flex-end; gap: 3px; height: 30px; margin-top: 9px; }
+.deprec i { flex: 1 1 0; min-width: 4px; background: var(--fill-blue); border: 1px solid var(--edge-blue); border-bottom: 0; border-radius: var(--r-xs) var(--r-xs) 0 0; position: relative; }
+.deprec i.none { background: transparent; border-color: transparent; border-bottom: 1px dashed var(--edge-grey); height: 1px !important; }
+.deprecfoot { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-3); margin-top: 3px; }
+
+/* The grid's sections get their own ground, so CapEx, OpEx, Cloud and Benefits are four things
+   rather than one wall of inputs. */
+.finsec { margin-top: 16px; padding: 8px 10px 10px; border-radius: var(--r-md); border: 1px solid var(--edge-grey); background: var(--fill-grey); }
+.finsec.capex { background: var(--fill-blue); border-color: var(--edge-blue); }
+.finsec.opex { background: var(--fill-yellow); border-color: var(--edge-yellow); }
+.finsec.cloud { background: #EFEBF7; border-color: #BFB3DC; }
+.finsec.benefit { background: var(--fill-green); border-color: var(--edge-green); }
+.finsec > .sect { margin: 0 0 6px !important; }
+.finsec .finrow .input { background: #FFFFFFE0; }
+.finrow.total.pos span:not(:first-child) { color: var(--link); }
+.finrow.total.neg span:not(:first-child) { color: var(--red); }
+/* The year the accumulated cash flow crosses zero — the single thing a spreadsheet makes you
+   find for yourself. */
+.finrow .crossed { background: var(--fill-green); border-radius: var(--r-xs); padding: 1px 4px; font-weight: 700; color: var(--green-deep); }
+/* The date each promise was for, on the dot itself (R132) — counting back from the latest, at
+   whatever stride keeps the labels from touching. The hover carries the rest. */
+.slip .ptlab { font-size: 9.5px; fill: var(--ink-3); font-weight: 700; letter-spacing: .01em; }
+.slip .ptlab.on { fill: var(--ink); }
+.slip g { cursor: default; }
+.slip g:hover .pt { r: 5; stroke-width: 2.5; }
+/* One AuC made of several GL lines: the identity is said once and the lines are rows that add up.
+   The extract has a row per GL account, so an order under one AuC can appear three times. */
+.glset { margin: 8px 0 4px; padding: 8px 10px; border-radius: var(--r-sm); background: var(--card-soft); border: 1px solid var(--line-soft); }
+.glhd { font-size: 10px; font-weight: 700; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 5px; }
+.glrow { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 4px 0; font-size: 12px; border-bottom: 1px solid var(--line-soft); }
+.glrow:last-child { border-bottom: 0; }
+.glrow .g { min-width: 0; font-variant-numeric: tabular-nums; }
+.glrow .g i { display: block; font-style: normal; font-size: 11px; color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.glrow.neg .amt { color: var(--red); }
+.glrow.tot { border-top: 1px solid var(--line); margin-top: 3px; padding-top: 6px; font-weight: 700; }
+.glrow.tot .g { font-weight: 700; }
+/* A date the workbook cannot mean. Said out loud, because only the FA team can fix it. */
+.slipbad { display: flex; gap: 6px; align-items: flex-start; margin-top: 6px; padding: 6px 9px; border-radius: var(--r-sm); background: var(--fill-yellow); color: var(--yellow); font-size: 11.5px; }
+.slipbad svg { flex: none; margin-top: 2px; }
+/* SVG text scales with the viewBox, and the chart is authored at 560 wide — so on a 375px phone
+   it renders at 0.57 and a 9.5px label comes out at 5.4px, which is not a label, it is a smudge.
+   The font is set in viewBox units, so the media query compensates for the scale rather than
+   fighting it. */
+@media (max-width: 760px) { .slip .ptlab { font-size: 16px; } .slip .nowlab { font-size: 15px; } }
+/* A node you can press: it goes to what was being said around that date. */
+.slip g[data-jump] { cursor: pointer; }
+.slip g[data-jump]:hover .pt, .slip g[data-jump]:focus-visible .pt { r: 5.5; stroke-width: 2.5; }
+.slip g[data-jump]:focus-visible { outline: 2px solid var(--cta); outline-offset: 2px; border-radius: var(--r-xs); }
+.slip g[data-jump]:hover .ptlab { fill: var(--ink); }
+
+/* ---- what goes back to the requester (R133) ----------------------------------------------------
+   It was two run-on sentences welding together four different kinds of fact: what prints in red,
+   what is drawn on the page, which files are inside the PDF, and who receives it. "Clutter is
+   what I see — effort is what goes into reading such unstructured continuous text."
+
+   And the red marks are shown IN RED. A preview that describes a colour instead of using it is
+   asking to be taken on trust. The values sit on a near-white ground with a red spine rather
+   than on a red fill, because `--red` on `--fill-red` is under 4.5:1 and a control's own values
+   are the last thing that should be hard to read. */
+.packview { display: flex; flex-direction: column; gap: 12px; }
+.redset { border-left: 3px solid var(--red); border-radius: 0 var(--r-sm) var(--r-sm) 0; background: var(--card-soft); padding: 9px 12px; }
+.redhd { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; color: var(--red); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 5px; }
+.redhd svg { flex: none; }
+.redrow { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 3px 0; font-size: 12.5px; }
+.redrow .l { color: var(--ink-3); }
+.redrow .v { color: var(--red); font-variant-numeric: tabular-nums; }
+.redrow .v.none { color: var(--ink-3); font-style: italic; font-weight: 400; }
+.packsec { border-top: 1px solid var(--line-soft); padding-top: 9px; }
+.packhd { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+.packhd svg { flex: none; }
+.packdoc { display: flex; align-items: center; gap: 9px; padding: 4px 0; }
+.packdoc .nm { min-width: 0; flex: 1; font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.packdoc .nm i { display: block; font-style: normal; font-size: 11px; color: var(--ink-3); }
+.packdoc.dim .nm { color: var(--ink-3); }
+/* What the approvers were given sits INSIDE the signed AFE (R156): indented under it, because
+   it is part of that file rather than something added beside it. */
+.packdoc.inside { padding-left: 22px; }
+.packto { display: flex; flex-wrap: wrap; gap: 14px; }
+.packto .who { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; }
+.packto .who i { display: block; font-style: normal; font-size: 11px; font-weight: 400; color: var(--ink-3); }
+.packcc { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--ink-3); margin-top: 7px; }
+.packcc svg { flex: none; }
+.packsent { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; padding: 8px 10px; border-radius: var(--r-sm); background: var(--fill-green); color: var(--green-deep); font-size: 12.5px; }
+.packsent svg { flex: none; }
+/* In the send sheet the file row IS the control — the checkbox list underneath was the same
+   list again, which is the clutter this whole pass is about. */
+.packdoc.pick { cursor: pointer; }
+.packdoc.pick input { flex: none; margin: 0; }
+.packdoc.pick:hover { background: var(--card-soft); border-radius: var(--r-xs); }
+/* The issued AFE on the requester's own screen: the numbers they have to quote, spelled out. */
+.issuedfacts { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.issuedfacts > div { display: flex; flex-direction: column; gap: 1px; }
+.issuedfacts span { font-size: 10.5px; font-weight: 700; color: var(--ink-3); letter-spacing: .05em; text-transform: uppercase; }
+.issuedfacts b { font-size: 16px; font-variant-numeric: tabular-nums; }
+/* The two red fields Fixed Assets supplies are typed in the block that previews them, not under
+   a separate heading below it (R135). Red text, because that is what they will be on the page. */
+.redrow.edit { align-items: center; gap: 10px; }
+.redrow.edit .l { flex: none; min-width: 108px; }
+.redrow .l .opt { color: var(--muted); font-size: 11px; font-weight: 400; margin-left: 4px; }
+.redin { flex: 1; min-width: 0; height: 30px; font-size: 12.5px; padding: 0 8px; color: var(--red); font-weight: 700; }
+textarea.redin { height: auto; padding: 5px 8px; font-weight: 400; line-height: 1.4; resize: vertical; }
+.redin::placeholder { color: var(--ink-3); font-weight: 400; font-style: italic; }
+.redin:focus { border-color: var(--edge-red); box-shadow: 0 0 0 2px var(--fill-red); }

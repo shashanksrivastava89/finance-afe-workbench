@@ -1,0 +1,46 @@
+# Postgres for local development — the same engine and the same major version as UAT
+# (pg-afe-workbench-uat, PostgreSQL 16), so what works here works there.
+#
+#   docker compose up -d db          start it
+#   docker compose down              stop it, keep the data
+#   docker compose down -v           stop it and throw the data away
+#
+# Then point the app at it and start as usual:
+#
+#   $env:DATABASE_URL = "postgres://afe:afe_dev@localhost:5434/afe?sslmode=disable"   # PowerShell
+#   npm start
+#
+# With DATABASE_URL set, lib/repos/pgStore.js becomes the store: write-through JSONB, the
+# working set in memory, uploads as bytea. Without it the app runs in memory exactly as before,
+# so nobody is forced to run Docker to work on a screen.
+#
+# The password here is a local development default and is deliberately not a secret: this
+# container is bound to the loopback interface and never leaves the machine. UAT and production
+# take theirs from App Service settings, never from a file in the repo.
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: afe-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-afe}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-afe_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-afe}
+      # Deterministic collation, so ORDER BY sorts the same here as on Azure.
+      POSTGRES_INITDB_ARGS: "--locale-provider=icu --icu-locale=en-US"
+    ports:
+      # Loopback only, and on 5434 so it does not collide with any other project's Postgres on
+      # this machine. Override with POSTGRES_PORT if 5434 is taken too.
+      - "127.0.0.1:${POSTGRES_PORT:-5434}:5432"
+    volumes:
+      - afe-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-afe} -d ${POSTGRES_DB:-afe}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    shm_size: 256mb
+
+volumes:
+  afe-pgdata:
+    name: afe-pgdata

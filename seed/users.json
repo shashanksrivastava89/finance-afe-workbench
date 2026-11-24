@@ -1,0 +1,115 @@
+{
+  "_note": "Real Acme identities only (ADC rule: no placeholder identity values). Roles decide what the app permits; `title` is the designation shown in the UI. `coordinatorFor` lists the divisions whose AFEs route through this person before approval (R41). Demo personas are act-as only.",
+  "users": [
+    {
+      "id": "usr-0001",
+      "email": "shashank_srivastava@example.com",
+      "displayName": "Shashank Srivastava",
+      "title": "Solution Engineer",
+      "roles": ["admin", "fa_preparer", "fa_checker", "leadership", "approver", "coordinator"],
+      "coordinatorFor": ["CORP_IT"],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0002",
+      "email": "judithmelanie_ware@example.com",
+      "displayName": "Judithmelanie Ware",
+      "title": "FA Preparer",
+      "roles": ["fa_preparer", "fa_checker"],
+      "coordinatorFor": [],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0003",
+      "email": "ebony_lowe@example.com",
+      "displayName": "Ebony Lowe",
+      "title": "FA Preparer",
+      "roles": ["fa_preparer"],
+      "coordinatorFor": [],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0004",
+      "email": "imogen_blanche@example.com",
+      "displayName": "Imogen Blanche",
+      "title": "FA Checker",
+      "roles": ["fa_checker", "fa_preparer"],
+      "coordinatorFor": [],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0005",
+      "email": "lyndsay_radhakrishnan@example.com",
+      "displayName": "Lyndsay Radhakrishnan",
+      "title": "FA Lead",
+      "roles": ["fa_preparer", "fa_checker"],
+      "coordinatorFor": [],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0006",
+      "email": "jarrod_dane@example.com",
+      "displayName": "Jarrod Dane",
+      "title": "Manager",
+      "roles": ["leadership", "fa_checker"],
+      "coordinatorFor": [],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0007",
+      "email": "manaia_ginty@example.com",
+      "displayName": "Manaia Ginty",
+      "title": "Assoc Director, Finance",
+      "roles": ["leadership", "fa_checker"],
+      "coordinatorFor": [],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0008",
+      "email": "aiden-mulqueeny_crilly@example.com",
+      "displayName": "Aiden-Mulqueeny Crilly",
+      "title": "IT AFE Coordinator",
+      "roles": ["coordinator"],
+      "coordinatorFor": ["CORP_IT"],
+      "matrixNames": [],
+      "active": true
+    },
+    {
+      "id": "usr-0009",
+      "email": "udarsh_atwal@example.com",
+      "displayName": "Udarsh Atwal",
+      "title": "Senior Manager, IT Infrastructure",
+      "roles": ["approver"],
+      "coordinatorFor": [],
+      "matrixNames": ["Udarsh Atwal"],
+      "active": true
+    },
+    {
+      "id": "usr-0010",
+      "email": "lekha_rogerson@example.com",
+      "displayName": "Lekha Rogerson",
+      "title": "Div. Controller / Finance Partner",
+      "roles": ["approver"],
+      "coordinatorFor": [],
+      "matrixNames": ["Lekha Rogerson"],
+      "active": true
+    },
+    {
+      "id": "usr-0011",
+      "email": "annette_sandhu@example.com",
+      "displayName": "Annette Sandhu",
+      "title": "Assoc. Dir Digital Workplace",
+      "roles": ["approver"],
+      "coordinatorFor": [],
+      "matrixNames": ["Annette Sandhu"],
+      "active": true
+    }
+  ]
+}

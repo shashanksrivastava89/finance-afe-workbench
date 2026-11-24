@@ -1,0 +1,52 @@
+/* ===========================================================================
+   Acme — Typography tokens
+   Typeface is LOCKED to Arial (no substitutions). The PPT brand standard
+   defines a fixed type scale; the px values below convert the locked pt sizes
+   for screen at the slide scale, plus a web-appropriate body scale.
+   Casing: Title Case for titles, sentence case for everything else.
+   =========================================================================== */
+
+:root {
+  /* --- Families ------------------------------------------------------- */
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
+
+  /* --- Weights -------------------------------------------------------- */
+  --weight-regular: 400;
+  --weight-bold:    700;
+
+  /* --- Type scale (locked PPT roles, expressed for screen) ------------ */
+  --type-title:      60px; /* Slide title — Arial Regular, ≤ 8 words */
+  --type-callout:    46px; /* Numeric callouts — Arial Bold */
+  --type-section:    28px; /* Section header — Arial Bold */
+  --type-subhead:    24px; /* Subhead — Arial Regular */
+  --type-body-lg:    20px; /* Body large */
+  --type-body:       18px; /* Body standard */
+  --type-body-sm:    16px; /* Body small */
+  --type-caption:    14px; /* Caption */
+  --type-footer:     10px; /* Footer / page numbers */
+
+  /* --- Web UI scale (denser, for components & app surfaces) ----------- */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-lg:   18px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+  --text-3xl:  28px;
+  --text-4xl:  36px;
+  --text-5xl:  46px;
+  --text-6xl:  60px;
+
+  /* --- Line heights --------------------------------------------------- */
+  --leading-tight:   1.1;   /* Display / titles */
+  --leading-snug:    1.25;  /* Headings */
+  --leading-normal:  1.5;   /* Body */
+  --leading-relaxed: 1.65;  /* Long-form body */
+
+  /* --- Letter spacing ------------------------------------------------- */
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em; /* Eyebrows / small caps labels */
+}

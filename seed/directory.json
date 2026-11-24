@@ -1,0 +1,10 @@
+{
+  "_note": "Approver name -> mailbox (R60). The SAP matrix carries NAMES ONLY, so this is how a chain becomes sendable. `source` says how much to trust an entry: `confirmed` was seen on a real envelope; `guessed` follows the First_Last@example.com pattern and must be confirmed by the coordinator before an envelope is created; a name with no entry at all blocks sending until someone supplies the address. Entries are learned as coordinators confirm them.",
+  "entries": [
+    { "id": "dir-0001", "matrixName": "Udarsh Atwal", "displayName": "Udarsh Atwal", "email": "udarsh_atwal@example.com", "source": "confirmed", "note": "seen on the APAC hardware-refresh envelope, 2026-09-03" },
+    { "id": "dir-0002", "matrixName": "Lekha Rogerson", "displayName": "Lekha Rogerson", "email": "lekha_rogerson@example.com", "source": "confirmed", "note": "seen on the APAC hardware-refresh envelope, 2026-09-03" },
+    { "id": "dir-0003", "matrixName": "Annette Sandhu", "displayName": "Annette Sandhu", "email": "annette_sandhu@example.com", "source": "confirmed", "note": "seen on the APAC hardware-refresh envelope, 2026-09-03" },
+    { "id": "dir-0004", "matrixName": "Vrishti Aguirre", "displayName": "Vrishti Aguirre", "email": "vrishti_aguirre@example.com", "source": "guessed", "note": "First_Last pattern; confirm before the first real send" },
+    { "id": "dir-0005", "matrixName": "Kai Lun Ong", "displayName": "Kai Lun Ong", "email": null, "source": "unresolved", "note": "Matrix spells it \"Kai Lun Ong\", the signed form \"Kailun Ong\". Left unresolved on purpose so the confirm-before-send path is exercised." }
+  ]
+}

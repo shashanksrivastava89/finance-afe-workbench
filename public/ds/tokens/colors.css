@@ -1,0 +1,61 @@
+/* ===========================================================================
+   Acme — Color tokens
+   Locked brand palette from the Corporate PPT template brand standard.
+   Rule: no off-palette colors. Green is reserved for emphasis and brand
+   anchoring — never used for body text.
+   =========================================================================== */
+
+:root {
+  /* --- Brand greens --------------------------------------------------- */
+  --brand-green:        #00A651; /* Primary Green — the brand anchor */
+  --brand-green-deep:   #008943; /* Deeper green — emphasis on light, hover */
+  --brand-green-mid:    #7DB747; /* Secondary / chart green */
+  --brand-green-tint:   #CCEDDC; /* Light Green — tint surfaces, fills */
+
+  /* --- Supporting accents --------------------------------------------- */
+  --accent-blue:        #90D8E6; /* Light Blue accent */
+  --accent-blue-tint:   #E9F7FA; /* Light Blue surface wash */
+  --accent-yellow:      #FFE354; /* Yellow accent */
+  --accent-yellow-tint: #FFF9DD; /* Light Yellow surface wash */
+  --link-blue:          #40AFFF; /* Hyperlink blue */
+
+  /* --- Neutrals ------------------------------------------------------- */
+  --white:        #FFFFFF;
+  --ink:          #222222; /* Primary text / near-black */
+  --ink-soft:     #5A5A5A; /* Secondary text */
+  --ink-muted:    #797979; /* Tertiary text / followed-link */
+  --neutral-100:  #F8F9F6; /* Lightest app background */
+  --neutral-150:  #F4F4F4; /* Off-white surface */
+  --neutral-200:  #F0F2E6; /* Soft Neutral — warm brand off-white */
+  --neutral-300:  #E4E4E4; /* Neutral Gray — borders, dividers */
+  --neutral-400:  #C9C9C9; /* Stronger border */
+
+  /* --- Semantic aliases ----------------------------------------------- */
+  --color-primary:        var(--brand-green);
+  --color-primary-hover:  var(--brand-green-deep);
+  --color-primary-tint:   var(--brand-green-tint);
+
+  --text-heading:  var(--ink);
+  --text-body:     var(--ink);
+  --text-muted:    var(--ink-soft);
+  --text-subtle:   var(--ink-muted);
+  --text-on-brand: var(--white);
+  --text-link:     var(--link-blue);
+
+  --surface-page:    var(--white);
+  --surface-app:     var(--neutral-100);
+  --surface-card:    var(--white);
+  --surface-subtle:  var(--neutral-150);
+  --surface-brand:   var(--brand-green-tint);
+  --surface-info:    var(--accent-blue-tint);
+  --surface-warn:    var(--accent-yellow-tint);
+
+  --border-subtle:  var(--neutral-300);
+  --border-strong:  var(--neutral-400);
+  --focus-ring:     var(--brand-green);
+
+  /* Status (derived in-palette; greens/blues/yellow are brand-approved) */
+  --status-success: var(--brand-green-deep);
+  --status-info:    var(--link-blue);
+  --status-warning: #C8920A; /* darkened brand yellow for legible text */
+}

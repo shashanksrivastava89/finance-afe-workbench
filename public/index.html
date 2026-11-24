@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>AFE Workbench</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="modulepreload" href="/js/app.js">
+<link rel="modulepreload" href="/js/core/dom.js">
+<link rel="modulepreload" href="/js/core/api.js">
+<link rel="modulepreload" href="/js/core/store.js">
+<link rel="modulepreload" href="/js/core/router.js">
+<link rel="modulepreload" href="/js/core/session.js">
+<link rel="modulepreload" href="/js/core/format.js">
+<link rel="modulepreload" href="/js/core/icons.js">
+<link rel="modulepreload" href="/js/core/ui.js">
+<link rel="modulepreload" href="/js/core/chrome.js">
+<style>
+  /* Critical: the page ground and the bar exist before the stylesheet lands, so nothing flashes. */
+  /* These must match app.css's --page, --line and .top height EXACTLY, and they are checked by
+     smoke-boot because nothing else would notice. They did not match twice over: the page was
+     painted in the mint R106 retired and the bar was reserved at 60px against a real 48px, so
+     every cold load flashed the old colour and then jumped. And `#top` is an ID, so it outranks
+     `.top` for good — a wrong height here is not a flash, it is the height, at every width. */
+  html { background: #F4F6F4; }
+  body { margin: 0; background: #F4F6F4; color: #1C1F1D; font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+  #top { height: 48px; border-bottom: 1px solid #DEE3DF; background: #FFF; }
+  .boot { max-width: 720px; margin: 0 auto; padding: 44px 24px; }
+  .boot .sk { height: 26px; border-radius: 3px; background: #E4E9E5; width: 55%; }
+  .boot .sk + .sk { margin-top: 14px; height: 64px; width: 100%; border-radius: 4px; }
+</style>
+</head>
+<body>
+<header id="top" class="top" aria-label="Top bar"></header>
+<div id="ctx" class="ctxbar" aria-label="Open record" hidden></div>
+<main id="app">
+  <div class="boot" aria-busy="true"><div class="sk"></div><div class="sk"></div></div>
+</main>
+<div id="layer"></div>
+<script type="module" src="/js/app.js"></script>
+<noscript><div class="boot">This tool needs JavaScript. The API is still available at <code>/api</code>.</div></noscript>
+</body>
+</html>

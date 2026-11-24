@@ -1,0 +1,110 @@
+{
+  "_note": "Asset Life in years, from the template's DataVal sheet. `years` is what the cost is divided by to get the annual depreciation; two bands are ranges and take their upper bound, which is what the template's own worked example does. Maintained in Admin > Master data.",
+  "source": "AFE Form.xlsx",
+  "entries": [
+    {
+      "value": "3-Automobiles",
+      "label": "3-Automobiles",
+      "years": 3,
+      "openRange": false,
+      "sortOrder": 1,
+      "active": true
+    },
+    {
+      "value": "3-Personal Computers",
+      "label": "3-Personal Computers",
+      "years": 3,
+      "openRange": false,
+      "sortOrder": 2,
+      "active": true
+    },
+    {
+      "value": "3-5-Softwares",
+      "label": "3-5-Softwares",
+      "years": 5,
+      "openRange": true,
+      "sortOrder": 3,
+      "active": true
+    },
+    {
+      "value": "3-5-Computer equipment",
+      "label": "3-5-Computer equipment",
+      "years": 5,
+      "openRange": true,
+      "sortOrder": 4,
+      "active": true
+    },
+    {
+      "value": "5-Research equipment",
+      "label": "5-Research equipment",
+      "years": 5,
+      "openRange": false,
+      "sortOrder": 5,
+      "active": true
+    },
+    {
+      "value": "5-Engineering equipment",
+      "label": "5-Engineering equipment",
+      "years": 5,
+      "openRange": false,
+      "sortOrder": 6,
+      "active": true
+    },
+    {
+      "value": "5-Trade Shows Exhibits",
+      "label": "5-Trade Shows Exhibits",
+      "years": 5,
+      "openRange": false,
+      "sortOrder": 7,
+      "active": true
+    },
+    {
+      "value": "5-Office Equipment mechanical",
+      "label": "5-Office Equipment mechanical",
+      "years": 5,
+      "openRange": false,
+      "sortOrder": 8,
+      "active": true
+    },
+    {
+      "value": "7-Machinery and Equipment(Production, Warehousing, Shipping)",
+      "label": "7-Machinery and Equipment(Production, Warehousing, Shipping)",
+      "years": 7,
+      "openRange": false,
+      "sortOrder": 9,
+      "active": true
+    },
+    {
+      "value": "10-Office Furniture and Fixtures",
+      "label": "10-Office Furniture and Fixtures",
+      "years": 10,
+      "openRange": false,
+      "sortOrder": 10,
+      "active": true
+    },
+    {
+      "value": "10-Building Improvements",
+      "label": "10-Building Improvements",
+      "years": 10,
+      "openRange": false,
+      "sortOrder": 11,
+      "active": true
+    },
+    {
+      "value": "39-New Prefabricated Buildings and Old Conventional Buildings",
+      "label": "39-New Prefabricated Buildings and Old Conventional Buildings",
+      "years": 39,
+      "openRange": false,
+      "sortOrder": 12,
+      "active": true
+    },
+    {
+      "value": "39-New Conventional Buildings",
+      "label": "39-New Conventional Buildings",
+      "years": 39,
+      "openRange": false,
+      "sortOrder": 13,
+      "active": true
+    }
+  ]
+}

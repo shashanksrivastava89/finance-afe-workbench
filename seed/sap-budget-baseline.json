@@ -1,0 +1,4464 @@
+{
+ "batchId": "imp-0001",
+ "filename": "budget-details-sample.xls",
+ "asOfDate": "2026-08-18",
+ "importedByEmail": "seed",
+ "importedAt": "2026-08-26",
+ "rows": [
+  {
+   "ioNumber": "3000200976",
+   "description": "Benchtop analyser V684",
+   "budget": 0.0,
+   "actual": 19445.06,
+   "commitment": 0.0,
+   "allotted": 19445.06,
+   "available": -19445.06
+  },
+  {
+   "ioNumber": "3000201070",
+   "description": "Freezer -80C D386",
+   "budget": 0.0,
+   "actual": 7900.0,
+   "commitment": 0.0,
+   "allotted": 4700.0,
+   "available": -4700.0
+  },
+  {
+   "ioNumber": "3000201180",
+   "description": "Electrophoresis kit P422",
+   "budget": 0.0,
+   "actual": 6300.0,
+   "commitment": 0.0,
+   "allotted": 8800.0,
+   "available": -8800.0
+  },
+  {
+   "ioNumber": "3000201212",
+   "description": "Centrifuge K220",
+   "budget": 0.0,
+   "actual": 16600.0,
+   "commitment": 0.0,
+   "allotted": 11700.0,
+   "available": -11700.0
+  },
+  {
+   "ioNumber": "3000201214",
+   "description": "Pallet racking D915",
+   "budget": 0.0,
+   "actual": 12000.0,
+   "commitment": 0.0,
+   "allotted": 22500.0,
+   "available": -22500.0
+  },
+  {
+   "ioNumber": "3000201215",
+   "description": "Pallet racking W441",
+   "budget": 0.0,
+   "actual": 15400.0,
+   "commitment": 0.0,
+   "allotted": 25000.0,
+   "available": -25000.0
+  },
+  {
+   "ioNumber": "3000201218",
+   "description": "Conference AV kit D711",
+   "budget": 0.0,
+   "actual": 20300.0,
+   "commitment": 0.0,
+   "allotted": 15900.0,
+   "available": -15900.0
+  },
+  {
+   "ioNumber": "3000201219",
+   "description": "Laptop pool K479",
+   "budget": 0.0,
+   "actual": 22300.0,
+   "commitment": 0.0,
+   "allotted": 18500.0,
+   "available": -18500.0
+  },
+  {
+   "ioNumber": "3000201224",
+   "description": "Centrifuge H928",
+   "budget": 0.0,
+   "actual": 14500.0,
+   "commitment": 0.0,
+   "allotted": 10700.0,
+   "available": -10700.0
+  },
+  {
+   "ioNumber": "3000201230",
+   "description": "Forklift G459",
+   "budget": 0.0,
+   "actual": 22100.0,
+   "commitment": 0.0,
+   "allotted": 13000.0,
+   "available": -13000.0
+  },
+  {
+   "ioNumber": "3000201245",
+   "description": "Liquid handler X508",
+   "budget": 0.0,
+   "actual": 12500.0,
+   "commitment": 0.0,
+   "allotted": 23200.0,
+   "available": -23200.0
+  },
+  {
+   "ioNumber": "3000201246",
+   "description": "Liquid handler D652",
+   "budget": 0.0,
+   "actual": 21500.0,
+   "commitment": 0.0,
+   "allotted": 15000.0,
+   "available": -15000.0
+  },
+  {
+   "ioNumber": "3000201249",
+   "description": "Benchtop analyser U917",
+   "budget": 0.0,
+   "actual": 16300.0,
+   "commitment": 0.0,
+   "allotted": 23400.0,
+   "available": -23400.0
+  },
+  {
+   "ioNumber": "3000201251",
+   "description": "Imaging system D535",
+   "budget": 0.0,
+   "actual": 13800.0,
+   "commitment": 0.0,
+   "allotted": 16900.0,
+   "available": -16900.0
+  },
+  {
+   "ioNumber": "3000201253",
+   "description": "Power supply R575",
+   "budget": 0.0,
+   "actual": 22100.0,
+   "commitment": 0.0,
+   "allotted": 21800.0,
+   "available": -21800.0
+  },
+  {
+   "ioNumber": "3000201254",
+   "description": "Liquid handler Y330",
+   "budget": 0.0,
+   "actual": 10700.0,
+   "commitment": 0.0,
+   "allotted": 11800.0,
+   "available": -11800.0
+  },
+  {
+   "ioNumber": "3000201262",
+   "description": "Thermal cycler K696",
+   "budget": 0.0,
+   "actual": 8700.0,
+   "commitment": 0.0,
+   "allotted": 22600.0,
+   "available": -22600.0
+  },
+  {
+   "ioNumber": "3000201377",
+   "description": "Freezer -80C B690",
+   "budget": 0.0,
+   "actual": 6300.0,
+   "commitment": 0.0,
+   "allotted": 7800.0,
+   "available": -7800.0
+  },
+  {
+   "ioNumber": "3000203365",
+   "description": "Laptop pool C647",
+   "budget": 0.0,
+   "actual": 7600.0,
+   "commitment": 0.0,
+   "allotted": 7900.0,
+   "available": -7900.0
+  },
+  {
+   "ioNumber": "3000205026",
+   "description": "Network switch Y679",
+   "budget": 0.0,
+   "actual": 181100.0,
+   "commitment": 0.0,
+   "allotted": 124600.0,
+   "available": -124600.0
+  },
+  {
+   "ioNumber": "3000207035",
+   "description": "Thermal cycler L355",
+   "budget": 0.0,
+   "actual": 109100.0,
+   "commitment": 0.0,
+   "allotted": 69900.0,
+   "available": -69900.0
+  },
+  {
+   "ioNumber": "3000207186",
+   "description": "Plate reader Y252",
+   "budget": 0.0,
+   "actual": 10100.0,
+   "commitment": 0.0,
+   "allotted": 22000.0,
+   "available": -22000.0
+  },
+  {
+   "ioNumber": "3000207205",
+   "description": "Imaging system T328",
+   "budget": 0.0,
+   "actual": 41400.0,
+   "commitment": 0.0,
+   "allotted": 23700.0,
+   "available": -23700.0
+  },
+  {
+   "ioNumber": "3000208242",
+   "description": "Electrophoresis kit B563",
+   "budget": 0.0,
+   "actual": 456100.0,
+   "commitment": 0.0,
+   "allotted": 238400.0,
+   "available": -238400.0
+  },
+  {
+   "ioNumber": "3000209088",
+   "description": "Power supply T339",
+   "budget": 0.0,
+   "actual": 379400.0,
+   "commitment": 0.0,
+   "allotted": 340600.0,
+   "available": -340600.0
+  },
+  {
+   "ioNumber": "3000209990",
+   "description": "Laptop pool F964",
+   "budget": 0.0,
+   "actual": 26400.0,
+   "commitment": 0.0,
+   "allotted": 17800.0,
+   "available": -17800.0
+  },
+  {
+   "ioNumber": "3000210387",
+   "description": "Benchtop analyser T305",
+   "budget": 0.0,
+   "actual": 221700.0,
+   "commitment": 0.0,
+   "allotted": 441700.0,
+   "available": -441700.0
+  },
+  {
+   "ioNumber": "3000210617",
+   "description": "Plate reader J999",
+   "budget": 0.0,
+   "actual": 4100.0,
+   "commitment": 0.0,
+   "allotted": 1900.0,
+   "available": -1900.0
+  },
+  {
+   "ioNumber": "3000211485",
+   "description": "Benchtop analyser G986",
+   "budget": 0.0,
+   "actual": 3900.0,
+   "commitment": 0.0,
+   "allotted": 2400.0,
+   "available": -2400.0
+  },
+  {
+   "ioNumber": "3000211507",
+   "description": "Forklift H913",
+   "budget": 0.0,
+   "actual": 118600.0,
+   "commitment": 0.0,
+   "allotted": 153000.0,
+   "available": -153000.0
+  },
+  {
+   "ioNumber": "3000212278",
+   "description": "Laptop pool N704",
+   "budget": 0.0,
+   "actual": 33600.0,
+   "commitment": 0.0,
+   "allotted": 19100.0,
+   "available": -19100.0
+  },
+  {
+   "ioNumber": "3000216253",
+   "description": "Spectrophotometer Z849",
+   "budget": 0.0,
+   "actual": 1700.0,
+   "commitment": 0.0,
+   "allotted": 1700.0,
+   "available": -1700.0
+  },
+  {
+   "ioNumber": "3000216276",
+   "description": "Imaging system L565",
+   "budget": 0.0,
+   "actual": 32000.0,
+   "commitment": 0.0,
+   "allotted": 25400.0,
+   "available": -25400.0
+  },
+  {
+   "ioNumber": "3000216328",
+   "description": "Network switch G626",
+   "budget": 0.0,
+   "actual": 121000.0,
+   "commitment": 0.0,
+   "allotted": 141300.0,
+   "available": -141300.0
+  },
+  {
+   "ioNumber": "3000216935",
+   "description": "Freezer -80C R252",
+   "budget": 0.0,
+   "actual": 24500.0,
+   "commitment": 0.0,
+   "allotted": 31500.0,
+   "available": -31500.0
+  },
+  {
+   "ioNumber": "3000217266",
+   "description": "Spectrophotometer T311",
+   "budget": 0.0,
+   "actual": 10700.0,
+   "commitment": 0.0,
+   "allotted": 18300.0,
+   "available": -18300.0
+  },
+  {
+   "ioNumber": "3000218119",
+   "description": "Benchtop analyser B280",
+   "budget": 0.0,
+   "actual": 10400.0,
+   "commitment": 0.0,
+   "allotted": 16700.0,
+   "available": -16700.0
+  },
+  {
+   "ioNumber": "3000218324",
+   "description": "Power supply G688",
+   "budget": 0.0,
+   "actual": 12200.0,
+   "commitment": 0.0,
+   "allotted": 16100.0,
+   "available": -16100.0
+  },
+  {
+   "ioNumber": "3000218335",
+   "description": "Pallet racking G737",
+   "budget": 0.0,
+   "actual": 7900.0,
+   "commitment": 0.0,
+   "allotted": 16000.0,
+   "available": -16000.0
+  },
+  {
+   "ioNumber": "3000218409",
+   "description": "Plate reader S902",
+   "budget": 0.0,
+   "actual": 255200.0,
+   "commitment": 0.0,
+   "allotted": 209300.0,
+   "available": -209300.0
+  },
+  {
+   "ioNumber": "3000218830",
+   "description": "Gel documentation unit J253",
+   "budget": 0.0,
+   "actual": 90300.0,
+   "commitment": 0.0,
+   "allotted": 113900.0,
+   "available": -113900.0
+  },
+  {
+   "ioNumber": "3000219574",
+   "description": "Forklift V818",
+   "budget": 0.0,
+   "actual": 228500.0,
+   "commitment": 0.0,
+   "allotted": 463900.0,
+   "available": -463900.0
+  },
+  {
+   "ioNumber": "3000219597",
+   "description": "Network switch Z283",
+   "budget": 0.0,
+   "actual": 109100.0,
+   "commitment": 0.0,
+   "allotted": 118200.0,
+   "available": -118200.0
+  },
+  {
+   "ioNumber": "3000219650",
+   "description": "Spectrophotometer B615",
+   "budget": 0.0,
+   "actual": 26900.0,
+   "commitment": 0.0,
+   "allotted": 33500.0,
+   "available": -33500.0
+  },
+  {
+   "ioNumber": "3000219987",
+   "description": "Network switch P278",
+   "budget": 0.0,
+   "actual": 249100.0,
+   "commitment": 0.0,
+   "allotted": 233100.0,
+   "available": -233100.0
+  },
+  {
+   "ioNumber": "3000219988",
+   "description": "Conference AV kit E894",
+   "budget": 0.0,
+   "actual": 365700.0,
+   "commitment": 0.0,
+   "allotted": 308700.0,
+   "available": -308700.0
+  },
+  {
+   "ioNumber": "3000219999",
+   "description": "Thermal cycler U694",
+   "budget": 0.0,
+   "actual": 55400.0,
+   "commitment": 0.0,
+   "allotted": 52200.0,
+   "available": -52200.0
+  },
+  {
+   "ioNumber": "3000220000",
+   "description": "Pallet racking V232",
+   "budget": 0.0,
+   "actual": 7300.0,
+   "commitment": 0.0,
+   "allotted": 6200.0,
+   "available": -6200.0
+  },
+  {
+   "ioNumber": "3000220001",
+   "description": "Liquid handler D981",
+   "budget": 0.0,
+   "actual": 13200.0,
+   "commitment": 0.0,
+   "allotted": 14600.0,
+   "available": -14600.0
+  },
+  {
+   "ioNumber": "3000220048",
+   "description": "Spectrophotometer D466",
+   "budget": 0.0,
+   "actual": 356800.0,
+   "commitment": 0.0,
+   "allotted": 516300.0,
+   "available": -516300.0
+  },
+  {
+   "ioNumber": "3000220051",
+   "description": "Spectrophotometer U568",
+   "budget": 0.0,
+   "actual": 432400.0,
+   "commitment": 0.0,
+   "allotted": 733600.0,
+   "available": -733600.0
+  },
+  {
+   "ioNumber": "3000220088",
+   "description": "Laptop pool J527",
+   "budget": 0.0,
+   "actual": 683900.0,
+   "commitment": 0.0,
+   "allotted": 925100.0,
+   "available": -925100.0
+  },
+  {
+   "ioNumber": "3000220089",
+   "description": "Label printer R810",
+   "budget": 0.0,
+   "actual": 144300.0,
+   "commitment": 0.0,
+   "allotted": 125000.0,
+   "available": -125000.0
+  },
+  {
+   "ioNumber": "3000220090",
+   "description": "Thermal cycler C249",
+   "budget": 0.0,
+   "actual": 98800.0,
+   "commitment": 0.0,
+   "allotted": 98400.0,
+   "available": -98400.0
+  },
+  {
+   "ioNumber": "3000220127",
+   "description": "Label printer X795",
+   "budget": 0.0,
+   "actual": 94200.0,
+   "commitment": 0.0,
+   "allotted": 99200.0,
+   "available": -99200.0
+  },
+  {
+   "ioNumber": "3000220166",
+   "description": "Incubator A485",
+   "budget": 0.0,
+   "actual": 47600.0,
+   "commitment": 0.0,
+   "allotted": 64500.0,
+   "available": -64500.0
+  },
+  {
+   "ioNumber": "3000220233",
+   "description": "Imaging system T296",
+   "budget": 0.0,
+   "actual": 79600.0,
+   "commitment": 0.0,
+   "allotted": 77500.0,
+   "available": -77500.0
+  },
+  {
+   "ioNumber": "3000220243",
+   "description": "Plate reader J832",
+   "budget": 0.0,
+   "actual": 24300.0,
+   "commitment": 0.0,
+   "allotted": 29300.0,
+   "available": -29300.0
+  },
+  {
+   "ioNumber": "3000220294",
+   "description": "Benchtop analyser A441",
+   "budget": 0.0,
+   "actual": 138900.0,
+   "commitment": 0.0,
+   "allotted": 113800.0,
+   "available": -113800.0
+  },
+  {
+   "ioNumber": "3000220331",
+   "description": "Imaging system S999",
+   "budget": 0.0,
+   "actual": 19400.0,
+   "commitment": 0.0,
+   "allotted": 25200.0,
+   "available": -25200.0
+  },
+  {
+   "ioNumber": "3000220383",
+   "description": "Spectrophotometer A604",
+   "budget": 0.0,
+   "actual": 57600.0,
+   "commitment": 0.0,
+   "allotted": 68300.0,
+   "available": -68300.0
+  },
+  {
+   "ioNumber": "3000220384",
+   "description": "Benchtop analyser Y551",
+   "budget": 0.0,
+   "actual": 35400.0,
+   "commitment": 0.0,
+   "allotted": 37000.0,
+   "available": -37000.0
+  },
+  {
+   "ioNumber": "3000220388",
+   "description": "Laptop pool G371",
+   "budget": 0.0,
+   "actual": 11600.0,
+   "commitment": 0.0,
+   "allotted": 10800.0,
+   "available": -10800.0
+  },
+  {
+   "ioNumber": "3000220434",
+   "description": "Centrifuge S741",
+   "budget": 0.0,
+   "actual": 27100.0,
+   "commitment": 0.0,
+   "allotted": 47400.0,
+   "available": -47400.0
+  },
+  {
+   "ioNumber": "3000220485",
+   "description": "Thermal cycler J607",
+   "budget": 0.0,
+   "actual": 141900.0,
+   "commitment": 0.0,
+   "allotted": 76300.0,
+   "available": -76300.0
+  },
+  {
+   "ioNumber": "3000220548",
+   "description": "Thermal cycler C375",
+   "budget": 0.0,
+   "actual": 135600.0,
+   "commitment": 0.0,
+   "allotted": 161100.0,
+   "available": -161100.0
+  },
+  {
+   "ioNumber": "3000220674",
+   "description": "Electrophoresis kit D809",
+   "budget": 0.0,
+   "actual": 29100.0,
+   "commitment": 0.0,
+   "allotted": 13600.0,
+   "available": -13600.0
+  },
+  {
+   "ioNumber": "3000220675",
+   "description": "Incubator Z382",
+   "budget": 0.0,
+   "actual": 21200.0,
+   "commitment": 0.0,
+   "allotted": 19300.0,
+   "available": -19300.0
+  },
+  {
+   "ioNumber": "3000220755",
+   "description": "Laptop pool Y505",
+   "budget": 0.0,
+   "actual": 20200.0,
+   "commitment": 0.0,
+   "allotted": 19900.0,
+   "available": -19900.0
+  },
+  {
+   "ioNumber": "3000220762",
+   "description": "Power supply G395",
+   "budget": 0.0,
+   "actual": 424900.0,
+   "commitment": 0.0,
+   "allotted": 176300.0,
+   "available": -176300.0
+  },
+  {
+   "ioNumber": "3000220783",
+   "description": "Laptop pool R282",
+   "budget": 0.0,
+   "actual": 48700.0,
+   "commitment": 0.0,
+   "allotted": 83300.0,
+   "available": -83300.0
+  },
+  {
+   "ioNumber": "3000220798",
+   "description": "Liquid handler N908",
+   "budget": 0.0,
+   "actual": 1000.0,
+   "commitment": 0.0,
+   "allotted": 1800.0,
+   "available": -1800.0
+  },
+  {
+   "ioNumber": "3000220804",
+   "description": "Spectrophotometer T323",
+   "budget": 0.0,
+   "actual": 248300.0,
+   "commitment": 0.0,
+   "allotted": 127400.0,
+   "available": -127400.0
+  },
+  {
+   "ioNumber": "3000220877",
+   "description": "Imaging system G134",
+   "budget": 0.0,
+   "actual": 24100.0,
+   "commitment": 0.0,
+   "allotted": 22300.0,
+   "available": -22300.0
+  },
+  {
+   "ioNumber": "3000220954",
+   "description": "Liquid handler T416",
+   "budget": 0.0,
+   "actual": 113200.0,
+   "commitment": 0.0,
+   "allotted": 78700.0,
+   "available": -78700.0
+  },
+  {
+   "ioNumber": "3000220994",
+   "description": "Electrophoresis kit B481",
+   "budget": 0.0,
+   "actual": 142100.0,
+   "commitment": 0.0,
+   "allotted": 120200.0,
+   "available": -120200.0
+  },
+  {
+   "ioNumber": "3000221230",
+   "description": "Electrophoresis kit U219",
+   "budget": 0.0,
+   "actual": 81300.0,
+   "commitment": 0.0,
+   "allotted": 60900.0,
+   "available": -60900.0
+  },
+  {
+   "ioNumber": "3000221243",
+   "description": "Imaging system D834",
+   "budget": 0.0,
+   "actual": 255600.0,
+   "commitment": 0.0,
+   "allotted": 205400.0,
+   "available": -205400.0
+  },
+  {
+   "ioNumber": "3000221280",
+   "description": "Label printer S443",
+   "budget": 0.0,
+   "actual": 2600.0,
+   "commitment": 0.0,
+   "allotted": 4500.0,
+   "available": -4500.0
+  },
+  {
+   "ioNumber": "3000221281",
+   "description": "Label printer N978",
+   "budget": 0.0,
+   "actual": 365600.0,
+   "commitment": 0.0,
+   "allotted": 241300.0,
+   "available": -241300.0
+  },
+  {
+   "ioNumber": "3000221301",
+   "description": "Conference AV kit M191",
+   "budget": 0.0,
+   "actual": 74300.0,
+   "commitment": 0.0,
+   "allotted": 54300.0,
+   "available": -54300.0
+  },
+  {
+   "ioNumber": "3000221302",
+   "description": "Label printer H317",
+   "budget": 0.0,
+   "actual": 59500.0,
+   "commitment": 0.0,
+   "allotted": 42100.0,
+   "available": -42100.0
+  },
+  {
+   "ioNumber": "3000221338",
+   "description": "Forklift A664",
+   "budget": 0.0,
+   "actual": 28000.0,
+   "commitment": 0.0,
+   "allotted": 20200.0,
+   "available": -20200.0
+  },
+  {
+   "ioNumber": "3000221343",
+   "description": "Spectrophotometer V645",
+   "budget": 0.0,
+   "actual": 21400.0,
+   "commitment": 0.0,
+   "allotted": 26500.0,
+   "available": -26500.0
+  },
+  {
+   "ioNumber": "3000221349",
+   "description": "Imaging system N726",
+   "budget": 0.0,
+   "actual": 75400.0,
+   "commitment": 0.0,
+   "allotted": 51700.0,
+   "available": -51700.0
+  },
+  {
+   "ioNumber": "3000221454",
+   "description": "Imaging system T848",
+   "budget": 0.0,
+   "actual": 77000.0,
+   "commitment": 0.0,
+   "allotted": 52400.0,
+   "available": -52400.0
+  },
+  {
+   "ioNumber": "3000221460",
+   "description": "Imaging system B493",
+   "budget": 0.0,
+   "actual": 193300.0,
+   "commitment": 0.0,
+   "allotted": 88200.0,
+   "available": -88200.0
+  },
+  {
+   "ioNumber": "3000221485",
+   "description": "Label printer B295",
+   "budget": 0.0,
+   "actual": 43700.0,
+   "commitment": 0.0,
+   "allotted": 39000.0,
+   "available": -39000.0
+  },
+  {
+   "ioNumber": "3000221531",
+   "description": "Spectrophotometer X597",
+   "budget": 0.0,
+   "actual": 27600.0,
+   "commitment": 0.0,
+   "allotted": 28900.0,
+   "available": -28900.0
+  },
+  {
+   "ioNumber": "3000221690",
+   "description": "Gel documentation unit J673",
+   "budget": 0.0,
+   "actual": 75000.0,
+   "commitment": 0.0,
+   "allotted": 65800.0,
+   "available": -65800.0
+  },
+  {
+   "ioNumber": "3000221755",
+   "description": "Label printer X978",
+   "budget": 0.0,
+   "actual": 10800.0,
+   "commitment": 0.0,
+   "allotted": 5700.0,
+   "available": -5700.0
+  },
+  {
+   "ioNumber": "308389",
+   "description": "Pallet racking P942",
+   "budget": 28500.0,
+   "actual": 13000.0,
+   "commitment": 0.0,
+   "allotted": 15300.0,
+   "available": 13200.0
+  },
+  {
+   "ioNumber": "308630",
+   "description": "Imaging system V265",
+   "budget": 7286800.0,
+   "actual": 3962000.0,
+   "commitment": 257.0,
+   "allotted": 4534800.0,
+   "available": 2752000.0
+  },
+  {
+   "ioNumber": "308964",
+   "description": "Power supply K554",
+   "budget": 8751000.0,
+   "actual": 7941200.0,
+   "commitment": 132800.0,
+   "allotted": 6399300.0,
+   "available": 2351700.0
+  },
+  {
+   "ioNumber": "309301",
+   "description": "Label printer H457",
+   "budget": 55800.0,
+   "actual": 100100.0,
+   "commitment": 0.0,
+   "allotted": 103700.0,
+   "available": -47900.0
+  },
+  {
+   "ioNumber": "309364",
+   "description": "Incubator U639",
+   "budget": 56500.0,
+   "actual": 39400.0,
+   "commitment": 0.0,
+   "allotted": 59900.0,
+   "available": -3400.0
+  },
+  {
+   "ioNumber": "309368",
+   "description": "Electrophoresis kit D966",
+   "budget": 217400.0,
+   "actual": 227200.0,
+   "commitment": 0.0,
+   "allotted": 148600.0,
+   "available": 68800.0
+  },
+  {
+   "ioNumber": "309390",
+   "description": "Electrophoresis kit K607",
+   "budget": 41500.0,
+   "actual": 51300.0,
+   "commitment": 0.0,
+   "allotted": 47900.0,
+   "available": -6400.0
+  },
+  {
+   "ioNumber": "309421",
+   "description": "Pallet racking V971",
+   "budget": 61100.0,
+   "actual": 34800.0,
+   "commitment": 0.0,
+   "allotted": 63600.0,
+   "available": -2500.0
+  },
+  {
+   "ioNumber": "309446",
+   "description": "Imaging system N955",
+   "budget": 192100.0,
+   "actual": 212600.0,
+   "commitment": 0.0,
+   "allotted": 131400.0,
+   "available": 60700.0
+  },
+  {
+   "ioNumber": "309806",
+   "description": "Plate reader Y888",
+   "budget": 630300.0,
+   "actual": 369800.0,
+   "commitment": 50600.0,
+   "allotted": 899900.0,
+   "available": -269600.0
+  },
+  {
+   "ioNumber": "309881",
+   "description": "Laptop pool U322",
+   "budget": 56300.0,
+   "actual": 116100.0,
+   "commitment": 0.0,
+   "allotted": 107700.0,
+   "available": -51400.0
+  },
+  {
+   "ioNumber": "310012",
+   "description": "Incubator K970",
+   "budget": 9448300.0,
+   "actual": 21859000.0,
+   "commitment": 0.0,
+   "allotted": 16832700.0,
+   "available": -7384400.0
+  },
+  {
+   "ioNumber": "310013",
+   "description": "Spectrophotometer R274",
+   "budget": 14117500.0,
+   "actual": 43318600.0,
+   "commitment": 0.0,
+   "allotted": 45852400.0,
+   "available": -31734900.0
+  },
+  {
+   "ioNumber": "310014",
+   "description": "Gel documentation unit X350",
+   "budget": 1907500.0,
+   "actual": 5769000.0,
+   "commitment": 0.0,
+   "allotted": 2971700.0,
+   "available": -1064200.0
+  },
+  {
+   "ioNumber": "310028",
+   "description": "Forklift P117",
+   "budget": 262200.0,
+   "actual": 330900.0,
+   "commitment": 0.0,
+   "allotted": 353900.0,
+   "available": -91700.0
+  },
+  {
+   "ioNumber": "310095",
+   "description": "Imaging system C402",
+   "budget": 3119400.0,
+   "actual": 2038300.0,
+   "commitment": 855700.0,
+   "allotted": 2026100.0,
+   "available": 1093300.0
+  },
+  {
+   "ioNumber": "310108",
+   "description": "Liquid handler T554",
+   "budget": 44300.0,
+   "actual": 27600.0,
+   "commitment": 0.0,
+   "allotted": 47300.0,
+   "available": -3000.0
+  },
+  {
+   "ioNumber": "310358",
+   "description": "Spectrophotometer T238",
+   "budget": 5696400.0,
+   "actual": 4802200.0,
+   "commitment": 60500.0,
+   "allotted": 8559900.0,
+   "available": -2863500.0
+  },
+  {
+   "ioNumber": "310456",
+   "description": "Label printer A394",
+   "budget": 1430300.0,
+   "actual": 1765900.0,
+   "commitment": 0.0,
+   "allotted": 1422500.0,
+   "available": 7800.0
+  },
+  {
+   "ioNumber": "310480",
+   "description": "Incubator E919",
+   "budget": 15626525.0,
+   "actual": 12733376.61,
+   "commitment": 1674040.8,
+   "allotted": 14407417.41,
+   "available": 1219107.59
+  },
+  {
+   "ioNumber": "310631",
+   "description": "Plate reader T430",
+   "budget": 133600.0,
+   "actual": 170400.0,
+   "commitment": 0.0,
+   "allotted": 101000.0,
+   "available": 32600.0
+  },
+  {
+   "ioNumber": "310642",
+   "description": "Label printer F356",
+   "budget": 67400.0,
+   "actual": 61000.0,
+   "commitment": 0.0,
+   "allotted": 60600.0,
+   "available": 6800.0
+  },
+  {
+   "ioNumber": "310649",
+   "description": "Imaging system Z793",
+   "budget": 200200.0,
+   "actual": 115900.0,
+   "commitment": 0.0,
+   "allotted": 108000.0,
+   "available": 92200.0
+  },
+  {
+   "ioNumber": "310668",
+   "description": "Gel documentation unit G987",
+   "budget": 14000.0,
+   "actual": 8200.0,
+   "commitment": 0.0,
+   "allotted": 9200.0,
+   "available": 4800.0
+  },
+  {
+   "ioNumber": "310744",
+   "description": "Laptop pool T665",
+   "budget": 79200.0,
+   "actual": 67100.0,
+   "commitment": 0.0,
+   "allotted": 61600.0,
+   "available": 17600.0
+  },
+  {
+   "ioNumber": "310745",
+   "description": "Electrophoresis kit Z655",
+   "budget": 96200.0,
+   "actual": 72100.0,
+   "commitment": 0.0,
+   "allotted": 70600.0,
+   "available": 25600.0
+  },
+  {
+   "ioNumber": "310805",
+   "description": "Liquid handler Y728",
+   "budget": 177000.0,
+   "actual": 182100.0,
+   "commitment": 0.0,
+   "allotted": 140800.0,
+   "available": 36200.0
+  },
+  {
+   "ioNumber": "310806",
+   "description": "Forklift J625",
+   "budget": 178500.0,
+   "actual": 103200.0,
+   "commitment": 0.0,
+   "allotted": 104500.0,
+   "available": 74000.0
+  },
+  {
+   "ioNumber": "310926",
+   "description": "Forklift U377",
+   "budget": 155400.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 155400.0
+  },
+  {
+   "ioNumber": "311169",
+   "description": "Network switch Z528",
+   "budget": 11000.0,
+   "actual": 7000.0,
+   "commitment": 0.0,
+   "allotted": 7100.0,
+   "available": 3900.0
+  },
+  {
+   "ioNumber": "311221",
+   "description": "Plate reader E443",
+   "budget": 2738600.0,
+   "actual": 1814000.0,
+   "commitment": 0.0,
+   "allotted": 1851300.0,
+   "available": 887300.0
+  },
+  {
+   "ioNumber": "311235",
+   "description": "Incubator G891",
+   "budget": 84800.0,
+   "actual": 114200.0,
+   "commitment": 0.0,
+   "allotted": 118900.0,
+   "available": -34100.0
+  },
+  {
+   "ioNumber": "311238",
+   "description": "Label printer J948",
+   "budget": 141100.0,
+   "actual": 128600.0,
+   "commitment": 25.0,
+   "allotted": 272700.0,
+   "available": -131600.0
+  },
+  {
+   "ioNumber": "311264",
+   "description": "Incubator E990",
+   "budget": 3588800.0,
+   "actual": 3234000.0,
+   "commitment": 254500.0,
+   "allotted": 1819100.0,
+   "available": 1769700.0
+  },
+  {
+   "ioNumber": "311278",
+   "description": "Freezer -80C L675",
+   "budget": 132500.0,
+   "actual": 203300.0,
+   "commitment": 0.0,
+   "allotted": 88400.0,
+   "available": 44100.0
+  },
+  {
+   "ioNumber": "311300",
+   "description": "Freezer -80C J861",
+   "budget": 6782200.0,
+   "actual": 2255200.0,
+   "commitment": 1479400.0,
+   "allotted": 3937900.0,
+   "available": 2844300.0
+  },
+  {
+   "ioNumber": "311308",
+   "description": "Incubator P325",
+   "budget": 20000.0,
+   "actual": 16800.0,
+   "commitment": 0.0,
+   "allotted": 10300.0,
+   "available": 9700.0
+  },
+  {
+   "ioNumber": "311368",
+   "description": "Gel documentation unit J878",
+   "budget": 942800.0,
+   "actual": 566600.0,
+   "commitment": 0.0,
+   "allotted": 549000.0,
+   "available": 393800.0
+  },
+  {
+   "ioNumber": "311389",
+   "description": "Liquid handler Z364",
+   "budget": 128200.0,
+   "actual": 79600.0,
+   "commitment": 0.0,
+   "allotted": 204900.0,
+   "available": -76700.0
+  },
+  {
+   "ioNumber": "311422",
+   "description": "Liquid handler C449",
+   "budget": 425400.0,
+   "actual": 132300.0,
+   "commitment": 143.0,
+   "allotted": 94800.0,
+   "available": 330600.0
+  },
+  {
+   "ioNumber": "311423",
+   "description": "Incubator K415",
+   "budget": 6192700.0,
+   "actual": 2545000.0,
+   "commitment": 489700.0,
+   "allotted": 5512100.0,
+   "available": 680600.0
+  },
+  {
+   "ioNumber": "311424",
+   "description": "Incubator D496",
+   "budget": 252700.0,
+   "actual": 133600.0,
+   "commitment": 2600.0,
+   "allotted": 191800.0,
+   "available": 60900.0
+  },
+  {
+   "ioNumber": "311462",
+   "description": "Spectrophotometer Y772",
+   "budget": 969600.0,
+   "actual": 1392200.0,
+   "commitment": 0.0,
+   "allotted": 1028200.0,
+   "available": -58600.0
+  },
+  {
+   "ioNumber": "311496",
+   "description": "Plate reader U356",
+   "budget": 253600.0,
+   "actual": 154900.0,
+   "commitment": 0.0,
+   "allotted": 96100.0,
+   "available": 157500.0
+  },
+  {
+   "ioNumber": "311514",
+   "description": "Plate reader U836",
+   "budget": 57600.0,
+   "actual": 39600.0,
+   "commitment": 0.0,
+   "allotted": 67300.0,
+   "available": -9700.0
+  },
+  {
+   "ioNumber": "311515",
+   "description": "Centrifuge V900",
+   "budget": 6500.0,
+   "actual": 7600.0,
+   "commitment": 0.0,
+   "allotted": 10300.0,
+   "available": -3800.0
+  },
+  {
+   "ioNumber": "311516",
+   "description": "Network switch C865",
+   "budget": 21200.0,
+   "actual": 16700.0,
+   "commitment": 0.0,
+   "allotted": 22200.0,
+   "available": -1000.0
+  },
+  {
+   "ioNumber": "311529",
+   "description": "PC Hardware Lifecycle Repl",
+   "budget": 471800.0,
+   "actual": 407400.0,
+   "commitment": 8.0,
+   "allotted": 668500.0,
+   "available": -196700.0
+  },
+  {
+   "ioNumber": "311592",
+   "description": "Incubator N383",
+   "budget": 6900.0,
+   "actual": 5900.0,
+   "commitment": 0.0,
+   "allotted": 5700.0,
+   "available": 1200.0
+  },
+  {
+   "ioNumber": "311608",
+   "description": "Conference AV kit C522",
+   "budget": 440400.0,
+   "actual": 446000.0,
+   "commitment": 8500.0,
+   "allotted": 230600.0,
+   "available": 209800.0
+  },
+  {
+   "ioNumber": "311609",
+   "description": "Forklift W727",
+   "budget": 813100.0,
+   "actual": 460000.0,
+   "commitment": 2600.0,
+   "allotted": 626000.0,
+   "available": 187100.0
+  },
+  {
+   "ioNumber": "311613",
+   "description": "Gel documentation unit J390",
+   "budget": 20100.0,
+   "actual": 27300.0,
+   "commitment": 0.0,
+   "allotted": 27200.0,
+   "available": -7100.0
+  },
+  {
+   "ioNumber": "311644",
+   "description": "Laptop pool J483",
+   "budget": 44200.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 44200.0
+  },
+  {
+   "ioNumber": "311762",
+   "description": "Laptop pool F426",
+   "budget": 66400.0,
+   "actual": 13000.0,
+   "commitment": 329.0,
+   "allotted": 10600.0,
+   "available": 55800.0
+  },
+  {
+   "ioNumber": "311774",
+   "description": "Label printer B818",
+   "budget": 667200.0,
+   "actual": 636900.0,
+   "commitment": 0.0,
+   "allotted": 356400.0,
+   "available": 310800.0
+  },
+  {
+   "ioNumber": "311842",
+   "description": "Liquid handler Y478",
+   "budget": 17600.0,
+   "actual": 35600.0,
+   "commitment": 86.0,
+   "allotted": 28400.0,
+   "available": -10800.0
+  },
+  {
+   "ioNumber": "311843",
+   "description": "Freezer -80C K578",
+   "budget": 671400.0,
+   "actual": 664400.0,
+   "commitment": 0.0,
+   "allotted": 596600.0,
+   "available": 74800.0
+  },
+  {
+   "ioNumber": "311860",
+   "description": "Thermal cycler H264",
+   "budget": 531900.0,
+   "actual": 495300.0,
+   "commitment": 0.0,
+   "allotted": 591800.0,
+   "available": -59900.0
+  },
+  {
+   "ioNumber": "311883",
+   "description": "Benchtop analyser B292",
+   "budget": 427800.0,
+   "actual": 228400.0,
+   "commitment": 0.0,
+   "allotted": 271600.0,
+   "available": 156200.0
+  },
+  {
+   "ioNumber": "311926",
+   "description": "Thermal cycler C287",
+   "budget": 3300.0,
+   "actual": 4600.0,
+   "commitment": 0.0,
+   "allotted": 5700.0,
+   "available": -2400.0
+  },
+  {
+   "ioNumber": "311930",
+   "description": "Spectrophotometer D695",
+   "budget": 30600.0,
+   "actual": 20700.0,
+   "commitment": 0.0,
+   "allotted": 20700.0,
+   "available": 9900.0
+  },
+  {
+   "ioNumber": "311934",
+   "description": "Laptop pool E399",
+   "budget": 324800.0,
+   "actual": 472600.0,
+   "commitment": 171.0,
+   "allotted": 480100.0,
+   "available": -155300.0
+  },
+  {
+   "ioNumber": "311938",
+   "description": "Laptop pool E427",
+   "budget": 49600.0,
+   "actual": 67700.0,
+   "commitment": 0.0,
+   "allotted": 51300.0,
+   "available": -1700.0
+  },
+  {
+   "ioNumber": "311948",
+   "description": "Forklift R899",
+   "budget": 16000.0,
+   "actual": 11200.0,
+   "commitment": 24.0,
+   "allotted": 11500.0,
+   "available": 4500.0
+  },
+  {
+   "ioNumber": "311961",
+   "description": "Power supply G385",
+   "budget": 108700.0,
+   "actual": 158000.0,
+   "commitment": 0.0,
+   "allotted": 128600.0,
+   "available": -19900.0
+  },
+  {
+   "ioNumber": "311967",
+   "description": "Gel documentation unit T738",
+   "budget": 155700.0,
+   "actual": 148900.0,
+   "commitment": 0.0,
+   "allotted": 78700.0,
+   "available": 77000.0
+  },
+  {
+   "ioNumber": "311974",
+   "description": "Pallet racking J893",
+   "budget": 12800.0,
+   "actual": 9000.0,
+   "commitment": 0.0,
+   "allotted": 7800.0,
+   "available": 5000.0
+  },
+  {
+   "ioNumber": "311975",
+   "description": "Label printer N603",
+   "budget": 48700.0,
+   "actual": 39200.0,
+   "commitment": 82.0,
+   "allotted": 32000.0,
+   "available": 16700.0
+  },
+  {
+   "ioNumber": "312009",
+   "description": "Freezer -80C G279",
+   "budget": 345500.0,
+   "actual": 542500.0,
+   "commitment": 6700.0,
+   "allotted": 373700.0,
+   "available": -28200.0
+  },
+  {
+   "ioNumber": "312011",
+   "description": "Spectrophotometer D421",
+   "budget": 17100.0,
+   "actual": 25700.0,
+   "commitment": 0.0,
+   "allotted": 19500.0,
+   "available": -2400.0
+  },
+  {
+   "ioNumber": "312019",
+   "description": "Gel documentation unit L630",
+   "budget": 113100.0,
+   "actual": 63400.0,
+   "commitment": 2400.0,
+   "allotted": 39100.0,
+   "available": 74000.0
+  },
+  {
+   "ioNumber": "312029",
+   "description": "Benchtop analyser U715",
+   "budget": 604300.0,
+   "actual": 1039300.0,
+   "commitment": 46400.0,
+   "allotted": 1145800.0,
+   "available": -541500.0
+  },
+  {
+   "ioNumber": "312037",
+   "description": "Plate reader T196",
+   "budget": 3900.0,
+   "actual": 4300.0,
+   "commitment": 0.0,
+   "allotted": 1900.0,
+   "available": 2000.0
+  },
+  {
+   "ioNumber": "312038",
+   "description": "Spectrophotometer S809",
+   "budget": 342000.0,
+   "actual": 142900.0,
+   "commitment": 42300.0,
+   "allotted": 186500.0,
+   "available": 155500.0
+  },
+  {
+   "ioNumber": "312039",
+   "description": "Benchtop analyser J651",
+   "budget": 41200.0,
+   "actual": 4100.0,
+   "commitment": 36500.0,
+   "allotted": 20500.0,
+   "available": 20700.0
+  },
+  {
+   "ioNumber": "312064",
+   "description": "Pallet racking F107",
+   "budget": 115500.0,
+   "actual": 95500.0,
+   "commitment": 13900.0,
+   "allotted": 88600.0,
+   "available": 26900.0
+  },
+  {
+   "ioNumber": "312067",
+   "description": "Power supply L829",
+   "budget": 54800.0,
+   "actual": 66900.0,
+   "commitment": 467.0,
+   "allotted": 30200.0,
+   "available": 24600.0
+  },
+  {
+   "ioNumber": "312070",
+   "description": "Freezer -80C E543",
+   "budget": 253600.0,
+   "actual": 192800.0,
+   "commitment": 1300.0,
+   "allotted": 196500.0,
+   "available": 57100.0
+  },
+  {
+   "ioNumber": "312098",
+   "description": "Liquid handler G845",
+   "budget": 150500.0,
+   "actual": 109200.0,
+   "commitment": 2200.0,
+   "allotted": 201100.0,
+   "available": -50600.0
+  },
+  {
+   "ioNumber": "312100",
+   "description": "Electrophoresis kit E432",
+   "budget": 2671500.0,
+   "actual": 1218400.0,
+   "commitment": 410.0,
+   "allotted": 1424800.0,
+   "available": 1246700.0
+  },
+  {
+   "ioNumber": "312103",
+   "description": "Centrifuge T180",
+   "budget": 99354.12,
+   "actual": 83241.77,
+   "commitment": 0.0,
+   "allotted": 83241.77,
+   "available": 16112.35
+  },
+  {
+   "ioNumber": "312110",
+   "description": "Gel documentation unit Y322",
+   "budget": 64000.0,
+   "actual": 72800.0,
+   "commitment": 0.0,
+   "allotted": 73300.0,
+   "available": -9300.0
+  },
+  {
+   "ioNumber": "312112",
+   "description": "Benchtop analyser B283",
+   "budget": 390300.0,
+   "actual": 119000.0,
+   "commitment": 9400.0,
+   "allotted": 218700.0,
+   "available": 171600.0
+  },
+  {
+   "ioNumber": "312113",
+   "description": "Forklift M682",
+   "budget": 109700.0,
+   "actual": 188500.0,
+   "commitment": 0.0,
+   "allotted": 257900.0,
+   "available": -148200.0
+  },
+  {
+   "ioNumber": "312114",
+   "description": "Forklift S841",
+   "budget": 126500.0,
+   "actual": 127900.0,
+   "commitment": 0.0,
+   "allotted": 74800.0,
+   "available": 51700.0
+  },
+  {
+   "ioNumber": "312124",
+   "description": "Conference AV kit T668",
+   "budget": 500600.0,
+   "actual": 304500.0,
+   "commitment": 9600.0,
+   "allotted": 423500.0,
+   "available": 77100.0
+  },
+  {
+   "ioNumber": "312126",
+   "description": "Centrifuge Y169",
+   "budget": 91100.0,
+   "actual": 105100.0,
+   "commitment": 0.0,
+   "allotted": 162100.0,
+   "available": -71000.0
+  },
+  {
+   "ioNumber": "312127",
+   "description": "Laptop pool U184",
+   "budget": 7194600.0,
+   "actual": 7011100.0,
+   "commitment": 755100.0,
+   "allotted": 6534500.0,
+   "available": 660100.0
+  },
+  {
+   "ioNumber": "312146",
+   "description": "Benchtop analyser N253",
+   "budget": 38800.0,
+   "actual": 34300.0,
+   "commitment": 118.0,
+   "allotted": 29000.0,
+   "available": 9800.0
+  },
+  {
+   "ioNumber": "312162",
+   "description": "Centrifuge T194",
+   "budget": 89800.0,
+   "actual": 91700.0,
+   "commitment": 0.0,
+   "allotted": 88900.0,
+   "available": 900.0
+  },
+  {
+   "ioNumber": "312168",
+   "description": "Benchtop analyser P373",
+   "budget": 12814700.0,
+   "actual": 11334500.0,
+   "commitment": 0.0,
+   "allotted": 11911800.0,
+   "available": 902900.0
+  },
+  {
+   "ioNumber": "312174",
+   "description": "Power supply T619",
+   "budget": 169700.0,
+   "actual": 70100.0,
+   "commitment": 73.0,
+   "allotted": 70800.0,
+   "available": 98900.0
+  },
+  {
+   "ioNumber": "312178",
+   "description": "Pallet racking N798",
+   "budget": 252900.0,
+   "actual": 178600.0,
+   "commitment": 21200.0,
+   "allotted": 214500.0,
+   "available": 38400.0
+  },
+  {
+   "ioNumber": "312179",
+   "description": "Laptop pool P685",
+   "budget": 121800.0,
+   "actual": 104100.0,
+   "commitment": 1300.0,
+   "allotted": 145500.0,
+   "available": -23700.0
+  },
+  {
+   "ioNumber": "312192",
+   "description": "Power supply X203",
+   "budget": 68700.0,
+   "actual": 64800.0,
+   "commitment": 0.0,
+   "allotted": 45900.0,
+   "available": 22800.0
+  },
+  {
+   "ioNumber": "312197",
+   "description": "Benchtop analyser J244",
+   "budget": 13800.0,
+   "actual": 8700.0,
+   "commitment": 0.0,
+   "allotted": 8800.0,
+   "available": 5000.0
+  },
+  {
+   "ioNumber": "312198",
+   "description": "Electrophoresis kit Z586",
+   "budget": 9900.0,
+   "actual": 0.0,
+   "commitment": 871.0,
+   "allotted": 908.0,
+   "available": 8992.0
+  },
+  {
+   "ioNumber": "312199",
+   "description": "Thermal cycler U161",
+   "budget": 26700.0,
+   "actual": 55100.0,
+   "commitment": 453.0,
+   "allotted": 41500.0,
+   "available": -14800.0
+  },
+  {
+   "ioNumber": "312217",
+   "description": "Liquid handler H400",
+   "budget": 15500.0,
+   "actual": 14200.0,
+   "commitment": 19.0,
+   "allotted": 19000.0,
+   "available": -3500.0
+  },
+  {
+   "ioNumber": "312218",
+   "description": "Electrophoresis kit E715",
+   "budget": 1257000.0,
+   "actual": 678100.0,
+   "commitment": 0.0,
+   "allotted": 707000.0,
+   "available": 550000.0
+  },
+  {
+   "ioNumber": "312220",
+   "description": "Pallet racking T691",
+   "budget": 43423300.0,
+   "actual": 12701600.0,
+   "commitment": 7080700.0,
+   "allotted": 8933900.0,
+   "available": 34489400.0
+  },
+  {
+   "ioNumber": "312248",
+   "description": "Forklift S933",
+   "budget": 1048100.0,
+   "actual": 1466500.0,
+   "commitment": 81200.0,
+   "allotted": 1577500.0,
+   "available": -529400.0
+  },
+  {
+   "ioNumber": "312255",
+   "description": "Spectrophotometer X281",
+   "budget": 5043400.0,
+   "actual": 2461100.0,
+   "commitment": 0.0,
+   "allotted": 2728700.0,
+   "available": 2314700.0
+  },
+  {
+   "ioNumber": "312267",
+   "description": "Label printer P890",
+   "budget": 65700.0,
+   "actual": 32900.0,
+   "commitment": 3200.0,
+   "allotted": 30000.0,
+   "available": 35700.0
+  },
+  {
+   "ioNumber": "312272",
+   "description": "Label printer X746",
+   "budget": 35400.0,
+   "actual": 39900.0,
+   "commitment": 0.0,
+   "allotted": 21700.0,
+   "available": 13700.0
+  },
+  {
+   "ioNumber": "312279",
+   "description": "Laptop pool N298",
+   "budget": 109900.0,
+   "actual": 69900.0,
+   "commitment": 0.0,
+   "allotted": 41400.0,
+   "available": 68500.0
+  },
+  {
+   "ioNumber": "312280",
+   "description": "Laptop pool G530",
+   "budget": 179500.0,
+   "actual": 141500.0,
+   "commitment": 6600.0,
+   "allotted": 137100.0,
+   "available": 42400.0
+  },
+  {
+   "ioNumber": "312284",
+   "description": "Conference AV kit X927",
+   "budget": 298200.0,
+   "actual": 160100.0,
+   "commitment": 0.0,
+   "allotted": 285000.0,
+   "available": 13200.0
+  },
+  {
+   "ioNumber": "312286",
+   "description": "Liquid handler H472",
+   "budget": 14780.0,
+   "actual": 15155.0,
+   "commitment": 0.0,
+   "allotted": 15155.0,
+   "available": -375.0
+  },
+  {
+   "ioNumber": "312289",
+   "description": "Incubator H212",
+   "budget": 41600.0,
+   "actual": 13700.0,
+   "commitment": 0.0,
+   "allotted": 25900.0,
+   "available": 15700.0
+  },
+  {
+   "ioNumber": "312291",
+   "description": "Pallet racking V180",
+   "budget": 74400.0,
+   "actual": 64700.0,
+   "commitment": 0.0,
+   "allotted": 68200.0,
+   "available": 6200.0
+  },
+  {
+   "ioNumber": "312294",
+   "description": "Gel documentation unit V539",
+   "budget": 8800.0,
+   "actual": 7200.0,
+   "commitment": 0.0,
+   "allotted": 4500.0,
+   "available": 4300.0
+  },
+  {
+   "ioNumber": "312295",
+   "description": "Network switch Z530",
+   "budget": 55400.0,
+   "actual": 26400.0,
+   "commitment": 600.0,
+   "allotted": 45000.0,
+   "available": 10400.0
+  },
+  {
+   "ioNumber": "312298",
+   "description": "Pallet racking E424",
+   "budget": 15700.0,
+   "actual": 13900.0,
+   "commitment": 0.0,
+   "allotted": 11900.0,
+   "available": 3800.0
+  },
+  {
+   "ioNumber": "312301",
+   "description": "Plate reader G727",
+   "budget": 6313100.0,
+   "actual": 4647900.0,
+   "commitment": 767700.0,
+   "allotted": 2338400.0,
+   "available": 3974700.0
+  },
+  {
+   "ioNumber": "312302",
+   "description": "Electrophoresis kit M611",
+   "budget": 29200.0,
+   "actual": 21600.0,
+   "commitment": 0.0,
+   "allotted": 17100.0,
+   "available": 12100.0
+  },
+  {
+   "ioNumber": "312307",
+   "description": "Incubator S765",
+   "budget": 44600.0,
+   "actual": 33500.0,
+   "commitment": 9900.0,
+   "allotted": 60200.0,
+   "available": -15600.0
+  },
+  {
+   "ioNumber": "312308",
+   "description": "Plate reader K457",
+   "budget": 200400.0,
+   "actual": 132300.0,
+   "commitment": 0.0,
+   "allotted": 324300.0,
+   "available": -123900.0
+  },
+  {
+   "ioNumber": "312316",
+   "description": "Freezer -80C C644",
+   "budget": 89400.0,
+   "actual": 185800.0,
+   "commitment": 0.0,
+   "allotted": 201800.0,
+   "available": -112400.0
+  },
+  {
+   "ioNumber": "312317",
+   "description": "Electrophoresis kit S424",
+   "budget": 8900.0,
+   "actual": 3100.0,
+   "commitment": 0.0,
+   "allotted": 6100.0,
+   "available": 2800.0
+  },
+  {
+   "ioNumber": "312319",
+   "description": "Gel documentation unit V956",
+   "budget": 201400.0,
+   "actual": 150700.0,
+   "commitment": 0.0,
+   "allotted": 164700.0,
+   "available": 36700.0
+  },
+  {
+   "ioNumber": "312331",
+   "description": "Pallet racking P517",
+   "budget": 6700.0,
+   "actual": 12300.0,
+   "commitment": 0.0,
+   "allotted": 10100.0,
+   "available": -3400.0
+  },
+  {
+   "ioNumber": "312332",
+   "description": "Laptop pool Y385",
+   "budget": 9400.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 9400.0
+  },
+  {
+   "ioNumber": "312333",
+   "description": "Forklift P128",
+   "budget": 58600.0,
+   "actual": 30100.0,
+   "commitment": 0.0,
+   "allotted": 63800.0,
+   "available": -5200.0
+  },
+  {
+   "ioNumber": "312342",
+   "description": "Benchtop analyser S502",
+   "budget": 44100.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 44100.0
+  },
+  {
+   "ioNumber": "312345",
+   "description": "Centrifuge J249",
+   "budget": 16400.0,
+   "actual": 4800.0,
+   "commitment": 4700.0,
+   "allotted": 7800.0,
+   "available": 8600.0
+  },
+  {
+   "ioNumber": "312350",
+   "description": "Imaging system X970",
+   "budget": 18000.0,
+   "actual": 14300.0,
+   "commitment": 0.0,
+   "allotted": 8600.0,
+   "available": 9400.0
+  },
+  {
+   "ioNumber": "312357",
+   "description": "Conference AV kit W163",
+   "budget": 79900.0,
+   "actual": 28400.0,
+   "commitment": 2500.0,
+   "allotted": 36500.0,
+   "available": 43400.0
+  },
+  {
+   "ioNumber": "312358",
+   "description": "Centrifuge N635",
+   "budget": 274800.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 274800.0
+  },
+  {
+   "ioNumber": "312359",
+   "description": "Electrophoresis kit T143",
+   "budget": 13300.0,
+   "actual": 18300.0,
+   "commitment": 47.0,
+   "allotted": 16500.0,
+   "available": -3200.0
+  },
+  {
+   "ioNumber": "312363",
+   "description": "Imaging system B231",
+   "budget": 3033400.0,
+   "actual": 211300.0,
+   "commitment": 175000.0,
+   "allotted": 313300.0,
+   "available": 2720100.0
+  },
+  {
+   "ioNumber": "312364",
+   "description": "Gel documentation unit E323",
+   "budget": 46800.0,
+   "actual": 81300.0,
+   "commitment": 0.0,
+   "allotted": 51600.0,
+   "available": -4800.0
+  },
+  {
+   "ioNumber": "312365",
+   "description": "Incubator J323",
+   "budget": 51800.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 51800.0
+  },
+  {
+   "ioNumber": "312368",
+   "description": "Incubator B842",
+   "budget": 64500.0,
+   "actual": 62000.0,
+   "commitment": 0.0,
+   "allotted": 35600.0,
+   "available": 28900.0
+  },
+  {
+   "ioNumber": "312371",
+   "description": "Forklift C544",
+   "budget": 29800.0,
+   "actual": 8700.0,
+   "commitment": 0.0,
+   "allotted": 14900.0,
+   "available": 14900.0
+  },
+  {
+   "ioNumber": "312372",
+   "description": "Network switch S456",
+   "budget": 387000.0,
+   "actual": 477300.0,
+   "commitment": 0.0,
+   "allotted": 279100.0,
+   "available": 107900.0
+  },
+  {
+   "ioNumber": "312379",
+   "description": "Gel documentation unit C628",
+   "budget": 857300.0,
+   "actual": 225300.0,
+   "commitment": 17100.0,
+   "allotted": 199000.0,
+   "available": 658300.0
+  },
+  {
+   "ioNumber": "312386",
+   "description": "Thermal cycler E125",
+   "budget": 47800.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 47800.0
+  },
+  {
+   "ioNumber": "312392",
+   "description": "Gel documentation unit T669",
+   "budget": 47400.0,
+   "actual": 74300.0,
+   "commitment": 354.0,
+   "allotted": 86400.0,
+   "available": -39000.0
+  },
+  {
+   "ioNumber": "312393",
+   "description": "Plate reader L340",
+   "budget": 31800.0,
+   "actual": 30800.0,
+   "commitment": 0.0,
+   "allotted": 52000.0,
+   "available": -20200.0
+  },
+  {
+   "ioNumber": "312394",
+   "description": "Gel documentation unit F478",
+   "budget": 26900.0,
+   "actual": 5700.0,
+   "commitment": 0.0,
+   "allotted": 7000.0,
+   "available": 19900.0
+  },
+  {
+   "ioNumber": "312404",
+   "description": "Benchtop analyser L686",
+   "budget": 35500.0,
+   "actual": 16700.0,
+   "commitment": 0.0,
+   "allotted": 20300.0,
+   "available": 15200.0
+  },
+  {
+   "ioNumber": "312406",
+   "description": "Laptop pool P609",
+   "budget": 15900.0,
+   "actual": 8400.0,
+   "commitment": 0.0,
+   "allotted": 13600.0,
+   "available": 2300.0
+  },
+  {
+   "ioNumber": "312411",
+   "description": "Label printer U948",
+   "budget": 8500.0,
+   "actual": 7900.0,
+   "commitment": 0.0,
+   "allotted": 8700.0,
+   "available": -200.0
+  },
+  {
+   "ioNumber": "312413",
+   "description": "Incubator E617",
+   "budget": 15000.0,
+   "actual": 15300.0,
+   "commitment": 0.0,
+   "allotted": 17200.0,
+   "available": -2200.0
+  },
+  {
+   "ioNumber": "312414",
+   "description": "Incubator D910",
+   "budget": 16000.0,
+   "actual": 21100.0,
+   "commitment": 350.0,
+   "allotted": 14600.0,
+   "available": 1400.0
+  },
+  {
+   "ioNumber": "312415",
+   "description": "Centrifuge A948",
+   "budget": 8600.0,
+   "actual": 8500.0,
+   "commitment": 0.0,
+   "allotted": 9800.0,
+   "available": -1200.0
+  },
+  {
+   "ioNumber": "312416",
+   "description": "Imaging system X538",
+   "budget": 16200.0,
+   "actual": 15600.0,
+   "commitment": 0.0,
+   "allotted": 9700.0,
+   "available": 6500.0
+  },
+  {
+   "ioNumber": "312417",
+   "description": "Pallet racking W806",
+   "budget": 13000.0,
+   "actual": 20200.0,
+   "commitment": 0.0,
+   "allotted": 17500.0,
+   "available": -4500.0
+  },
+  {
+   "ioNumber": "312418",
+   "description": "Network switch B475",
+   "budget": 10600.0,
+   "actual": 8100.0,
+   "commitment": 0.0,
+   "allotted": 14100.0,
+   "available": -3500.0
+  },
+  {
+   "ioNumber": "312419",
+   "description": "Forklift W803",
+   "budget": 15200.0,
+   "actual": 12500.0,
+   "commitment": 87.0,
+   "allotted": 9300.0,
+   "available": 5900.0
+  },
+  {
+   "ioNumber": "312423",
+   "description": "Spectrophotometer C396",
+   "budget": 93400.0,
+   "actual": 48600.0,
+   "commitment": 0.0,
+   "allotted": 61600.0,
+   "available": 31800.0
+  },
+  {
+   "ioNumber": "312424",
+   "description": "Thermal cycler T938",
+   "budget": 5100.0,
+   "actual": 0.0,
+   "commitment": 4600.0,
+   "allotted": 9500.0,
+   "available": -4400.0
+  },
+  {
+   "ioNumber": "312425",
+   "description": "Centrifuge T930",
+   "budget": 334500.0,
+   "actual": 435000.0,
+   "commitment": 0.0,
+   "allotted": 279900.0,
+   "available": 54600.0
+  },
+  {
+   "ioNumber": "312429",
+   "description": "Network switch X895",
+   "budget": 16600.0,
+   "actual": 12300.0,
+   "commitment": 0.0,
+   "allotted": 15400.0,
+   "available": 1200.0
+  },
+  {
+   "ioNumber": "312431",
+   "description": "Forklift G274",
+   "budget": 15900.0,
+   "actual": 11300.0,
+   "commitment": 0.0,
+   "allotted": 12600.0,
+   "available": 3300.0
+  },
+  {
+   "ioNumber": "312432",
+   "description": "Pallet racking L544",
+   "budget": 10000.0,
+   "actual": 10900.0,
+   "commitment": 0.0,
+   "allotted": 6300.0,
+   "available": 3700.0
+  },
+  {
+   "ioNumber": "312433",
+   "description": "Gel documentation unit M829",
+   "budget": 6100.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 6100.0
+  },
+  {
+   "ioNumber": "312434",
+   "description": "Forklift D884",
+   "budget": 28300.0,
+   "actual": 25500.0,
+   "commitment": 110.0,
+   "allotted": 26100.0,
+   "available": 2200.0
+  },
+  {
+   "ioNumber": "312436",
+   "description": "Plate reader Y145",
+   "budget": 5000.0,
+   "actual": 7300.0,
+   "commitment": 0.0,
+   "allotted": 8400.0,
+   "available": -3400.0
+  },
+  {
+   "ioNumber": "312442",
+   "description": "Spectrophotometer P609",
+   "budget": 9600.0,
+   "actual": 22100.0,
+   "commitment": 0.0,
+   "allotted": 16700.0,
+   "available": -7100.0
+  },
+  {
+   "ioNumber": "312447",
+   "description": "Plate reader T244",
+   "budget": 13500.0,
+   "actual": 9300.0,
+   "commitment": 0.0,
+   "allotted": 6800.0,
+   "available": 6700.0
+  },
+  {
+   "ioNumber": "312449",
+   "description": "Liquid handler E188",
+   "budget": 16900.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 16900.0
+  },
+  {
+   "ioNumber": "312452",
+   "description": "Pallet racking N342",
+   "budget": 23100.0,
+   "actual": 12300.0,
+   "commitment": 0.0,
+   "allotted": 22400.0,
+   "available": 700.0
+  },
+  {
+   "ioNumber": "312460",
+   "description": "Power supply T461",
+   "budget": 118300.0,
+   "actual": 115400.0,
+   "commitment": 0.0,
+   "allotted": 80600.0,
+   "available": 37700.0
+  },
+  {
+   "ioNumber": "312464",
+   "description": "Freezer -80C B668",
+   "budget": 583800.0,
+   "actual": 183000.0,
+   "commitment": 0.0,
+   "allotted": 100400.0,
+   "available": 483400.0
+  },
+  {
+   "ioNumber": "312467",
+   "description": "Label printer U679",
+   "budget": 50300.0,
+   "actual": 51600.0,
+   "commitment": 0.0,
+   "allotted": 75000.0,
+   "available": -24700.0
+  },
+  {
+   "ioNumber": "312468",
+   "description": "Pallet racking S121",
+   "budget": 8300.0,
+   "actual": 5100.0,
+   "commitment": 0.0,
+   "allotted": 8200.0,
+   "available": 100.0
+  },
+  {
+   "ioNumber": "312469",
+   "description": "Label printer N277",
+   "budget": 30500.0,
+   "actual": 32200.0,
+   "commitment": 0.0,
+   "allotted": 26400.0,
+   "available": 4100.0
+  },
+  {
+   "ioNumber": "312475",
+   "description": "Plate reader C689",
+   "budget": 17400.0,
+   "actual": 17200.0,
+   "commitment": 0.0,
+   "allotted": 22100.0,
+   "available": -4700.0
+  },
+  {
+   "ioNumber": "312476",
+   "description": "Power supply T958",
+   "budget": 20400.0,
+   "actual": 20300.0,
+   "commitment": 2700.0,
+   "allotted": 23700.0,
+   "available": -3300.0
+  },
+  {
+   "ioNumber": "312477",
+   "description": "Conference AV kit W450",
+   "budget": 13800.0,
+   "actual": 16200.0,
+   "commitment": 0.0,
+   "allotted": 14700.0,
+   "available": -900.0
+  },
+  {
+   "ioNumber": "312479",
+   "description": "Incubator B754",
+   "budget": 15500.0,
+   "actual": 12100.0,
+   "commitment": 0.0,
+   "allotted": 12100.0,
+   "available": 3400.0
+  },
+  {
+   "ioNumber": "312500",
+   "description": "Plate reader U804",
+   "budget": 73500.0,
+   "actual": 39900.0,
+   "commitment": 13500.0,
+   "allotted": 61600.0,
+   "available": 11900.0
+  },
+  {
+   "ioNumber": "312501",
+   "description": "Centrifuge F604",
+   "budget": 125400.0,
+   "actual": 97200.0,
+   "commitment": 12800.0,
+   "allotted": 107300.0,
+   "available": 18100.0
+  },
+  {
+   "ioNumber": "312502",
+   "description": "Electrophoresis kit H358",
+   "budget": 24400.0,
+   "actual": 19700.0,
+   "commitment": 0.0,
+   "allotted": 14200.0,
+   "available": 10200.0
+  },
+  {
+   "ioNumber": "312503",
+   "description": "Power supply T805",
+   "budget": 13300.0,
+   "actual": 8500.0,
+   "commitment": 0.0,
+   "allotted": 15700.0,
+   "available": -2400.0
+  },
+  {
+   "ioNumber": "312504",
+   "description": "Benchtop analyser J390",
+   "budget": 10700.0,
+   "actual": 11200.0,
+   "commitment": 0.0,
+   "allotted": 5700.0,
+   "available": 5000.0
+  },
+  {
+   "ioNumber": "312505",
+   "description": "Benchtop analyser D255",
+   "budget": 13900.0,
+   "actual": 20200.0,
+   "commitment": 0.0,
+   "allotted": 28500.0,
+   "available": -14600.0
+  },
+  {
+   "ioNumber": "312506",
+   "description": "Imaging system X420",
+   "budget": 296900.0,
+   "actual": 154900.0,
+   "commitment": 0.0,
+   "allotted": 91200.0,
+   "available": 205700.0
+  },
+  {
+   "ioNumber": "312507",
+   "description": "Laptop pool S535",
+   "budget": 16800.0,
+   "actual": 8500.0,
+   "commitment": 0.0,
+   "allotted": 17300.0,
+   "available": -500.0
+  },
+  {
+   "ioNumber": "312514",
+   "description": "Centrifuge Y125",
+   "budget": 66500.0,
+   "actual": 43300.0,
+   "commitment": 0.0,
+   "allotted": 27700.0,
+   "available": 38800.0
+  },
+  {
+   "ioNumber": "312521",
+   "description": "Thermal cycler N768",
+   "budget": 63400.0,
+   "actual": 48700.0,
+   "commitment": 0.0,
+   "allotted": 50100.0,
+   "available": 13300.0
+  },
+  {
+   "ioNumber": "312524",
+   "description": "Thermal cycler C941",
+   "budget": 13900.0,
+   "actual": 16900.0,
+   "commitment": 0.0,
+   "allotted": 23700.0,
+   "available": -9800.0
+  },
+  {
+   "ioNumber": "312525",
+   "description": "Liquid handler U469",
+   "budget": 29600.0,
+   "actual": 30500.0,
+   "commitment": 0.0,
+   "allotted": 22800.0,
+   "available": 6800.0
+  },
+  {
+   "ioNumber": "312529",
+   "description": "Freezer -80C H681",
+   "budget": 5000.0,
+   "actual": 3200.0,
+   "commitment": 0.0,
+   "allotted": 2200.0,
+   "available": 2800.0
+  },
+  {
+   "ioNumber": "312537",
+   "description": "Gel documentation unit P552",
+   "budget": 7000.0,
+   "actual": 11200.0,
+   "commitment": 0.0,
+   "allotted": 7800.0,
+   "available": -800.0
+  },
+  {
+   "ioNumber": "312540",
+   "description": "Spectrophotometer H875",
+   "budget": 83300.0,
+   "actual": 53100.0,
+   "commitment": 0.0,
+   "allotted": 62900.0,
+   "available": 20400.0
+  },
+  {
+   "ioNumber": "312543",
+   "description": "Forklift A475",
+   "budget": 9500.0,
+   "actual": 20700.0,
+   "commitment": 0.0,
+   "allotted": 17500.0,
+   "available": -8000.0
+  },
+  {
+   "ioNumber": "312544",
+   "description": "Incubator C440",
+   "budget": 27500.0,
+   "actual": 42400.0,
+   "commitment": 0.0,
+   "allotted": 37200.0,
+   "available": -9700.0
+  },
+  {
+   "ioNumber": "312545",
+   "description": "Network switch G119",
+   "budget": 10900.0,
+   "actual": 8200.0,
+   "commitment": 0.0,
+   "allotted": 9800.0,
+   "available": 1100.0
+  },
+  {
+   "ioNumber": "312546",
+   "description": "Spectrophotometer H775",
+   "budget": 23000.0,
+   "actual": 19300.0,
+   "commitment": 0.0,
+   "allotted": 21100.0,
+   "available": 1900.0
+  },
+  {
+   "ioNumber": "312552",
+   "description": "Incubator H390",
+   "budget": 8400.0,
+   "actual": 5700.0,
+   "commitment": 81.0,
+   "allotted": 6200.0,
+   "available": 2200.0
+  },
+  {
+   "ioNumber": "312553",
+   "description": "Electrophoresis kit D342",
+   "budget": 6700.0,
+   "actual": 3200.0,
+   "commitment": 0.0,
+   "allotted": 6700.0,
+   "available": 0.0
+  },
+  {
+   "ioNumber": "312554",
+   "description": "Freezer -80C L946",
+   "budget": 96900.0,
+   "actual": 26100.0,
+   "commitment": 0.0,
+   "allotted": 27700.0,
+   "available": 69200.0
+  },
+  {
+   "ioNumber": "312555",
+   "description": "Pallet racking Z118",
+   "budget": 11600.0,
+   "actual": 10300.0,
+   "commitment": 0.0,
+   "allotted": 9600.0,
+   "available": 2000.0
+  },
+  {
+   "ioNumber": "312556",
+   "description": "Forklift W953",
+   "budget": 7800.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 7800.0
+  },
+  {
+   "ioNumber": "312558",
+   "description": "Gel documentation unit A437",
+   "budget": 42100.0,
+   "actual": 38600.0,
+   "commitment": 0.0,
+   "allotted": 36600.0,
+   "available": 5500.0
+  },
+  {
+   "ioNumber": "312561",
+   "description": "Laptop pool P919",
+   "budget": 631500.0,
+   "actual": 1258800.0,
+   "commitment": 18600.0,
+   "allotted": 1086700.0,
+   "available": -455200.0
+  },
+  {
+   "ioNumber": "312564",
+   "description": "Incubator G176",
+   "budget": 5800.0,
+   "actual": 3700.0,
+   "commitment": 0.0,
+   "allotted": 6000.0,
+   "available": -200.0
+  },
+  {
+   "ioNumber": "312577",
+   "description": "Gel documentation unit C184",
+   "budget": 110900.0,
+   "actual": 56200.0,
+   "commitment": 0.0,
+   "allotted": 68100.0,
+   "available": 42800.0
+  },
+  {
+   "ioNumber": "312578",
+   "description": "Spectrophotometer S190",
+   "budget": 221200.0,
+   "actual": 205300.0,
+   "commitment": 4700.0,
+   "allotted": 275600.0,
+   "available": -54400.0
+  },
+  {
+   "ioNumber": "312579",
+   "description": "Centrifuge A944",
+   "budget": 28100.0,
+   "actual": 23500.0,
+   "commitment": 0.0,
+   "allotted": 35500.0,
+   "available": -7400.0
+  },
+  {
+   "ioNumber": "312592",
+   "description": "Liquid handler T822",
+   "budget": 28400.0,
+   "actual": 19400.0,
+   "commitment": 0.0,
+   "allotted": 16600.0,
+   "available": 11800.0
+  },
+  {
+   "ioNumber": "312600",
+   "description": "Network switch L990",
+   "budget": 60300.0,
+   "actual": 44900.0,
+   "commitment": 0.0,
+   "allotted": 72900.0,
+   "available": -12600.0
+  },
+  {
+   "ioNumber": "312601",
+   "description": "Spectrophotometer Y812",
+   "budget": 6500.0,
+   "actual": 4300.0,
+   "commitment": 0.0,
+   "allotted": 6700.0,
+   "available": -200.0
+  },
+  {
+   "ioNumber": "312605",
+   "description": "Label printer M522",
+   "budget": 14000.0,
+   "actual": 24700.0,
+   "commitment": 0.0,
+   "allotted": 28100.0,
+   "available": -14100.0
+  },
+  {
+   "ioNumber": "312609",
+   "description": "Liquid handler H306",
+   "budget": 116900.0,
+   "actual": 62100.0,
+   "commitment": 0.0,
+   "allotted": 106000.0,
+   "available": 10900.0
+  },
+  {
+   "ioNumber": "312610",
+   "description": "Electrophoresis kit U117",
+   "budget": 152200.0,
+   "actual": 82200.0,
+   "commitment": 0.0,
+   "allotted": 147100.0,
+   "available": 5100.0
+  },
+  {
+   "ioNumber": "312612",
+   "description": "Centrifuge W639",
+   "budget": 41300.0,
+   "actual": 32700.0,
+   "commitment": 0.0,
+   "allotted": 45100.0,
+   "available": -3800.0
+  },
+  {
+   "ioNumber": "312613",
+   "description": "Benchtop analyser J796",
+   "budget": 307100.0,
+   "actual": 8600.0,
+   "commitment": 2500.0,
+   "allotted": 17400.0,
+   "available": 289700.0
+  },
+  {
+   "ioNumber": "312616",
+   "description": "Benchtop analyser U788",
+   "budget": 20800.0,
+   "actual": 37300.0,
+   "commitment": 0.0,
+   "allotted": 40100.0,
+   "available": -19300.0
+  },
+  {
+   "ioNumber": "312621",
+   "description": "Plate reader N119",
+   "budget": 34200.0,
+   "actual": 31400.0,
+   "commitment": 0.0,
+   "allotted": 30900.0,
+   "available": 3300.0
+  },
+  {
+   "ioNumber": "312624",
+   "description": "Imaging system V153",
+   "budget": 41500.0,
+   "actual": 28100.0,
+   "commitment": 0.0,
+   "allotted": 34800.0,
+   "available": 6700.0
+  },
+  {
+   "ioNumber": "312630",
+   "description": "Incubator K254",
+   "budget": 260100.0,
+   "actual": 372600.0,
+   "commitment": 30500.0,
+   "allotted": 498100.0,
+   "available": -238000.0
+  },
+  {
+   "ioNumber": "312631",
+   "description": "Imaging system P890",
+   "budget": 10300.0,
+   "actual": 6300.0,
+   "commitment": 0.0,
+   "allotted": 5700.0,
+   "available": 4600.0
+  },
+  {
+   "ioNumber": "312632",
+   "description": "Liquid handler J842",
+   "budget": 36300.0,
+   "actual": 20300.0,
+   "commitment": 0.0,
+   "allotted": 37500.0,
+   "available": -1200.0
+  },
+  {
+   "ioNumber": "312633",
+   "description": "Conference AV kit Z176",
+   "budget": 6100.0,
+   "actual": 3700.0,
+   "commitment": 0.0,
+   "allotted": 4200.0,
+   "available": 1900.0
+  },
+  {
+   "ioNumber": "312634",
+   "description": "Pallet racking W712",
+   "budget": 5200.0,
+   "actual": 3200.0,
+   "commitment": 0.0,
+   "allotted": 6400.0,
+   "available": -1200.0
+  },
+  {
+   "ioNumber": "312636",
+   "description": "Thermal cycler H421",
+   "budget": 44000.0,
+   "actual": 50900.0,
+   "commitment": 0.0,
+   "allotted": 82900.0,
+   "available": -38900.0
+  },
+  {
+   "ioNumber": "312637",
+   "description": "Incubator P677",
+   "budget": 71300.0,
+   "actual": 170500.0,
+   "commitment": 0.0,
+   "allotted": 101100.0,
+   "available": -29800.0
+  },
+  {
+   "ioNumber": "312638",
+   "description": "Laptop pool A386",
+   "budget": 56400.0,
+   "actual": 74700.0,
+   "commitment": 0.0,
+   "allotted": 45700.0,
+   "available": 10700.0
+  },
+  {
+   "ioNumber": "312639",
+   "description": "Spectrophotometer P159",
+   "budget": 276400.0,
+   "actual": 224800.0,
+   "commitment": 0.0,
+   "allotted": 233800.0,
+   "available": 42600.0
+  },
+  {
+   "ioNumber": "312640",
+   "description": "Power supply W380",
+   "budget": 30200.0,
+   "actual": 30700.0,
+   "commitment": 0.0,
+   "allotted": 18600.0,
+   "available": 11600.0
+  },
+  {
+   "ioNumber": "312641",
+   "description": "Pallet racking V286",
+   "budget": 19900.0,
+   "actual": 13200.0,
+   "commitment": 0.0,
+   "allotted": 11500.0,
+   "available": 8400.0
+  },
+  {
+   "ioNumber": "312650",
+   "description": "Electrophoresis kit E302",
+   "budget": 183900.0,
+   "actual": 800.0,
+   "commitment": 70800.0,
+   "allotted": 89600.0,
+   "available": 94300.0
+  },
+  {
+   "ioNumber": "312657",
+   "description": "Electrophoresis kit L850",
+   "budget": 37200.0,
+   "actual": 54800.0,
+   "commitment": 700.0,
+   "allotted": 85500.0,
+   "available": -48300.0
+  },
+  {
+   "ioNumber": "312658",
+   "description": "Forklift U837",
+   "budget": 16700.0,
+   "actual": 36900.0,
+   "commitment": 0.0,
+   "allotted": 16900.0,
+   "available": -200.0
+  },
+  {
+   "ioNumber": "312659",
+   "description": "Label printer T346",
+   "budget": 412300.0,
+   "actual": 401500.0,
+   "commitment": 2100.0,
+   "allotted": 351600.0,
+   "available": 60700.0
+  },
+  {
+   "ioNumber": "312664",
+   "description": "Forklift Y646",
+   "budget": 21300.0,
+   "actual": 21600.0,
+   "commitment": 0.0,
+   "allotted": 14100.0,
+   "available": 7200.0
+  },
+  {
+   "ioNumber": "312680",
+   "description": "Conference AV kit L364",
+   "budget": 7300.0,
+   "actual": 11400.0,
+   "commitment": 0.0,
+   "allotted": 6100.0,
+   "available": 1200.0
+  },
+  {
+   "ioNumber": "312682",
+   "description": "Forklift X833",
+   "budget": 48000.0,
+   "actual": 21500.0,
+   "commitment": 11900.0,
+   "allotted": 69300.0,
+   "available": -21300.0
+  },
+  {
+   "ioNumber": "312684",
+   "description": "Electrophoresis kit C428",
+   "budget": 8400.0,
+   "actual": 10100.0,
+   "commitment": 0.0,
+   "allotted": 10300.0,
+   "available": -1900.0
+  },
+  {
+   "ioNumber": "312685",
+   "description": "Incubator B214",
+   "budget": 268900.0,
+   "actual": 106200.0,
+   "commitment": 0.0,
+   "allotted": 62400.0,
+   "available": 206500.0
+  },
+  {
+   "ioNumber": "312687",
+   "description": "Thermal cycler S302",
+   "budget": 10600.0,
+   "actual": 11100.0,
+   "commitment": 0.0,
+   "allotted": 6600.0,
+   "available": 4000.0
+  },
+  {
+   "ioNumber": "312688",
+   "description": "Pallet racking E789",
+   "budget": 4400.0,
+   "actual": 4800.0,
+   "commitment": 0.0,
+   "allotted": 5300.0,
+   "available": -900.0
+  },
+  {
+   "ioNumber": "312689",
+   "description": "Label printer B673",
+   "budget": 13900.0,
+   "actual": 13100.0,
+   "commitment": 0.0,
+   "allotted": 14400.0,
+   "available": -500.0
+  },
+  {
+   "ioNumber": "312690",
+   "description": "Laptop pool V172",
+   "budget": 267500.0,
+   "actual": 250800.0,
+   "commitment": 56.0,
+   "allotted": 289500.0,
+   "available": -22000.0
+  },
+  {
+   "ioNumber": "312691",
+   "description": "Benchtop analyser K783",
+   "budget": 7500.0,
+   "actual": 7400.0,
+   "commitment": 0.0,
+   "allotted": 12600.0,
+   "available": -5100.0
+  },
+  {
+   "ioNumber": "312694",
+   "description": "Forklift L183",
+   "budget": 100100.0,
+   "actual": 80500.0,
+   "commitment": 0.0,
+   "allotted": 131300.0,
+   "available": -31200.0
+  },
+  {
+   "ioNumber": "312695",
+   "description": "Freezer -80C D687",
+   "budget": 311400.0,
+   "actual": 137100.0,
+   "commitment": 0.0,
+   "allotted": 212300.0,
+   "available": 99100.0
+  },
+  {
+   "ioNumber": "312696",
+   "description": "Benchtop analyser G895",
+   "budget": 166900.0,
+   "actual": 260000.0,
+   "commitment": 0.0,
+   "allotted": 208000.0,
+   "available": -41100.0
+  },
+  {
+   "ioNumber": "312697",
+   "description": "Liquid handler Y316",
+   "budget": 369200.0,
+   "actual": 195400.0,
+   "commitment": 0.0,
+   "allotted": 128500.0,
+   "available": 240700.0
+  },
+  {
+   "ioNumber": "312698",
+   "description": "Power supply C673",
+   "budget": 63700.0,
+   "actual": 50100.0,
+   "commitment": 0.0,
+   "allotted": 98800.0,
+   "available": -35100.0
+  },
+  {
+   "ioNumber": "312702",
+   "description": "Electrophoresis kit N475",
+   "budget": 19600.0,
+   "actual": 14300.0,
+   "commitment": 0.0,
+   "allotted": 15900.0,
+   "available": 3700.0
+  },
+  {
+   "ioNumber": "312703",
+   "description": "Incubator W719",
+   "budget": 100600.0,
+   "actual": 40700.0,
+   "commitment": 231.0,
+   "allotted": 34900.0,
+   "available": 65700.0
+  },
+  {
+   "ioNumber": "312704",
+   "description": "Centrifuge R653",
+   "budget": 11200.0,
+   "actual": 6500.0,
+   "commitment": 0.0,
+   "allotted": 8100.0,
+   "available": 3100.0
+  },
+  {
+   "ioNumber": "312705",
+   "description": "Centrifuge Y430",
+   "budget": 638300.0,
+   "actual": 615500.0,
+   "commitment": 8900.0,
+   "allotted": 694900.0,
+   "available": -56600.0
+  },
+  {
+   "ioNumber": "312706",
+   "description": "Plate reader A845",
+   "budget": 18200.0,
+   "actual": 13000.0,
+   "commitment": 0.0,
+   "allotted": 19400.0,
+   "available": -1200.0
+  },
+  {
+   "ioNumber": "312707",
+   "description": "Forklift W609",
+   "budget": 275100.0,
+   "actual": 149700.0,
+   "commitment": 4200.0,
+   "allotted": 197200.0,
+   "available": 77900.0
+  },
+  {
+   "ioNumber": "312708",
+   "description": "Freezer -80C Z717",
+   "budget": 72400.0,
+   "actual": 37000.0,
+   "commitment": 0.0,
+   "allotted": 44500.0,
+   "available": 27900.0
+  },
+  {
+   "ioNumber": "312721",
+   "description": "Centrifuge N305",
+   "budget": 2700.0,
+   "actual": 4200.0,
+   "commitment": 0.0,
+   "allotted": 2400.0,
+   "available": 300.0
+  },
+  {
+   "ioNumber": "312722",
+   "description": "Spectrophotometer A762",
+   "budget": 17800.0,
+   "actual": 11700.0,
+   "commitment": 0.0,
+   "allotted": 14100.0,
+   "available": 3700.0
+  },
+  {
+   "ioNumber": "312743",
+   "description": "Forklift B699",
+   "budget": 5600.0,
+   "actual": 5400.0,
+   "commitment": 0.0,
+   "allotted": 6500.0,
+   "available": -900.0
+  },
+  {
+   "ioNumber": "312744",
+   "description": "Forklift P745",
+   "budget": 31400.0,
+   "actual": 29400.0,
+   "commitment": 0.0,
+   "allotted": 27600.0,
+   "available": 3800.0
+  },
+  {
+   "ioNumber": "312763",
+   "description": "Power supply Z281",
+   "budget": 17600.0,
+   "actual": 0.0,
+   "commitment": 31900.0,
+   "allotted": 17300.0,
+   "available": 300.0
+  },
+  {
+   "ioNumber": "312765",
+   "description": "Benchtop analyser D535",
+   "budget": 3400.0,
+   "actual": 5300.0,
+   "commitment": 0.0,
+   "allotted": 4300.0,
+   "available": -900.0
+  },
+  {
+   "ioNumber": "312780",
+   "description": "Thermal cycler W479",
+   "budget": 23700.0,
+   "actual": 16700.0,
+   "commitment": 0.0,
+   "allotted": 19900.0,
+   "available": 3800.0
+  },
+  {
+   "ioNumber": "312782",
+   "description": "Imaging system S428",
+   "budget": 7600.0,
+   "actual": 9300.0,
+   "commitment": 0.0,
+   "allotted": 15000.0,
+   "available": -7400.0
+  },
+  {
+   "ioNumber": "312783",
+   "description": "Freezer -80C X327",
+   "budget": 623300.0,
+   "actual": 460100.0,
+   "commitment": 38200.0,
+   "allotted": 280200.0,
+   "available": 343100.0
+  },
+  {
+   "ioNumber": "312784",
+   "description": "Network switch V671",
+   "budget": 55400.0,
+   "actual": 22600.0,
+   "commitment": 35500.0,
+   "allotted": 71000.0,
+   "available": -15600.0
+  },
+  {
+   "ioNumber": "312785",
+   "description": "Liquid handler E578",
+   "budget": 5300.0,
+   "actual": 5000.0,
+   "commitment": 0.0,
+   "allotted": 7700.0,
+   "available": -2400.0
+  },
+  {
+   "ioNumber": "312786",
+   "description": "Electrophoresis kit R712",
+   "budget": 4400.0,
+   "actual": 7000.0,
+   "commitment": 0.0,
+   "allotted": 6100.0,
+   "available": -1700.0
+  },
+  {
+   "ioNumber": "312787",
+   "description": "Spectrophotometer R864",
+   "budget": 45100.0,
+   "actual": 29600.0,
+   "commitment": 0.0,
+   "allotted": 48300.0,
+   "available": -3200.0
+  },
+  {
+   "ioNumber": "312788",
+   "description": "Electrophoresis kit C293",
+   "budget": 129600.0,
+   "actual": 141500.0,
+   "commitment": 0.0,
+   "allotted": 111800.0,
+   "available": 17800.0
+  },
+  {
+   "ioNumber": "312804",
+   "description": "Thermal cycler A561",
+   "budget": 45500.0,
+   "actual": 28000.0,
+   "commitment": 0.0,
+   "allotted": 50100.0,
+   "available": -4600.0
+  },
+  {
+   "ioNumber": "312806",
+   "description": "Power supply T920",
+   "budget": 23800.0,
+   "actual": 27400.0,
+   "commitment": 0.0,
+   "allotted": 16600.0,
+   "available": 7200.0
+  },
+  {
+   "ioNumber": "312820",
+   "description": "Conference AV kit C153",
+   "budget": 49500.0,
+   "actual": 90200.0,
+   "commitment": 0.0,
+   "allotted": 43300.0,
+   "available": 6200.0
+  },
+  {
+   "ioNumber": "312843",
+   "description": "Forklift L480",
+   "budget": 34800.0,
+   "actual": 28100.0,
+   "commitment": 0.0,
+   "allotted": 23100.0,
+   "available": 11700.0
+  },
+  {
+   "ioNumber": "312860",
+   "description": "Forklift R597",
+   "budget": 101600.0,
+   "actual": 115600.0,
+   "commitment": 3000.0,
+   "allotted": 161400.0,
+   "available": -59800.0
+  },
+  {
+   "ioNumber": "312861",
+   "description": "Conference AV kit K783",
+   "budget": 25500.0,
+   "actual": 16300.0,
+   "commitment": 0.0,
+   "allotted": 29700.0,
+   "available": -4200.0
+  },
+  {
+   "ioNumber": "312883",
+   "description": "Benchtop analyser E999",
+   "budget": 235100.0,
+   "actual": 177400.0,
+   "commitment": 0.0,
+   "allotted": 257800.0,
+   "available": -22700.0
+  },
+  {
+   "ioNumber": "312884",
+   "description": "Benchtop analyser V311",
+   "budget": 5700.0,
+   "actual": 9700.0,
+   "commitment": 0.0,
+   "allotted": 7000.0,
+   "available": -1300.0
+  },
+  {
+   "ioNumber": "312887",
+   "description": "Label printer K469",
+   "budget": 71800.0,
+   "actual": 56700.0,
+   "commitment": 0.0,
+   "allotted": 52200.0,
+   "available": 19600.0
+  },
+  {
+   "ioNumber": "312891",
+   "description": "Conference AV kit R904",
+   "budget": 328900.0,
+   "actual": 168800.0,
+   "commitment": 386600.0,
+   "allotted": 461900.0,
+   "available": -133000.0
+  },
+  {
+   "ioNumber": "312901",
+   "description": "Freezer -80C E297",
+   "budget": 77800.0,
+   "actual": 66600.0,
+   "commitment": 0.0,
+   "allotted": 40500.0,
+   "available": 37300.0
+  },
+  {
+   "ioNumber": "312902",
+   "description": "Thermal cycler F955",
+   "budget": 111800.0,
+   "actual": 56900.0,
+   "commitment": 0.0,
+   "allotted": 61600.0,
+   "available": 50200.0
+  },
+  {
+   "ioNumber": "312909",
+   "description": "Electrophoresis kit D651",
+   "budget": 11000.0,
+   "actual": 6900.0,
+   "commitment": 0.0,
+   "allotted": 9300.0,
+   "available": 1700.0
+  },
+  {
+   "ioNumber": "312910",
+   "description": "Spectrophotometer N552",
+   "budget": 99800.0,
+   "actual": 126600.0,
+   "commitment": 0.0,
+   "allotted": 71400.0,
+   "available": 28400.0
+  },
+  {
+   "ioNumber": "312921",
+   "description": "Laptop pool K484",
+   "budget": 19600.0,
+   "actual": 7900.0,
+   "commitment": 0.0,
+   "allotted": 6600.0,
+   "available": 13000.0
+  },
+  {
+   "ioNumber": "312923",
+   "description": "Incubator S884",
+   "budget": 83800.0,
+   "actual": 77300.0,
+   "commitment": 0.0,
+   "allotted": 81500.0,
+   "available": 2300.0
+  },
+  {
+   "ioNumber": "312924",
+   "description": "Incubator H603",
+   "budget": 10800.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 10800.0
+  },
+  {
+   "ioNumber": "312926",
+   "description": "Plate reader Z652",
+   "budget": 26900.0,
+   "actual": 14300.0,
+   "commitment": 0.0,
+   "allotted": 25300.0,
+   "available": 1600.0
+  },
+  {
+   "ioNumber": "312927",
+   "description": "Gel documentation unit F843",
+   "budget": 166300.0,
+   "actual": 66600.0,
+   "commitment": 43200.0,
+   "allotted": 204200.0,
+   "available": -37900.0
+  },
+  {
+   "ioNumber": "312963",
+   "description": "Electrophoresis kit E796",
+   "budget": 77900.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 77900.0
+  },
+  {
+   "ioNumber": "312980",
+   "description": "Forklift L369",
+   "budget": 22700.0,
+   "actual": 49100.0,
+   "commitment": 0.0,
+   "allotted": 41900.0,
+   "available": -19200.0
+  },
+  {
+   "ioNumber": "312981",
+   "description": "Laptop pool U483",
+   "budget": 15100.0,
+   "actual": 15900.0,
+   "commitment": 0.0,
+   "allotted": 16200.0,
+   "available": -1100.0
+  },
+  {
+   "ioNumber": "313002",
+   "description": "Forklift C718",
+   "budget": 11100.0,
+   "actual": 9500.0,
+   "commitment": 0.0,
+   "allotted": 5200.0,
+   "available": 5900.0
+  },
+  {
+   "ioNumber": "313010",
+   "description": "Electrophoresis kit L240",
+   "budget": 98000.0,
+   "actual": 76700.0,
+   "commitment": 39900.0,
+   "allotted": 62400.0,
+   "available": 35600.0
+  },
+  {
+   "ioNumber": "313011",
+   "description": "Incubator J871",
+   "budget": 290800.0,
+   "actual": 126700.0,
+   "commitment": 0.0,
+   "allotted": 116400.0,
+   "available": 174400.0
+  },
+  {
+   "ioNumber": "313014",
+   "description": "Label printer Y605",
+   "budget": 430100.0,
+   "actual": 94800.0,
+   "commitment": 280700.0,
+   "allotted": 405300.0,
+   "available": 24800.0
+  },
+  {
+   "ioNumber": "313016",
+   "description": "Plate reader G337",
+   "budget": 207500.0,
+   "actual": 82700.0,
+   "commitment": 140600.0,
+   "allotted": 113900.0,
+   "available": 93600.0
+  },
+  {
+   "ioNumber": "313017",
+   "description": "Network switch X388",
+   "budget": 137400.0,
+   "actual": 147200.0,
+   "commitment": 286500.0,
+   "allotted": 312100.0,
+   "available": -174700.0
+  },
+  {
+   "ioNumber": "313018",
+   "description": "Label printer C678",
+   "budget": 281400.0,
+   "actual": 95300.0,
+   "commitment": 275300.0,
+   "allotted": 444900.0,
+   "available": -163500.0
+  },
+  {
+   "ioNumber": "313020",
+   "description": "Liquid handler T886",
+   "budget": 61400.0,
+   "actual": 58200.0,
+   "commitment": 21700.0,
+   "allotted": 74100.0,
+   "available": -12700.0
+  },
+  {
+   "ioNumber": "313021",
+   "description": "Thermal cycler G688",
+   "budget": 61200.0,
+   "actual": 65200.0,
+   "commitment": 0.0,
+   "allotted": 40500.0,
+   "available": 20700.0
+  },
+  {
+   "ioNumber": "313034",
+   "description": "Forklift J188",
+   "budget": 15000.0,
+   "actual": 8000.0,
+   "commitment": 0.0,
+   "allotted": 9100.0,
+   "available": 5900.0
+  },
+  {
+   "ioNumber": "313038",
+   "description": "Forklift L644",
+   "budget": 23100.0,
+   "actual": 38700.0,
+   "commitment": 0.0,
+   "allotted": 24800.0,
+   "available": -1700.0
+  },
+  {
+   "ioNumber": "313039",
+   "description": "Pallet racking R786",
+   "budget": 52500.0,
+   "actual": 0.0,
+   "commitment": 40200.0,
+   "allotted": 38000.0,
+   "available": 14500.0
+  },
+  {
+   "ioNumber": "313040",
+   "description": "Thermal cycler H213",
+   "budget": 79500.0,
+   "actual": 67800.0,
+   "commitment": 52200.0,
+   "allotted": 91800.0,
+   "available": -12300.0
+  },
+  {
+   "ioNumber": "313041",
+   "description": "Network switch X275",
+   "budget": 67000.0,
+   "actual": 35600.0,
+   "commitment": 11600.0,
+   "allotted": 37900.0,
+   "available": 29100.0
+  },
+  {
+   "ioNumber": "313042",
+   "description": "Thermal cycler D294",
+   "budget": 3600.0,
+   "actual": 7300.0,
+   "commitment": 0.0,
+   "allotted": 4800.0,
+   "available": -1200.0
+  },
+  {
+   "ioNumber": "313060",
+   "description": "Forklift C276",
+   "budget": 944300.0,
+   "actual": 669100.0,
+   "commitment": 66500.0,
+   "allotted": 993000.0,
+   "available": -48700.0
+  },
+  {
+   "ioNumber": "313065",
+   "description": "Plate reader E801",
+   "budget": 6900.0,
+   "actual": 12000.0,
+   "commitment": 0.0,
+   "allotted": 9400.0,
+   "available": -2500.0
+  },
+  {
+   "ioNumber": "313067",
+   "description": "Conference AV kit S260",
+   "budget": 9800.0,
+   "actual": 5200.0,
+   "commitment": 0.0,
+   "allotted": 8600.0,
+   "available": 1200.0
+  },
+  {
+   "ioNumber": "313069",
+   "description": "Imaging system T227",
+   "budget": 16000.0,
+   "actual": 19700.0,
+   "commitment": 0.0,
+   "allotted": 14700.0,
+   "available": 1300.0
+  },
+  {
+   "ioNumber": "313073",
+   "description": "Spectrophotometer Z951",
+   "budget": 3100.0,
+   "actual": 2000.0,
+   "commitment": 0.0,
+   "allotted": 2200.0,
+   "available": 900.0
+  },
+  {
+   "ioNumber": "313080",
+   "description": "Power supply E460",
+   "budget": 2321100.0,
+   "actual": 411200.0,
+   "commitment": 2393700.0,
+   "allotted": 1824000.0,
+   "available": 497100.0
+  },
+  {
+   "ioNumber": "313081",
+   "description": "Electrophoresis kit B507",
+   "budget": 1184900.0,
+   "actual": 246300.0,
+   "commitment": 1019600.0,
+   "allotted": 1348700.0,
+   "available": -163800.0
+  },
+  {
+   "ioNumber": "313082",
+   "description": "Benchtop analyser S150",
+   "budget": 94900.0,
+   "actual": 109800.0,
+   "commitment": 0.0,
+   "allotted": 114200.0,
+   "available": -19300.0
+  },
+  {
+   "ioNumber": "313083",
+   "description": "Gel documentation unit G128",
+   "budget": 203500.0,
+   "actual": 195400.0,
+   "commitment": 90.0,
+   "allotted": 124700.0,
+   "available": 78800.0
+  },
+  {
+   "ioNumber": "313089",
+   "description": "Liquid handler M343",
+   "budget": 30800.0,
+   "actual": 0.0,
+   "commitment": 24600.0,
+   "allotted": 23400.0,
+   "available": 7400.0
+  },
+  {
+   "ioNumber": "313090",
+   "description": "Imaging system T854",
+   "budget": 1349400.0,
+   "actual": 826900.0,
+   "commitment": 1473400.0,
+   "allotted": 1351700.0,
+   "available": -2300.0
+  },
+  {
+   "ioNumber": "313092",
+   "description": "Forklift D333",
+   "budget": 20900.0,
+   "actual": 20800.0,
+   "commitment": 400.0,
+   "allotted": 11000.0,
+   "available": 9900.0
+  },
+  {
+   "ioNumber": "313093",
+   "description": "Forklift A672",
+   "budget": 32900.0,
+   "actual": 19700.0,
+   "commitment": 0.0,
+   "allotted": 30000.0,
+   "available": 2900.0
+  },
+  {
+   "ioNumber": "313096",
+   "description": "Laptop pool C858",
+   "budget": 13800.0,
+   "actual": 15600.0,
+   "commitment": 0.0,
+   "allotted": 17700.0,
+   "available": -3900.0
+  },
+  {
+   "ioNumber": "313097",
+   "description": "Liquid handler H823",
+   "budget": 100000.0,
+   "actual": 92500.0,
+   "commitment": 0.0,
+   "allotted": 85000.0,
+   "available": 15000.0
+  },
+  {
+   "ioNumber": "313099",
+   "description": "Gel documentation unit V190",
+   "budget": 83300.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 83300.0
+  },
+  {
+   "ioNumber": "313103",
+   "description": "Laptop pool B370",
+   "budget": 48900.0,
+   "actual": 30800.0,
+   "commitment": 6800.0,
+   "allotted": 23300.0,
+   "available": 25600.0
+  },
+  {
+   "ioNumber": "313109",
+   "description": "Label printer B128",
+   "budget": 12000.0,
+   "actual": 13400.0,
+   "commitment": 0.0,
+   "allotted": 8500.0,
+   "available": 3500.0
+  },
+  {
+   "ioNumber": "313110",
+   "description": "Laptop pool C866",
+   "budget": 22500.0,
+   "actual": 20400.0,
+   "commitment": 8700.0,
+   "allotted": 22400.0,
+   "available": 100.0
+  },
+  {
+   "ioNumber": "313111",
+   "description": "Conference AV kit K821",
+   "budget": 43700.0,
+   "actual": 23700.0,
+   "commitment": 29100.0,
+   "allotted": 64400.0,
+   "available": -20700.0
+  },
+  {
+   "ioNumber": "313127",
+   "description": "Conference AV kit E117",
+   "budget": 42700.0,
+   "actual": 0.0,
+   "commitment": 26600.0,
+   "allotted": 48900.0,
+   "available": -6200.0
+  },
+  {
+   "ioNumber": "313128",
+   "description": "Freezer -80C F638",
+   "budget": 137700.0,
+   "actual": 60800.0,
+   "commitment": 86.0,
+   "allotted": 85400.0,
+   "available": 52300.0
+  },
+  {
+   "ioNumber": "313133",
+   "description": "Gel documentation unit J449",
+   "budget": 593800.0,
+   "actual": 0.0,
+   "commitment": 645900.0,
+   "allotted": 473700.0,
+   "available": 120100.0
+  },
+  {
+   "ioNumber": "313134",
+   "description": "Electrophoresis kit X295",
+   "budget": 26600.0,
+   "actual": 0.0,
+   "commitment": 18600.0,
+   "allotted": 21100.0,
+   "available": 5500.0
+  },
+  {
+   "ioNumber": "313135",
+   "description": "Incubator M278",
+   "budget": 0.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 0.0
+  },
+  {
+   "ioNumber": "313136",
+   "description": "Gel documentation unit B438",
+   "budget": 1285400.0,
+   "actual": 1203600.0,
+   "commitment": 415100.0,
+   "allotted": 1668500.0,
+   "available": -383100.0
+  },
+  {
+   "ioNumber": "313137",
+   "description": "Imaging system Y201",
+   "budget": 3055200.0,
+   "actual": 477400.0,
+   "commitment": 1059800.0,
+   "allotted": 1083400.0,
+   "available": 1971800.0
+  },
+  {
+   "ioNumber": "313138",
+   "description": "Thermal cycler Y784",
+   "budget": 2284300.0,
+   "actual": 968000.0,
+   "commitment": 1049400.0,
+   "allotted": 3405900.0,
+   "available": -1121600.0
+  },
+  {
+   "ioNumber": "313139",
+   "description": "Benchtop analyser B541",
+   "budget": 28700.0,
+   "actual": 23100.0,
+   "commitment": 577.0,
+   "allotted": 23000.0,
+   "available": 5700.0
+  },
+  {
+   "ioNumber": "313145",
+   "description": "Freezer -80C T797",
+   "budget": 49500.0,
+   "actual": 79700.0,
+   "commitment": 1700.0,
+   "allotted": 57300.0,
+   "available": -7800.0
+  },
+  {
+   "ioNumber": "313146",
+   "description": "Freezer -80C H873",
+   "budget": 3400.0,
+   "actual": 2900.0,
+   "commitment": 0.0,
+   "allotted": 4300.0,
+   "available": -900.0
+  },
+  {
+   "ioNumber": "313147",
+   "description": "Liquid handler R491",
+   "budget": 60983.62,
+   "actual": 53191.28,
+   "commitment": 0.0,
+   "allotted": 53191.28,
+   "available": 7792.34
+  },
+  {
+   "ioNumber": "313148",
+   "description": "Spectrophotometer E776",
+   "budget": 75400.0,
+   "actual": 50400.0,
+   "commitment": 0.0,
+   "allotted": 51300.0,
+   "available": 24100.0
+  },
+  {
+   "ioNumber": "313149",
+   "description": "Plate reader R818",
+   "budget": 119900.0,
+   "actual": 35700.0,
+   "commitment": 0.0,
+   "allotted": 62100.0,
+   "available": 57800.0
+  },
+  {
+   "ioNumber": "313157",
+   "description": "Freezer -80C V329",
+   "budget": 8600.0,
+   "actual": 8500.0,
+   "commitment": 0.0,
+   "allotted": 7500.0,
+   "available": 1100.0
+  },
+  {
+   "ioNumber": "313159",
+   "description": "Centrifuge L830",
+   "budget": 14000.0,
+   "actual": 14500.0,
+   "commitment": 0.0,
+   "allotted": 11800.0,
+   "available": 2200.0
+  },
+  {
+   "ioNumber": "313160",
+   "description": "Incubator D221",
+   "budget": 2700.0,
+   "actual": 4000.0,
+   "commitment": 0.0,
+   "allotted": 4800.0,
+   "available": -2100.0
+  },
+  {
+   "ioNumber": "313169",
+   "description": "Spectrophotometer W157",
+   "budget": 37200.0,
+   "actual": 14800.0,
+   "commitment": 9500.0,
+   "allotted": 45700.0,
+   "available": -8500.0
+  },
+  {
+   "ioNumber": "313172",
+   "description": "Plate reader B178",
+   "budget": 22700.0,
+   "actual": 8300.0,
+   "commitment": 0.0,
+   "allotted": 6900.0,
+   "available": 15800.0
+  },
+  {
+   "ioNumber": "313173",
+   "description": "Imaging system W922",
+   "budget": 13100.0,
+   "actual": 15200.0,
+   "commitment": 0.0,
+   "allotted": 10900.0,
+   "available": 2200.0
+  },
+  {
+   "ioNumber": "313194",
+   "description": "Conference AV kit T293",
+   "budget": 34600.0,
+   "actual": 0.0,
+   "commitment": 19500.0,
+   "allotted": 20500.0,
+   "available": 14100.0
+  },
+  {
+   "ioNumber": "313200",
+   "description": "Forklift V624",
+   "budget": 75900.0,
+   "actual": 62800.0,
+   "commitment": 0.0,
+   "allotted": 73200.0,
+   "available": 2700.0
+  },
+  {
+   "ioNumber": "313203",
+   "description": "Network switch B811",
+   "budget": 17999.71,
+   "actual": 16363.71,
+   "commitment": 0.0,
+   "allotted": 16363.71,
+   "available": 1636.0
+  },
+  {
+   "ioNumber": "313204",
+   "description": "Label printer K321",
+   "budget": 133100.0,
+   "actual": 142200.0,
+   "commitment": 597.0,
+   "allotted": 141300.0,
+   "available": -8200.0
+  },
+  {
+   "ioNumber": "313206",
+   "description": "Centrifuge A966",
+   "budget": 86200.0,
+   "actual": 0.0,
+   "commitment": 119300.0,
+   "allotted": 162900.0,
+   "available": -76700.0
+  },
+  {
+   "ioNumber": "313219",
+   "description": "Network switch A633",
+   "budget": 6800.0,
+   "actual": 7300.0,
+   "commitment": 0.0,
+   "allotted": 10600.0,
+   "available": -3800.0
+  },
+  {
+   "ioNumber": "313240",
+   "description": "Power supply L315",
+   "budget": 43900.0,
+   "actual": 28700.0,
+   "commitment": 1200.0,
+   "allotted": 33700.0,
+   "available": 10200.0
+  },
+  {
+   "ioNumber": "313245",
+   "description": "Freezer -80C N180",
+   "budget": 80300.0,
+   "actual": 75200.0,
+   "commitment": 0.0,
+   "allotted": 84300.0,
+   "available": -4000.0
+  },
+  {
+   "ioNumber": "313250",
+   "description": "Plate reader W684",
+   "budget": 56700.0,
+   "actual": 0.0,
+   "commitment": 70100.0,
+   "allotted": 35100.0,
+   "available": 21600.0
+  },
+  {
+   "ioNumber": "313251",
+   "description": "Laptop pool F345",
+   "budget": 9400.0,
+   "actual": 15700.0,
+   "commitment": 0.0,
+   "allotted": 11700.0,
+   "available": -2300.0
+  },
+  {
+   "ioNumber": "313252",
+   "description": "Imaging system N938",
+   "budget": 178800.0,
+   "actual": 26600.0,
+   "commitment": 32600.0,
+   "allotted": 61200.0,
+   "available": 117600.0
+  },
+  {
+   "ioNumber": "313253",
+   "description": "Pallet racking N972",
+   "budget": 12200.0,
+   "actual": 18500.0,
+   "commitment": 1132.0,
+   "allotted": 9800.0,
+   "available": 2400.0
+  },
+  {
+   "ioNumber": "313254",
+   "description": "Network switch G828",
+   "budget": 14900.0,
+   "actual": 10800.0,
+   "commitment": 387.0,
+   "allotted": 18100.0,
+   "available": -3200.0
+  },
+  {
+   "ioNumber": "313255",
+   "description": "Conference AV kit X959",
+   "budget": 7700.0,
+   "actual": 3000.0,
+   "commitment": 0.0,
+   "allotted": 5900.0,
+   "available": 1800.0
+  },
+  {
+   "ioNumber": "313256",
+   "description": "Plate reader D243",
+   "budget": 31500.0,
+   "actual": 20900.0,
+   "commitment": 0.0,
+   "allotted": 23000.0,
+   "available": 8500.0
+  },
+  {
+   "ioNumber": "313258",
+   "description": "Power supply Y558",
+   "budget": 7400.0,
+   "actual": 8300.0,
+   "commitment": 216.0,
+   "allotted": 6900.0,
+   "available": 500.0
+  },
+  {
+   "ioNumber": "313260",
+   "description": "Thermal cycler A640",
+   "budget": 60200.0,
+   "actual": 41700.0,
+   "commitment": 0.0,
+   "allotted": 53300.0,
+   "available": 6900.0
+  },
+  {
+   "ioNumber": "313261",
+   "description": "Freezer -80C W650",
+   "budget": 60700.0,
+   "actual": 42500.0,
+   "commitment": 7100.0,
+   "allotted": 85700.0,
+   "available": -25000.0
+  },
+  {
+   "ioNumber": "313262",
+   "description": "Spectrophotometer C136",
+   "budget": 46200.0,
+   "actual": 67500.0,
+   "commitment": 0.0,
+   "allotted": 59600.0,
+   "available": -13400.0
+  },
+  {
+   "ioNumber": "313263",
+   "description": "Incubator T208",
+   "budget": 22400.0,
+   "actual": 12000.0,
+   "commitment": 0.0,
+   "allotted": 17600.0,
+   "available": 4800.0
+  },
+  {
+   "ioNumber": "313264",
+   "description": "Laptop pool Z945",
+   "budget": 33300.0,
+   "actual": 29200.0,
+   "commitment": 0.0,
+   "allotted": 35900.0,
+   "available": -2600.0
+  },
+  {
+   "ioNumber": "313265",
+   "description": "Liquid handler W766",
+   "budget": 1229300.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 1229300.0
+  },
+  {
+   "ioNumber": "313266",
+   "description": "Plate reader V410",
+   "budget": 1985700.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 1985700.0
+  },
+  {
+   "ioNumber": "313267",
+   "description": "Benchtop analyser B921",
+   "budget": 5397900.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 5397900.0
+  },
+  {
+   "ioNumber": "313269",
+   "description": "Gel documentation unit C649",
+   "budget": 223500.0,
+   "actual": 160000.0,
+   "commitment": 16800.0,
+   "allotted": 261100.0,
+   "available": -37600.0
+  },
+  {
+   "ioNumber": "313274",
+   "description": "Benchtop analyser K589",
+   "budget": 271800.0,
+   "actual": 0.0,
+   "commitment": 362900.0,
+   "allotted": 333700.0,
+   "available": -61900.0
+  },
+  {
+   "ioNumber": "313276",
+   "description": "Imaging system L573",
+   "budget": 63200.0,
+   "actual": 43700.0,
+   "commitment": 21100.0,
+   "allotted": 34500.0,
+   "available": 28700.0
+  },
+  {
+   "ioNumber": "313280",
+   "description": "Liquid handler B772",
+   "budget": 7100.0,
+   "actual": 8000.0,
+   "commitment": 0.0,
+   "allotted": 8300.0,
+   "available": -1200.0
+  },
+  {
+   "ioNumber": "313282",
+   "description": "Liquid handler M580",
+   "budget": 12400.0,
+   "actual": 11700.0,
+   "commitment": 22.0,
+   "allotted": 7400.0,
+   "available": 5000.0
+  },
+  {
+   "ioNumber": "313291",
+   "description": "Spectrophotometer A288",
+   "budget": 19400.0,
+   "actual": 12500.0,
+   "commitment": 0.0,
+   "allotted": 12900.0,
+   "available": 6500.0
+  },
+  {
+   "ioNumber": "313298",
+   "description": "Thermal cycler U576",
+   "budget": 21200.0,
+   "actual": 14800.0,
+   "commitment": 0.0,
+   "allotted": 10100.0,
+   "available": 11100.0
+  },
+  {
+   "ioNumber": "313304",
+   "description": "Power supply N721",
+   "budget": 16800.0,
+   "actual": 8400.0,
+   "commitment": 0.0,
+   "allotted": 10100.0,
+   "available": 6700.0
+  },
+  {
+   "ioNumber": "313322",
+   "description": "Gel documentation unit W234",
+   "budget": 15100.0,
+   "actual": 29800.0,
+   "commitment": 3100.0,
+   "allotted": 33400.0,
+   "available": -18300.0
+  },
+  {
+   "ioNumber": "313326",
+   "description": "Label printer G656",
+   "budget": 30300.0,
+   "actual": 32700.0,
+   "commitment": 0.0,
+   "allotted": 31200.0,
+   "available": -900.0
+  },
+  {
+   "ioNumber": "313327",
+   "description": "Conference AV kit D936",
+   "budget": 18200.0,
+   "actual": 13200.0,
+   "commitment": 0.0,
+   "allotted": 22600.0,
+   "available": -4400.0
+  },
+  {
+   "ioNumber": "313330",
+   "description": "Laptop pool K283",
+   "budget": 7500.0,
+   "actual": 0.0,
+   "commitment": 9300.0,
+   "allotted": 9400.0,
+   "available": -1900.0
+  },
+  {
+   "ioNumber": "313331",
+   "description": "Liquid handler R653",
+   "budget": 88300.0,
+   "actual": 0.0,
+   "commitment": 41300.0,
+   "allotted": 54100.0,
+   "available": 34200.0
+  },
+  {
+   "ioNumber": "313334",
+   "description": "Conference AV kit Y379",
+   "budget": 149600.0,
+   "actual": 13700.0,
+   "commitment": 123500.0,
+   "allotted": 131400.0,
+   "available": 18200.0
+  },
+  {
+   "ioNumber": "313336",
+   "description": "Thermal cycler L552",
+   "budget": 28100.0,
+   "actual": 19300.0,
+   "commitment": 160.0,
+   "allotted": 19600.0,
+   "available": 8500.0
+  },
+  {
+   "ioNumber": "313339",
+   "description": "Benchtop analyser Y216",
+   "budget": 131400.0,
+   "actual": 0.0,
+   "commitment": 90200.0,
+   "allotted": 68900.0,
+   "available": 62500.0
+  },
+  {
+   "ioNumber": "313340",
+   "description": "Pallet racking R158",
+   "budget": 5200.0,
+   "actual": 5800.0,
+   "commitment": 0.0,
+   "allotted": 3000.0,
+   "available": 2200.0
+  },
+  {
+   "ioNumber": "313342",
+   "description": "Network switch Y995",
+   "budget": 2300.0,
+   "actual": 2900.0,
+   "commitment": 0.0,
+   "allotted": 2600.0,
+   "available": -300.0
+  },
+  {
+   "ioNumber": "313344",
+   "description": "Thermal cycler C430",
+   "budget": 238400.0,
+   "actual": 17900.0,
+   "commitment": 158700.0,
+   "allotted": 201500.0,
+   "available": 36900.0
+  },
+  {
+   "ioNumber": "313346",
+   "description": "Freezer -80C B938",
+   "budget": 52600.0,
+   "actual": 76000.0,
+   "commitment": 0.0,
+   "allotted": 42300.0,
+   "available": 10300.0
+  },
+  {
+   "ioNumber": "313347",
+   "description": "Label printer J113",
+   "budget": 16600.0,
+   "actual": 12400.0,
+   "commitment": 0.0,
+   "allotted": 13600.0,
+   "available": 3000.0
+  },
+  {
+   "ioNumber": "313348",
+   "description": "Plate reader G778",
+   "budget": 37600.0,
+   "actual": 0.0,
+   "commitment": 19100.0,
+   "allotted": 30200.0,
+   "available": 7400.0
+  },
+  {
+   "ioNumber": "313351",
+   "description": "Benchtop analyser J879",
+   "budget": 167100.0,
+   "actual": 0.0,
+   "commitment": 68300.0,
+   "allotted": 26500.0,
+   "available": 140600.0
+  },
+  {
+   "ioNumber": "313367",
+   "description": "Centrifuge M799",
+   "budget": 926000.0,
+   "actual": 0.0,
+   "commitment": 593800.0,
+   "allotted": 704100.0,
+   "available": 221900.0
+  },
+  {
+   "ioNumber": "313368",
+   "description": "Incubator K788",
+   "budget": 10000.0,
+   "actual": 7500.0,
+   "commitment": 0.0,
+   "allotted": 7700.0,
+   "available": 2300.0
+  },
+  {
+   "ioNumber": "313380",
+   "description": "Spectrophotometer B517",
+   "budget": 133900.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 133900.0
+  },
+  {
+   "ioNumber": "313381",
+   "description": "Plate reader B454",
+   "budget": 9000.0,
+   "actual": 0.0,
+   "commitment": 11900.0,
+   "allotted": 10900.0,
+   "available": -1900.0
+  },
+  {
+   "ioNumber": "313403",
+   "description": "Autolabe 390S",
+   "budget": 26475.0,
+   "actual": 25585.0,
+   "commitment": 0.0,
+   "allotted": 25585.0,
+   "available": 890.0
+  },
+  {
+   "ioNumber": "313404",
+   "description": "Centrifuge L428",
+   "budget": 256200.0,
+   "actual": 45132.0,
+   "commitment": 188898.21,
+   "allotted": 234030.21,
+   "available": 22169.79
+  },
+  {
+   "ioNumber": "313406",
+   "description": "Thermal cycler W313",
+   "budget": 11050.0,
+   "actual": 8500.0,
+   "commitment": 0.0,
+   "allotted": 8500.0,
+   "available": 2550.0
+  },
+  {
+   "ioNumber": "313425",
+   "description": "Imaging system B111",
+   "budget": 6300.0,
+   "actual": 6200.0,
+   "commitment": 0.0,
+   "allotted": 4500.0,
+   "available": 1800.0
+  },
+  {
+   "ioNumber": "313431",
+   "description": "Freezer -80C Y927",
+   "budget": 17400.0,
+   "actual": 0.0,
+   "commitment": 20300.0,
+   "allotted": 21600.0,
+   "available": -4200.0
+  },
+  {
+   "ioNumber": "313437",
+   "description": "Benchtop analyser S863",
+   "budget": 26900.0,
+   "actual": 0.0,
+   "commitment": 2200.0,
+   "allotted": 3100.0,
+   "available": 23800.0
+  },
+  {
+   "ioNumber": "313442",
+   "description": "Imaging system G766",
+   "budget": 4400.0,
+   "actual": 4100.0,
+   "commitment": 0.0,
+   "allotted": 3400.0,
+   "available": 1000.0
+  },
+  {
+   "ioNumber": "313461",
+   "description": "Plate reader D132",
+   "budget": 6700.0,
+   "actual": 0.0,
+   "commitment": 0.0,
+   "allotted": 0.0,
+   "available": 6700.0
+  },
+  {
+   "ioNumber": "313462",
+   "description": "Imaging system G325",
+   "budget": 284300.0,
+   "actual": 0.0,
+   "commitment": 86100.0,
+   "allotted": 101600.0,
+   "available": 182700.0
+  },
+  {
+   "ioNumber": "313463",
+   "description": "Gel documentation unit L161",
+   "budget": 198100.0,
+   "actual": 0.0,
+   "commitment": 209400.0,
+   "allotted": 120900.0,
+   "available": 77200.0
+  },
+  {
+   "ioNumber": "313482",
+   "description": "Plate reader Y701",
+   "budget": 96400.0,
+   "actual": 0.0,
+   "commitment": 88000.0,
+   "allotted": 64100.0,
+   "available": 32300.0
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+/* ===========================================================================
+   Acme Design System — global entry point
+   Consumers link THIS one file. It is an @import manifest only; no rules
+   are declared here directly.
+
+   Typeface: Arial is the LOCKED Acme brand face and a universally
+   available system font, so no @font-face / webfont binary is shipped.
+   Fallback stack: Arial, Helvetica Neue, Helvetica, sans-serif.
+   =========================================================================== */
+
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/base.css";

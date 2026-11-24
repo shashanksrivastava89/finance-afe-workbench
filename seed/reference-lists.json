@@ -1,0 +1,254 @@
+{
+  "_note": "The drop-downs. project_type comes from the Global AFE Template's Reference sheet (Type List); the rest were business config held in code until v0.5. Maintained in Admin > Master data.",
+  "source": "AFE Form.xlsx",
+  "entries": [
+    {
+      "list": "project_type",
+      "value": "Automation",
+      "label": "Automation",
+      "sortOrder": 1,
+      "active": true,
+      "list_value": "project_type|Automation"
+    },
+    {
+      "list": "project_type",
+      "value": "Compliance",
+      "label": "Compliance",
+      "sortOrder": 2,
+      "active": true,
+      "list_value": "project_type|Compliance"
+    },
+    {
+      "list": "project_type",
+      "value": "Cost Savings",
+      "label": "Cost Savings",
+      "sortOrder": 3,
+      "active": true,
+      "list_value": "project_type|Cost Savings"
+    },
+    {
+      "list": "project_type",
+      "value": "GM Improvement",
+      "label": "GM Improvement",
+      "sortOrder": 4,
+      "active": true,
+      "list_value": "project_type|GM Improvement"
+    },
+    {
+      "list": "project_type",
+      "value": "In Sourcing",
+      "label": "In Sourcing",
+      "sortOrder": 5,
+      "active": true,
+      "list_value": "project_type|In Sourcing"
+    },
+    {
+      "list": "project_type",
+      "value": "Maintenance/Repair",
+      "label": "Maintenance/Repair",
+      "sortOrder": 6,
+      "active": true,
+      "list_value": "project_type|Maintenance/Repair"
+    },
+    {
+      "list": "project_type",
+      "value": "New Construction",
+      "label": "New Construction",
+      "sortOrder": 7,
+      "active": true,
+      "list_value": "project_type|New Construction"
+    },
+    {
+      "list": "project_type",
+      "value": "New Equipment",
+      "label": "New Equipment",
+      "sortOrder": 8,
+      "active": true,
+      "list_value": "project_type|New Equipment"
+    },
+    {
+      "list": "project_type",
+      "value": "NPI",
+      "label": "NPI",
+      "sortOrder": 9,
+      "active": true,
+      "list_value": "project_type|NPI"
+    },
+    {
+      "list": "project_type",
+      "value": "Office Equip/Furniture",
+      "label": "Office Equip/Furniture",
+      "sortOrder": 10,
+      "active": true,
+      "list_value": "project_type|Office Equip/Furniture"
+    },
+    {
+      "list": "project_type",
+      "value": "Other",
+      "label": "Other",
+      "sortOrder": 11,
+      "active": true,
+      "list_value": "project_type|Other"
+    },
+    {
+      "list": "project_type",
+      "value": "Process Improvement",
+      "label": "Process Improvement",
+      "sortOrder": 12,
+      "active": true,
+      "list_value": "project_type|Process Improvement"
+    },
+    {
+      "list": "project_type",
+      "value": "Quality",
+      "label": "Quality",
+      "sortOrder": 13,
+      "active": true,
+      "list_value": "project_type|Quality"
+    },
+    {
+      "list": "project_type",
+      "value": "Regulatory",
+      "label": "Regulatory",
+      "sortOrder": 14,
+      "active": true,
+      "list_value": "project_type|Regulatory"
+    },
+    {
+      "list": "project_type",
+      "value": "Revenue Growth",
+      "label": "Revenue Growth",
+      "sortOrder": 15,
+      "active": true,
+      "list_value": "project_type|Revenue Growth"
+    },
+    {
+      "list": "project_type",
+      "value": "Safety",
+      "label": "Safety",
+      "sortOrder": 16,
+      "active": true,
+      "list_value": "project_type|Safety"
+    },
+    {
+      "list": "region",
+      "value": "NLAM",
+      "label": "North America and Latin America",
+      "sortOrder": 1,
+      "active": true,
+      "list_value": "region|NLAM"
+    },
+    {
+      "list": "region",
+      "value": "EMEA",
+      "label": "Europe, Middle East and Africa",
+      "sortOrder": 2,
+      "active": true,
+      "list_value": "region|EMEA"
+    },
+    {
+      "list": "region",
+      "value": "APAC",
+      "label": "Asia Pacific",
+      "sortOrder": 3,
+      "active": true,
+      "list_value": "region|APAC"
+    },
+    {
+      "list": "region",
+      "value": "Global",
+      "label": "More than one region",
+      "sortOrder": 4,
+      "active": true,
+      "list_value": "region|Global"
+    },
+    {
+      "list": "order_type",
+      "value": "Z002",
+      "label": "Capital Investment Order",
+      "sortOrder": 1,
+      "active": true,
+      "list_value": "order_type|Z002"
+    },
+    {
+      "list": "order_type",
+      "value": "Z005",
+      "label": "Second order type in use — selection rule pending (Q25)",
+      "sortOrder": 2,
+      "active": true,
+      "list_value": "order_type|Z005"
+    },
+    {
+      "list": "buy_vs_lease",
+      "value": "Yes",
+      "label": "Yes, reviewed with Procurement",
+      "sortOrder": 1,
+      "active": true,
+      "list_value": "buy_vs_lease|Yes"
+    },
+    {
+      "list": "buy_vs_lease",
+      "value": "No",
+      "label": "No",
+      "sortOrder": 2,
+      "active": true,
+      "list_value": "buy_vs_lease|No"
+    },
+    {
+      "list": "buy_vs_lease",
+      "value": "N/A",
+      "label": "Not applicable",
+      "sortOrder": 3,
+      "active": true,
+      "list_value": "buy_vs_lease|N/A"
+    },
+    {
+      "list": "new_equipment",
+      "value": "New",
+      "label": "New equipment",
+      "sortOrder": 1,
+      "active": true,
+      "list_value": "new_equipment|New"
+    },
+    {
+      "list": "new_equipment",
+      "value": "Used",
+      "label": "Used or refurbished",
+      "sortOrder": 2,
+      "active": true,
+      "list_value": "new_equipment|Used"
+    },
+    {
+      "list": "new_equipment",
+      "value": "N/A",
+      "label": "Not an equipment purchase",
+      "sortOrder": 3,
+      "active": true,
+      "list_value": "new_equipment|N/A"
+    },
+    {
+      "list": "yes_no_na",
+      "value": "Yes",
+      "label": "Yes",
+      "sortOrder": 1,
+      "active": true,
+      "list_value": "yes_no_na|Yes"
+    },
+    {
+      "list": "yes_no_na",
+      "value": "No",
+      "label": "No",
+      "sortOrder": 2,
+      "active": true,
+      "list_value": "yes_no_na|No"
+    },
+    {
+      "list": "yes_no_na",
+      "value": "N/A",
+      "label": "Not applicable",
+      "sortOrder": 3,
+      "active": true,
+      "list_value": "yes_no_na|N/A"
+    }
+  ]
+}

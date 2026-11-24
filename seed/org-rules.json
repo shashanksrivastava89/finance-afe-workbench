@@ -1,0 +1,132 @@
+{
+  "_note": "Routing rules the SAP approver matrix does not carry (R41-R43, R47, R58). The matrix is the MINIMUM chain; these add to it. Everything here is editable in Admin > Org rules — it is configuration, not code. Sources are the 2026-09-03 session with Aiden-Mulqueeny Crilly.",
+  "rules": [
+    {
+      "id": "rule-0001",
+      "kind": "coordinator",
+      "active": true,
+      "scope": {
+        "division": "CORP_IT"
+      },
+      "person": {
+        "name": "Aiden-Mulqueeny Crilly",
+        "email": "aiden-mulqueeny_crilly@example.com"
+      },
+      "note": "Every IT AFE is prepared or reviewed by the coordinator before it is sent. \"Any AFE request cannot go without Aiden.\" (transcript 29:53)"
+    },
+    {
+      "id": "rule-0002",
+      "kind": "pre_approver",
+      "active": true,
+      "scope": {
+        "ownerName": "Udarsh Atwal"
+      },
+      "person": {
+        "name": "Annette Sandhu",
+        "email": "annette_sandhu@example.com"
+      },
+      "group": "Assoc. Dir Digital Workplace",
+      "placement": "project_approvals",
+      "note": "The cost-centre owner wants his associate director to sign first; printed in the form's Project Approvals rows and signed at DocuSign order 1. (transcript 26:43-28:13; screenshots 20:32, 21:40)"
+    },
+    {
+      "id": "rule-0003",
+      "kind": "override",
+      "active": true,
+      "scope": {
+        "division": "CORP_IT"
+      },
+      "person": {
+        "name": "Vrishti Aguirre",
+        "email": "vrishti_aguirre@example.com"
+      },
+      "placement": "after_matrix",
+      "aboveLimit": "include",
+      "note": "IT routes every AFE to Erik regardless of band, because he wants to review them all. He already holds A3/A5 on the IT cost centres, so below $100,001 this rule adds him. May be withdrawn once Finance agrees. (transcript 24:13-25:47)"
+    },
+    {
+      "id": "rule-0004",
+      "kind": "cc",
+      "active": true,
+      "scope": {},
+      "person": {
+        "name": "Fixed Assets (RTR_FA)",
+        "email": "rtr_fa@example.com"
+      },
+      "placement": "cc",
+      "handoff": true,
+      "note": "Fixed Assets receives the completed envelope on every AFE, so the signed set arrives without being asked for (R58). `handoff` also makes this the mailbox the tool writes to once every signature is in: one mail, a standard subject, the requester in copy, for the FA team's own workflow to trigger on."
+    },
+    {
+      "id": "rule-0005",
+      "kind": "controllership",
+      "active": true,
+      "scope": {},
+      "conditions": {
+        "min": 1000000
+      },
+      "person": {
+        "name": "Janine Barad",
+        "email": null
+      },
+      "alternates": [
+        {
+          "name": "Gabriella Rafter",
+          "email": null
+        }
+      ],
+      "group": "Technical Accounting Review",
+      "placement": "after_matrix",
+      "note": "Above $1M a capital project takes a technical accounting review outside the SAP matrix, by EITHER of these two. Asked for by Imogen and confirmed by Judithmelanie and Lyndsay in Meeting #5 (transcript 27:29-28:44): \"if it is more than 1 million, it should go for VP... technical accounting review\". The two names were heard on a call recording until 2026-09-21 and were seeded as \"Juan Gandhi\" and \"Janine\" - one mis-heard, one a given name with no surname - so the tool refused to guess a mailbox and blocked Send above $1M, which is what it should have done. Shashank confirmed them as Janine Barad and Gabriella Rafter. The mailboxes are still blank on purpose: the directory guesses First_Last@example.com and a coordinator confirms it before anything is sent (R60). Acme's own policy words it as labour rather than total value - \"capital projects with $1 million or more in internal and external labor must be approved by the Chief Accounting Officer or designee\" - and chainBuilder already tests both the total AND the labour figure against the threshold."
+    },
+    {
+      "id": "rule-0007",
+      "kind": "coordinator",
+      "active": true,
+      "scope": {
+        "division": "LSD"
+      },
+      "person": {
+        "name": "Shakira Cashman",
+        "email": "shakira_cashman@example.com"
+      },
+      "note": "The finance business partner Fixed Assets coordinates with for LSD, rather than the requester - Lyndsay, Meeting #5 (58:33-59:16): \"each division has the finance business partner... we used to connect only the finance business partner\". Seen raising an AFE on Douglas Grahame's behalf in the hand-back mail of 2026-09-11."
+    },
+    {
+      "id": "rule-0008",
+      "kind": "fa_issue_approver",
+      "active": true,
+      "scope": {},
+      "person": {
+        "name": "Judithmelanie Ware",
+        "email": "judithmelanie_ware@example.com"
+      },
+      "group": "FA Supervisor",
+      "note": "Fixed Assets Supervisor. No internal order is created until Judithmelanie or Jarrod has approved the issue (Lyndsay, 2026-09-18). Either may approve; neither may then key SAP on the same AFE, which is four eyes by identity rather than by role."
+    },
+    {
+      "id": "rule-0009",
+      "kind": "fa_issue_approver",
+      "active": true,
+      "scope": {},
+      "person": {
+        "name": "Jarrod Dane",
+        "email": "jarrod_dane@example.com"
+      },
+      "group": "FA Manager",
+      "note": "Fixed Assets Manager, the second of the two who may approve the issue. Held only the leadership role until 2026-09-20, so the person the business names as an approver could not open a Fixed Assets screen at all."
+    },
+    {
+      "id": "rule-0010",
+      "kind": "fa_issue_approver",
+      "active": true,
+      "scope": {},
+      "person": {
+        "name": "Manaia Ginty",
+        "email": "manaia_ginty@example.com"
+      },
+      "group": "Assoc Director, Finance",
+      "note": "The third approver, named by Judithmelanie in Meeting #6 (2026-09-22): \"there is some option that preparer can choose either me or Jarrod or Manaia\". Cover for leave was the reason — \"in case I am not available, I am on leave that day\" — and the answer is that the preparer picks rather than that the system guesses who is in. Three is enough: \"Manaia, you can just select that. That's it.\""
+    }
+  ]
+}
